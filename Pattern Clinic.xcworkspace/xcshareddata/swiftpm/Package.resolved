@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "IBAnimatable",
+        "repositoryURL": "https://github.com/IBAnimatable/IBAnimatable.git",
+        "state": {
+          "branch": "master",
+          "revision": "c5bce0d977c9a9b1f98f54577703894bc8efa339",
+          "version": null
+        }
+      },
+      {
+        "package": "IQKeyboardManagerSwift",
+        "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
+        "state": {
+          "branch": "master",
+          "revision": "474f849accae40fe61b5302d9b057dd48ee073ba",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

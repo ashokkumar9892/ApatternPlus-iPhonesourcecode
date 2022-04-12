@@ -1,0 +1,24 @@
+PODS:
+  - KYDrawerController (2.1.0)
+  - NMMultiUnitRuler (0.1.1)
+  - SwiftyGif (5.4.3)
+
+DEPENDENCIES:
+  - KYDrawerController
+  - NMMultiUnitRuler
+  - SwiftyGif
+
+SPEC REPOS:
+  trunk:
+    - KYDrawerController
+    - NMMultiUnitRuler
+    - SwiftyGif
+
+SPEC CHECKSUMS:
+  KYDrawerController: baad0e63b09c0cb564bd48f0f7f70f45d9176ebc
+  NMMultiUnitRuler: 2620fb0c9b8a33931982f793731422395da1c31f
+  SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
+
+PODFILE CHECKSUM: 15e09c9c3beaa6bbb721e8838f0a7a00ea01a1e1
+
+COCOAPODS: 1.11.2

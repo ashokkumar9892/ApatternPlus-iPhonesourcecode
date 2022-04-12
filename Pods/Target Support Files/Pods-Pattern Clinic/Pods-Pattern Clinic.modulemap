@@ -1,0 +1,6 @@
+framework module Pods_Pattern_Clinic {
+  umbrella header "Pods-Pattern Clinic-umbrella.h"
+
+  export *
+  module * { export * }
+}
