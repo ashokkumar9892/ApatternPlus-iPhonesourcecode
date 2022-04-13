@@ -12,5 +12,6 @@ static let sharedInstance = StoryBoardSelection()
     var mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
     let settingsStoryBoard = UIStoryboard(name: "Settings", bundle: nil)
     let sideMenuStoryBoard = UIStoryboard(name: "SideMenu", bundle: nil)
+    let healthStoryBoard = UIStoryboard(name: "HealthTips", bundle: nil)
     
 }

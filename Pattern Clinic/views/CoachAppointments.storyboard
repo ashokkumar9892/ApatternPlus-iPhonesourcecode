@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Outfit-Light.ttf">
+            <string>Outfit-Light</string>
+        </array>
         <array key="Outfit-Medium.ttf">
             <string>Outfit-Medium</string>
         </array>
@@ -243,18 +246,183 @@
                     </view>
                     <connections>
                         <outlet property="segmentedControl" destination="Ufa-20-4Q3" id="KMg-SR-B8j"/>
+                        <outlet property="tableheight" destination="OHc-qB-PJ0" id="nqs-C0-Qxw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45Z-d5-3ky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6700" y="1651"/>
         </scene>
+        <!--Coach ProfileVC-->
+        <scene sceneID="viP-af-5NE">
+            <objects>
+                <viewController storyboardIdentifier="CoachProfileVC" id="KTB-iI-0vP" customClass="CoachProfileVC" customModule="Pattern_Clinic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ET6-0e-yjS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKF-f7-Qab">
+                                <rect key="frame" x="0.0" y="16" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dpt-3U-cDZ"/>
+                                    <constraint firstAttribute="width" secondItem="mKF-f7-Qab" secondAttribute="height" multiplier="1:1" id="zba-tT-R8n"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="back_icon"/>
+                                <connections>
+                                    <action selector="navigationBarBackAction:" destination="KTB-iI-0vP" eventType="touchUpInside" id="xF0-jw-JBV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coach Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdo-D5-Kb2">
+                                <rect key="frame" x="87.5" y="26" width="145.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="24"/>
+                                <color key="textColor" name="lbl_blackcolour"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe1-nG-8ZQ">
+                                <rect key="frame" x="0.0" y="70.5" width="320" height="0.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="Mmd-zF-mcU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-mk-Qow">
+                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poq-yW-h6B">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Emma Watson" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-AE-HfO" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                <rect key="frame" x="24" y="18" width="272" height="180"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="pNn-Xf-VVt"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OWm-fp-ofs">
+                                                <rect key="frame" x="24" y="214" width="272" height="207.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma Watson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ7-sU-Xg0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="272" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="20"/>
+                                                        <color key="textColor" name="lbl_blackcolour"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="s1f-nF-J6u">
+                                                        <rect key="frame" x="0.0" y="35.5" width="272" height="20.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-Yb-19p">
+                                                                <rect key="frame" x="0.0" y="0.0" width="136" height="20.5"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_dark" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-Cg-6dF">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="20.5"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="15" id="MPb-s4-fch"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 5, 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHV-SK-f9h">
+                                                                        <rect key="frame" x="21" y="0.0" width="115" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
+                                                                        <color key="textColor" name="lbl_blackcolour"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-Pb-46e">
+                                                                <rect key="frame" x="136" y="0.0" width="136" height="20.5"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_dark" translatesAutoresizingMaskIntoConstraints="NO" id="f4a-n1-gPj">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="20.5"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="9:30 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrI-4r-if0">
+                                                                        <rect key="frame" x="22" y="0.0" width="114" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
+                                                                        <color key="textColor" name="lbl_blackcolour"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiB-6i-6Cs">
+                                                        <rect key="frame" x="0.0" y="66" width="272" height="141.5"/>
+                                                        <string key="text">Aenean non ex nulla. Vivamus a enim tristique, sodales lacus sed, aliquam libero. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eu facilisis lorem. Aliquam vulputate vitae ligula sed lacinia. Sed rutrum bibendum ipsum id malesuada.</string>
+                                                        <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="14"/>
+                                                        <color key="textColor" name="#787878_lbl_grey"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="OWm-fp-ofs" firstAttribute="top" secondItem="EYa-AE-HfO" secondAttribute="bottom" constant="16" id="4A1-Up-5RB"/>
+                                            <constraint firstItem="EYa-AE-HfO" firstAttribute="width" secondItem="poq-yW-h6B" secondAttribute="width" multiplier="0.85" id="FWp-rp-zTl"/>
+                                            <constraint firstItem="OWm-fp-ofs" firstAttribute="trailing" secondItem="EYa-AE-HfO" secondAttribute="trailing" id="fU9-4S-U7p"/>
+                                            <constraint firstAttribute="bottom" secondItem="OWm-fp-ofs" secondAttribute="bottom" constant="104.5" id="gLJ-Ia-phu"/>
+                                            <constraint firstItem="EYa-AE-HfO" firstAttribute="top" secondItem="poq-yW-h6B" secondAttribute="top" constant="18" id="o4X-ze-f4b"/>
+                                            <constraint firstItem="EYa-AE-HfO" firstAttribute="centerX" secondItem="poq-yW-h6B" secondAttribute="centerX" id="ty3-eF-sHO"/>
+                                            <constraint firstItem="OWm-fp-ofs" firstAttribute="leading" secondItem="EYa-AE-HfO" secondAttribute="leading" id="wlG-NO-hkT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="poq-yW-h6B" firstAttribute="leading" secondItem="lcd-mk-Qow" secondAttribute="leading" id="AH8-1b-NOz"/>
+                                    <constraint firstItem="poq-yW-h6B" firstAttribute="width" secondItem="OXU-81-ixa" secondAttribute="width" id="TAT-jP-ufJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="poq-yW-h6B" secondAttribute="bottom" id="VcD-Oc-BsT"/>
+                                    <constraint firstItem="poq-yW-h6B" firstAttribute="top" secondItem="lcd-mk-Qow" secondAttribute="top" id="dau-5J-ZKJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="poq-yW-h6B" secondAttribute="trailing" id="nWU-fE-Yas"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="vya-Zi-SgN"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="OXU-81-ixa"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V7g-oV-IOs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V7g-oV-IOs" firstAttribute="trailing" secondItem="oe1-nG-8ZQ" secondAttribute="trailing" id="2sx-Zq-qyg"/>
+                            <constraint firstItem="mKF-f7-Qab" firstAttribute="top" secondItem="V7g-oV-IOs" secondAttribute="top" constant="16" id="5re-Gr-0zz"/>
+                            <constraint firstItem="lcd-mk-Qow" firstAttribute="bottom" secondItem="V7g-oV-IOs" secondAttribute="bottom" id="DOq-8h-J6H"/>
+                            <constraint firstItem="lcd-mk-Qow" firstAttribute="top" secondItem="oe1-nG-8ZQ" secondAttribute="bottom" constant="1" id="HKO-3T-wlw"/>
+                            <constraint firstItem="oe1-nG-8ZQ" firstAttribute="leading" secondItem="V7g-oV-IOs" secondAttribute="leading" id="S6j-HC-7ng"/>
+                            <constraint firstItem="oe1-nG-8ZQ" firstAttribute="top" secondItem="Pdo-D5-Kb2" secondAttribute="bottom" constant="14" id="lgK-1f-969"/>
+                            <constraint firstItem="lcd-mk-Qow" firstAttribute="leading" secondItem="V7g-oV-IOs" secondAttribute="leading" id="pQy-ai-OWS"/>
+                            <constraint firstItem="Pdo-D5-Kb2" firstAttribute="centerX" secondItem="V7g-oV-IOs" secondAttribute="centerX" id="qml-uc-VmB"/>
+                            <constraint firstItem="Pdo-D5-Kb2" firstAttribute="centerY" secondItem="mKF-f7-Qab" secondAttribute="centerY" id="tsk-S4-cWq"/>
+                            <constraint firstItem="mKF-f7-Qab" firstAttribute="leading" secondItem="V7g-oV-IOs" secondAttribute="leading" id="vjg-PQ-UKw"/>
+                            <constraint firstItem="lcd-mk-Qow" firstAttribute="trailing" secondItem="V7g-oV-IOs" secondAttribute="trailing" id="yJF-sz-HzQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAx-qd-Pvb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7410" y="1650"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="EYa-AE-HfO">
+            <size key="intrinsicContentSize" width="325" height="200"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="Emma Watson" width="325" height="200"/>
+        <image name="back_icon" width="20.5" height="13.5"/>
         <image name="calendar" width="10" height="11"/>
+        <image name="calendar_dark" width="15" height="16.5"/>
         <image name="clock" width="10.5" height="10.5"/>
+        <image name="clock_dark" width="16" height="16"/>
         <image name="coach_img" width="69" height="69"/>
         <image name="menu_White" width="23.5" height="16"/>
+        <namedColor name="#787878_lbl_grey">
+            <color red="0.47099998593330383" green="0.47099998593330383" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="#C7C7C7_textcolour">
             <color red="0.77999997138977051" green="0.77999997138977051" blue="0.77999997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

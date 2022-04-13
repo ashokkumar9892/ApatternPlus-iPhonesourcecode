@@ -20,8 +20,8 @@ class PendingStatusVC: CustomiseViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.statusImg.image = UIImage(named: "decline_img")
                 self.info_Lbl.text =  "Account set up could not be completed. Please contact A Pattern Medical Clinic for support."
+                self.submit_Btn.isHidden = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-                    self.submit_Btn.isHidden = false
                     let storyboard = StoryBoardSelection.sharedInstance.sideMenuStoryBoard
                     guard let vc = storyboard.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController  else{return}
                     self.navigationController?.pushViewController(vc, animated: true)
@@ -31,6 +31,6 @@ class PendingStatusVC: CustomiseViewController {
     }
     
     @IBAction func contact_Btn(_ sender :UIButton){
-       
+        
     }
 }

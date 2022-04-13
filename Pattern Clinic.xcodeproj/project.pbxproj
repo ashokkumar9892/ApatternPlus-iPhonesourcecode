@@ -55,8 +55,14 @@
 		89AE41BB27F7148B00C5C120 /* TutorialScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE41BA27F7148B00C5C120 /* TutorialScreenVC.swift */; };
 		89AE41BD27F71EC000C5C120 /* AP App screens 8.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89AE41BC27F71EC000C5C120 /* AP App screens 8.gif */; };
 		89AE41BF27F71F2F00C5C120 /* AP App screens 7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89AE41BE27F71F2F00C5C120 /* AP App screens 7.gif */; };
+		89B020692806CC6A00E05650 /* ProgressTrackerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B020682806CC6A00E05650 /* ProgressTrackerVC.swift */; };
+		89B0206B2806CCC000E05650 /* AP+ ScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0206A2806CCC000E05650 /* AP+ ScoreVC.swift */; };
+		89B0206D2806D4F900E05650 /* YourMetricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0206C2806D4F900E05650 /* YourMetricsVC.swift */; };
+		89B0206F2806E11B00E05650 /* CompletePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0206E2806E11B00E05650 /* CompletePopUpVC.swift */; };
+		89B020712806EF6D00E05650 /* RecipeFeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B020702806EF6D00E05650 /* RecipeFeedbackVC.swift */; };
 		89B4B98D27FEE2C500F9617E /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4B98C27FEE2C500F9617E /* LaunchScreenVC.swift */; };
 		89B5DCB428059BF700B1A4A9 /* CoachAppointmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DCB328059BF700B1A4A9 /* CoachAppointmentsVC.swift */; };
+		89B5DCB62805B66300B1A4A9 /* CoachProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B5DCB52805B66300B1A4A9 /* CoachProfileVC.swift */; };
 		89BB25C127F5652400786A13 /* HelperClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BB25C027F5652400786A13 /* HelperClassVC.swift */; };
 		89BB25C427F586B100786A13 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BB25C327F586B100786A13 /* LoginVC.swift */; };
 		89BB25C627F586F900786A13 /* StoryBoardSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BB25C527F586F900786A13 /* StoryBoardSelection.swift */; };
@@ -154,8 +160,14 @@
 		89AE41BA27F7148B00C5C120 /* TutorialScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenVC.swift; sourceTree = "<group>"; };
 		89AE41BC27F71EC000C5C120 /* AP App screens 8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "AP App screens 8.gif"; sourceTree = "<group>"; };
 		89AE41BE27F71F2F00C5C120 /* AP App screens 7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "AP App screens 7.gif"; sourceTree = "<group>"; };
+		89B020682806CC6A00E05650 /* ProgressTrackerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTrackerVC.swift; sourceTree = "<group>"; };
+		89B0206A2806CCC000E05650 /* AP+ ScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AP+ ScoreVC.swift"; sourceTree = "<group>"; };
+		89B0206C2806D4F900E05650 /* YourMetricsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourMetricsVC.swift; sourceTree = "<group>"; };
+		89B0206E2806E11B00E05650 /* CompletePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePopUpVC.swift; sourceTree = "<group>"; };
+		89B020702806EF6D00E05650 /* RecipeFeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeedbackVC.swift; sourceTree = "<group>"; };
 		89B4B98C27FEE2C500F9617E /* LaunchScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		89B5DCB328059BF700B1A4A9 /* CoachAppointmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachAppointmentsVC.swift; sourceTree = "<group>"; };
+		89B5DCB52805B66300B1A4A9 /* CoachProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachProfileVC.swift; sourceTree = "<group>"; };
 		89BB25C027F5652400786A13 /* HelperClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperClassVC.swift; sourceTree = "<group>"; };
 		89BB25C327F586B100786A13 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		89BB25C527F586F900786A13 /* StoryBoardSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardSelection.swift; sourceTree = "<group>"; };
@@ -383,6 +395,11 @@
 				89E1F48327FDC0DE00DCFC91 /* OptimalFitnessVC.swift */,
 				898D6C3B27FEFFA2004F469E /* NutritionTrackingVC.swift */,
 				898D6C3D27FF0874004F469E /* RecipeDetailsVC.swift */,
+				89B020682806CC6A00E05650 /* ProgressTrackerVC.swift */,
+				89B0206A2806CCC000E05650 /* AP+ ScoreVC.swift */,
+				89B0206C2806D4F900E05650 /* YourMetricsVC.swift */,
+				89B0206E2806E11B00E05650 /* CompletePopUpVC.swift */,
+				89B020702806EF6D00E05650 /* RecipeFeedbackVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -398,6 +415,7 @@
 				8998951028058A4300602E97 /* HealthTipsListVC.swift */,
 				89989512280597BE00602E97 /* HealthTipDetailsVC.swift */,
 				89B5DCB328059BF700B1A4A9 /* CoachAppointmentsVC.swift */,
+				89B5DCB52805B66300B1A4A9 /* CoachProfileVC.swift */,
 			);
 			path = "SideDrawerVC's";
 			sourceTree = "<group>";
@@ -691,11 +709,14 @@
 				89E1F47E27FDB22C00DCFC91 /* TodayActivityListVC.swift in Sources */,
 				89989513280597BE00602E97 /* HealthTipDetailsVC.swift in Sources */,
 				89C7087E27FC5C390091EFE2 /* MenuViewModel.swift in Sources */,
+				89B020692806CC6A00E05650 /* ProgressTrackerVC.swift in Sources */,
 				89C7087B27FC57460091EFE2 /* HomeVC.swift in Sources */,
+				89B0206B2806CCC000E05650 /* AP+ ScoreVC.swift in Sources */,
 				899680F627FAFC00000745B3 /* Static_InfoVC.swift in Sources */,
 				8962695D2804450200DA7ACA /* MessageListVC.swift in Sources */,
 				89BB25D227F58E3100786A13 /* AddWeightVC.swift in Sources */,
 				89BB25D427F58E3F00786A13 /* DevicesListVC.swift in Sources */,
+				89B0206F2806E11B00E05650 /* CompletePopUpVC.swift in Sources */,
 				89E1F48227FDB97A00DCFC91 /* TrendsVC.swift in Sources */,
 				89E1F48427FDC0DE00DCFC91 /* OptimalFitnessVC.swift in Sources */,
 				8901DDEE27F484C4008FF052 /* AppDelegate.swift in Sources */,
@@ -703,7 +724,9 @@
 				89B5DCB428059BF700B1A4A9 /* CoachAppointmentsVC.swift in Sources */,
 				89B4B98D27FEE2C500F9617E /* LaunchScreenVC.swift in Sources */,
 				89AE41BB27F7148B00C5C120 /* TutorialScreenVC.swift in Sources */,
+				89B5DCB62805B66300B1A4A9 /* CoachProfileVC.swift in Sources */,
 				89C7088227FC6D940091EFE2 /* ProfileSettingsVC.swift in Sources */,
+				89B0206D2806D4F900E05650 /* YourMetricsVC.swift in Sources */,
 				89BB25CA27F5878800786A13 /* ForgetPasswordVC.swift in Sources */,
 				8962696A28045B8700DA7ACA /* ContactUSVC.swift in Sources */,
 				89BB25CC27F5879900786A13 /* ResetPasswordVC.swift in Sources */,
@@ -716,6 +739,7 @@
 				8998951128058A4300602E97 /* HealthTipsListVC.swift in Sources */,
 				89626961280456F000DA7ACA /* PersonalMetricsVC.swift in Sources */,
 				8901DDF027F484C4008FF052 /* SceneDelegate.swift in Sources */,
+				89B020712806EF6D00E05650 /* RecipeFeedbackVC.swift in Sources */,
 				89BB25C427F586B100786A13 /* LoginVC.swift in Sources */,
 				89E1F48627FDC3BD00DCFC91 /* DectorsListVC.swift in Sources */,
 				89BB25CE27F5883B00786A13 /* NavigationProtocol.swift in Sources */,
