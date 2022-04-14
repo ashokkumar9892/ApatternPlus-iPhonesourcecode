@@ -30,6 +30,7 @@
 		8901DE3427F48D73008FF052 /* IBAnimatable in Frameworks */ = {isa = PBXBuildFile; productRef = 8901DE3327F48D73008FF052 /* IBAnimatable */; };
 		8901DE3927F49330008FF052 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8901DE3827F49330008FF052 /* Settings.storyboard */; };
 		892ADB4AF0ECC6F0A6B94D93 /* Pods_Pattern_ClinicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1A50DA47E50A8028423058 /* Pods_Pattern_ClinicTests.framework */; };
+		895CC7642808331A00A37449 /* HealthTripdetails1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CC7632808331A00A37449 /* HealthTripdetails1VC.swift */; };
 		8962695B280432F600DA7ACA /* PersonalInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962695A280432F600DA7ACA /* PersonalInformationVC.swift */; };
 		8962695D2804450200DA7ACA /* MessageListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962695C2804450200DA7ACA /* MessageListVC.swift */; };
 		8962695F28044B8400DA7ACA /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962695E28044B8400DA7ACA /* MessageVC.swift */; };
@@ -136,6 +137,7 @@
 		8901DE2727F4885A008FF052 /* Outfit-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Bold.ttf"; sourceTree = "<group>"; };
 		8901DE2827F4885A008FF052 /* Outfit-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Medium.ttf"; sourceTree = "<group>"; };
 		8901DE3827F49330008FF052 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		895CC7632808331A00A37449 /* HealthTripdetails1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTripdetails1VC.swift; sourceTree = "<group>"; };
 		8962695A280432F600DA7ACA /* PersonalInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationVC.swift; sourceTree = "<group>"; };
 		8962695C2804450200DA7ACA /* MessageListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListVC.swift; sourceTree = "<group>"; };
 		8962695E28044B8400DA7ACA /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				89989512280597BE00602E97 /* HealthTipDetailsVC.swift */,
 				89B5DCB328059BF700B1A4A9 /* CoachAppointmentsVC.swift */,
 				89B5DCB52805B66300B1A4A9 /* CoachProfileVC.swift */,
+				895CC7632808331A00A37449 /* HealthTripdetails1VC.swift */,
 			);
 			path = "SideDrawerVC's";
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 				89C7088227FC6D940091EFE2 /* ProfileSettingsVC.swift in Sources */,
 				89B0206D2806D4F900E05650 /* YourMetricsVC.swift in Sources */,
 				89BB25CA27F5878800786A13 /* ForgetPasswordVC.swift in Sources */,
+				895CC7642808331A00A37449 /* HealthTripdetails1VC.swift in Sources */,
 				8962696A28045B8700DA7ACA /* ContactUSVC.swift in Sources */,
 				89BB25CC27F5879900786A13 /* ResetPasswordVC.swift in Sources */,
 				89BB25C827F5877800786A13 /* CreateProfileVC.swift in Sources */,

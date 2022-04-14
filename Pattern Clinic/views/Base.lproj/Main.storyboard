@@ -382,13 +382,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTE-Ze-5Fq">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="633.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="631.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOb-oi-1HN">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your AP+ Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH2-U5-r4Y">
-                                                        <rect key="frame" x="78.5" y="16.5" width="163.5" height="41"/>
+                                                        <rect key="frame" x="78" y="16.5" width="164.5" height="41"/>
                                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="24"/>
                                                         <color key="textColor" name="lbl_blackcolour"/>
                                                         <nil key="highlightedColor"/>
@@ -433,13 +433,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select A Pattern Plus Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-Gr-sTX">
-                                                <rect key="frame" x="29" y="106" width="262" height="28"/>
+                                                <rect key="frame" x="26.5" y="106" width="267" height="26"/>
                                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="22"/>
                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AY5-mn-Fec" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic">
-                                                <rect key="frame" x="24" y="162" width="272" height="37"/>
+                                                <rect key="frame" x="24" y="160" width="272" height="37"/>
                                                 <color key="backgroundColor" name="test_FieldBackGround"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="18"/>
                                                 <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -459,7 +459,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zf-jW-Tzu">
-                                                <rect key="frame" x="24" y="223" width="272" height="0.5"/>
+                                                <rect key="frame" x="24" y="221" width="272" height="0.5"/>
                                                 <color key="backgroundColor" name="Light_TitleGrey"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.34999999999999998" id="NIm-Rb-t7f"/>
@@ -469,7 +469,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q8c-e8-3KS">
-                                                <rect key="frame" x="24" y="247.5" width="272" height="240"/>
+                                                <rect key="frame" x="24" y="245.5" width="272" height="240"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="240" id="NyO-3k-i5I"/>
@@ -564,7 +564,7 @@
                                                 </connections>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDA-cq-KfZ" customClass="AnimatableButton">
-                                                <rect key="frame" x="16" y="537.5" width="288" height="36.5"/>
+                                                <rect key="frame" x="16" y="535.5" width="288" height="36.5"/>
                                                 <color key="backgroundColor" name="button_Colour"/>
                                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -2146,7 +2146,7 @@
             <size key="intrinsicContentSize" width="12" height="18.5"/>
         </designable>
         <designable name="AY5-mn-Fec">
-            <size key="intrinsicContentSize" width="122" height="35"/>
+            <size key="intrinsicContentSize" width="126" height="33"/>
         </designable>
         <designable name="BDb-sv-7EW">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -2173,7 +2173,7 @@
             <size key="intrinsicContentSize" width="12" height="18.5"/>
         </designable>
         <designable name="YDA-cq-KfZ">
-            <size key="intrinsicContentSize" width="58" height="35"/>
+            <size key="intrinsicContentSize" width="58" height="33"/>
         </designable>
         <designable name="ajN-Kz-rTm">
             <size key="intrinsicContentSize" width="12" height="18.5"/>

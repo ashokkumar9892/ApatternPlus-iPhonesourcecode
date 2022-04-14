@@ -16,7 +16,17 @@ class HealthTipDetailsVC: CustomiseViewController {
     }
     
 
-  
+    @IBAction func subscribe_Btn(_ sender:UIButton){
+        if sender.isSelected == false{
+            sender.isSelected = true
+            sender.setTitle("Unsubscribe", for: .normal)
+        }else{
+            sender.setTitle("Subscribe", for: .normal)
+            sender.isSelected = false
+        }
+    }
 
 }
+
+
 

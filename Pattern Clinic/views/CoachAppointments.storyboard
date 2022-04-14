@@ -45,7 +45,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="menu_White"/>
                                         <connections>
-                                            <action selector="navigationBarBackAction:" destination="iox-my-eRN" eventType="touchUpInside" id="cbd-nb-e9J"/>
+                                            <action selector="action_SideMenu:" destination="iox-my-eRN" eventType="touchUpInside" id="PLo-MB-16O"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coach Appointments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBS-fz-UOX">
@@ -240,7 +240,7 @@
                             <constraint firstItem="gI0-4B-q7h" firstAttribute="top" secondItem="PwI-m3-MtB" secondAttribute="bottom" constant="26" id="nfs-HE-4mw"/>
                             <constraint firstItem="gI0-4B-q7h" firstAttribute="centerX" secondItem="PwI-m3-MtB" secondAttribute="centerX" id="sFj-yU-dGL"/>
                             <constraint firstItem="F9o-jS-OaB" firstAttribute="top" secondItem="gI0-4B-q7h" secondAttribute="bottom" constant="25" id="sbu-1n-wYK"/>
-                            <constraint firstItem="PwI-m3-MtB" firstAttribute="top" secondItem="ctB-I1-cGU" secondAttribute="top" id="t7A-jq-6HA"/>
+                            <constraint firstItem="PwI-m3-MtB" firstAttribute="top" secondItem="g6W-1a-PPp" secondAttribute="top" id="t7A-jq-6HA"/>
                             <constraint firstItem="gI0-4B-q7h" firstAttribute="width" secondItem="PwI-m3-MtB" secondAttribute="width" multiplier="0.9" id="yCt-gX-cGg"/>
                         </constraints>
                     </view>
@@ -409,6 +409,9 @@
     <designables>
         <designable name="EYa-AE-HfO">
             <size key="intrinsicContentSize" width="325" height="200"/>
+        </designable>
+        <designable name="Jct-9u-GLZ">
+            <size key="intrinsicContentSize" width="69" height="69"/>
         </designable>
     </designables>
     <resources>

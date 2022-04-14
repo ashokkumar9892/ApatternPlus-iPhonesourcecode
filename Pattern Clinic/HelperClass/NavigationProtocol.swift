@@ -17,14 +17,14 @@ class CustomiseViewController : UIViewController {
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
     }
-    func changeStatusColor(){
+    func changeStatusColor(colour:UIColor?){
         if #available(iOS 13.0, *) {
             let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-            statusBar.backgroundColor = UIColor.white
+            statusBar.backgroundColor = colour
             UIApplication.shared.keyWindow?.addSubview(statusBar)
         } else {
             if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
-                statusBar.backgroundColor = UIColor.white
+                statusBar.backgroundColor = colour
                 
             }
         }
@@ -40,7 +40,11 @@ class CustomiseViewController : UIViewController {
         }
         return false
     }
-    
+    func logOut(){
+        let storyBoard = StoryBoardSelection.sharedInstance.mainStoryBoard
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else{return}
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     func openViewControllerBasedOnStoryBoard(_ strIdentifier:String, _ storyBoard:String) -> UIViewController {
         var viewController = UIViewController()
         
@@ -80,22 +84,20 @@ class CustomiseViewController : UIViewController {
                 guard let self = self else {return}
                 switch type {
                 case .Home:
-                    self.navigationController?.popToRootViewController(animated: true)
-                    self.tabBarController?.selectedIndex = 0
-                    break
+                    (self.parent as? KYDrawerController)?.mainViewController = self.openViewControllerBasedOnStoryBoard("HomeVC", "SideMenu")
                 case .CoachingAppointments:
-                     _ = self.openViewControllerBasedOnStoryBoard("CoachAppointmentsVC", "CoachAppointments")
+                    (self.parent as? KYDrawerController)?.mainViewController = self.openViewControllerBasedOnStoryBoard("CoachAppointmentsVC", "CoachAppointments")
                 case .Messages:
-                    _ = self.openViewControllerBasedOnStoryBoard("MessageListVC", "SideMenu")
+                    (self.parent as? KYDrawerController)?.mainViewController = self.openViewControllerBasedOnStoryBoard("MessageListVC", "SideMenu")
                 case .PersonalMetrics:
-                    _ = self.openViewControllerBasedOnStoryBoard("PersonalMetricsVC", "SideMenu")
+                    (self.parent as? KYDrawerController)?.mainViewController = self.openViewControllerBasedOnStoryBoard("PersonalMetricsVC", "SideMenu")
                 case .HealthTips:
-                    _ = self.openViewControllerBasedOnStoryBoard("HealthTipsListVC", "HealthTips")
+                    (self.parent as? KYDrawerController)?.mainViewController = self.openViewControllerBasedOnStoryBoard("HealthTipsListVC", "HealthTips")
                     
                 case .MyProfile:
-                    _ = self.openViewControllerBasedOnStoryBoard("ProfileSettingsVC", "SideMenu")
+                    (self.parent as? KYDrawerController)?.mainViewController = self.openViewControllerBasedOnStoryBoard("ProfileSettingsVC", "SideMenu")
                 case .Settings:
-                    _ = self.openViewControllerBasedOnStoryBoard("SettingsVC", "Settings")
+                    (self.parent as? KYDrawerController)?.mainViewController = self.openViewControllerBasedOnStoryBoard("SettingsVC", "Settings")
                 }
             }
         }

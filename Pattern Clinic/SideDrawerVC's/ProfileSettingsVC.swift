@@ -41,5 +41,13 @@ class ProfileSettingsVC: CustomiseViewController {
         vc.screenApper = .Edit
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func logout_Btn(_ sender:UIButton){
+        self.alertWithOption(title: "Are you sure you want to logout?", message: "") {
+            self.logOut()
+        }
+    }
+    
+    
 
 }

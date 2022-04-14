@@ -44,11 +44,11 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="menu_White"/>
                                         <connections>
-                                            <action selector="navigationBarBackAction:" destination="Cno-hi-aAY" eventType="touchUpInside" id="R3D-PY-G5W"/>
+                                            <action selector="action_SideMenu:" destination="Cno-hi-aAY" eventType="touchUpInside" id="6fN-SV-5BN"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prI-fm-odA">
-                                        <rect key="frame" x="123.5" y="30.5" width="73" height="25.5"/>
+                                        <rect key="frame" x="123.5" y="31.5" width="73.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -67,31 +67,31 @@
                                 <rect key="frame" x="0.0" y="80" width="320" height="488"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQc-TY-PBC">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="496"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sP-9Y-85d">
-                                                <rect key="frame" x="18" y="24" width="102.5" height="23"/>
+                                                <rect key="frame" x="18" y="24" width="101" height="21"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="18"/>
                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTq-0I-XV5" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="18" y="67" width="284" height="80"/>
+                                                <rect key="frame" x="18" y="65" width="284" height="77.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ability to receive notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps5-Dr-gqE">
-                                                        <rect key="frame" x="12" y="12" width="260" height="19"/>
+                                                        <rect key="frame" x="12" y="12" width="260" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="15"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on/off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsO-aB-4It">
-                                                        <rect key="frame" x="12" y="39" width="78.5" height="20.5"/>
+                                                        <rect key="frame" x="12" y="37.5" width="77.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" name="lbl_blackcolour"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izA-La-i3r">
-                                                        <rect key="frame" x="223" y="34" width="51" height="31"/>
+                                                        <rect key="frame" x="223" y="31.5" width="51" height="31"/>
                                                         <color key="onTintColor" name="button_Colour"/>
                                                     </switch>
                                                 </subviews>
@@ -119,13 +119,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrk-Q2-Xzp" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="18" y="210" width="284" height="270.5"/>
+                                                <rect key="frame" x="18" y="203.5" width="284" height="268.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qNj-lj-1qD">
-                                                        <rect key="frame" x="0.0" y="12" width="284" height="246.5"/>
+                                                        <rect key="frame" x="0.0" y="12" width="284" height="244.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fN-YC-LbN" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="284" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="284" height="37"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -140,7 +140,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TV2-yd-XSZ">
-                                                                <rect key="frame" x="0.0" y="44.5" width="284" height="0.5"/>
+                                                                <rect key="frame" x="0.0" y="45" width="284" height="0.5"/>
                                                                 <color key="backgroundColor" name="Light_TitleGrey"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="0.5" id="rFK-tj-Q3c"/>
@@ -150,7 +150,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ob-yk-nHN" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="53" width="284" height="37"/>
+                                                                <rect key="frame" x="0.0" y="53.5" width="284" height="37"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal">
@@ -165,14 +165,14 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4V-tH-KOp">
-                                                                <rect key="frame" x="0.0" y="98" width="284" height="0.5"/>
+                                                                <rect key="frame" x="0.0" y="98.5" width="284" height="0.5"/>
                                                                 <color key="backgroundColor" name="Light_TitleGrey"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsM-m5-7pb" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="106.5" width="284" height="37"/>
+                                                                <rect key="frame" x="0.0" y="107" width="284" height="37"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -187,14 +187,14 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pe-fx-NJe">
-                                                                <rect key="frame" x="0.0" y="151.5" width="284" height="0.5"/>
+                                                                <rect key="frame" x="0.0" y="152" width="284" height="0.5"/>
                                                                 <color key="backgroundColor" name="Light_TitleGrey"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIJ-zw-iUD" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="160" width="284" height="37"/>
+                                                                <rect key="frame" x="0.0" y="160.5" width="284" height="36.5"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -216,7 +216,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayE-Nb-XiX" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="213.5" width="284" height="33"/>
+                                                                <rect key="frame" x="0.0" y="213.5" width="284" height="31"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -261,7 +261,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEr-Yh-IYw">
-                                                <rect key="frame" x="18" y="167" width="64" height="23"/>
+                                                <rect key="frame" x="18" y="162.5" width="66.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="18"/>
                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                 <nil key="highlightedColor"/>
@@ -302,7 +302,7 @@
                             <constraint firstItem="t4R-Sx-IzO" firstAttribute="trailing" secondItem="Skb-pl-FpG" secondAttribute="trailing" id="dws-bm-YDE"/>
                             <constraint firstItem="FCe-ii-Bmd" firstAttribute="leading" secondItem="t4R-Sx-IzO" secondAttribute="leading" id="f0j-Kd-c9U"/>
                             <constraint firstItem="Skb-pl-FpG" firstAttribute="leading" secondItem="t4R-Sx-IzO" secondAttribute="leading" id="hLi-iD-NLC"/>
-                            <constraint firstItem="Skb-pl-FpG" firstAttribute="top" secondItem="t4R-Sx-IzO" secondAttribute="top" id="oeX-fV-xJ0"/>
+                            <constraint firstItem="Skb-pl-FpG" firstAttribute="top" secondItem="Xne-EA-JYt" secondAttribute="top" id="oeX-fV-xJ0"/>
                             <constraint firstItem="5fN-YC-LbN" firstAttribute="height" secondItem="Xne-EA-JYt" secondAttribute="height" multiplier="0.065" id="uAA-k9-zdb"/>
                             <constraint firstItem="FCe-ii-Bmd" firstAttribute="trailing" secondItem="t4R-Sx-IzO" secondAttribute="trailing" id="uw7-Y2-1p5"/>
                         </constraints>
@@ -770,10 +770,10 @@
             <size key="intrinsicContentSize" width="12" height="18.5"/>
         </designable>
         <designable name="5fN-YC-LbN">
-            <size key="intrinsicContentSize" width="30" height="33"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="7Ob-yk-nHN">
-            <size key="intrinsicContentSize" width="30" height="33"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="9FN-hk-J6Y">
             <size key="intrinsicContentSize" width="12" height="18.5"/>
@@ -791,16 +791,16 @@
             <size key="intrinsicContentSize" width="12" height="18.5"/>
         </designable>
         <designable name="ayE-Nb-XiX">
-            <size key="intrinsicContentSize" width="30" height="33"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="eO2-HM-Jw8">
             <size key="intrinsicContentSize" width="12" height="18.5"/>
         </designable>
         <designable name="gsM-m5-7pb">
-            <size key="intrinsicContentSize" width="30" height="33"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
         <designable name="qIJ-zw-iUD">
-            <size key="intrinsicContentSize" width="30" height="33"/>
+            <size key="intrinsicContentSize" width="30" height="31"/>
         </designable>
     </designables>
     <resources>

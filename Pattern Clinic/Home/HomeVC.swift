@@ -24,9 +24,9 @@ class HomeVC: CustomiseViewController {
         self.addTapgesture(view:self.score_View)
         self.addTapgesture(view:self.progressTracker)
         self.addTapgesture(view:self.graphView)
+      //  self.changeStatusColor(colour: UIColor(hexString: "#0000EE"))
         
     }
-    
     @IBAction func viewAll_Btn(_ sender :UIButton){
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TodayActivityListVC") as? TodayActivityListVC else {return}
         self.navigationController?.pushViewController(vc, animated: true)

@@ -11,10 +11,15 @@ class LoginVC:CustomiseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     //   self.changeStatusColor(colour: UIColor(named: "blue_Back"))
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        //self.changeStatusColor(colour: .white)
+    }
     @IBAction func login_Btn(_ sender :UIButton){
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateProfileVC") as? CreateProfileVC else {return}
         self.navigationController?.pushViewController(vc, animated: true)
