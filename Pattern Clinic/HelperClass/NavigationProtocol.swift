@@ -145,3 +145,35 @@ extension CustomiseViewController : UITextFieldDelegate {
 }
 
 
+
+extension CustomiseViewController {
+    func setUpVM(model:ViewModel){
+        hideKeyboardWhenTappedAround()
+        var viewModel = model
+        viewModel.updateLoadingStatus = { [weak self] in
+            DispatchQueue.main.async {
+                
+            }
+        }
+        viewModel.showAlertClosure = {  [weak self] in
+            if let error = viewModel.error {
+                print(error)
+                DispatchQueue.main.async {
+                    guard let self = self else {return}
+                    self.view.makeToast(error, duration: 0.5, position: .bottom,title:"")
+                }
+            }
+        }
+    }
+    func showErrorMessages(message:String) {
+        DispatchQueue.main.async {
+            self.view.makeToast(message, duration: 0.5, position: .bottom,title:"")
+            
+        }
+    }
+    func showSuccessMessages(message:String,title:String = "") {
+        DispatchQueue.main.async {
+            self.view.makeToast(message, duration: 0.5, position: .bottom,title:title)
+        }
+    }
+}

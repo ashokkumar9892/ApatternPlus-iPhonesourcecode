@@ -25,11 +25,11 @@ extension UIButton {
 }
 
 extension UINavigationController {
-  func popToViewController(ofClass: AnyClass, animated: Bool = true) {
-    if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
-      popToViewController(vc, animated: animated)
+    func popToViewController(ofClass: AnyClass, animated: Bool = true) {
+        if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+            popToViewController(vc, animated: animated)
+        }
     }
-  }
 }
 
 extension UIView {
@@ -181,6 +181,32 @@ class CollectionViewDataSource<Cell :UICollectionViewCell,ViewModel> : NSObject,
 
 
 extension UIViewController {
+    
+    func getDataFormFile() -> ([CountiesWithPhoneModel],String)
+    {
+        var country_code = [CountiesWithPhoneModel]()
+        if let jsonFile = Bundle.main.path(forResource: "CountryCodes", ofType: "json")  {
+            let url = URL.init(fileURLWithPath: jsonFile)
+            do{
+                let data  = try Data.init(contentsOf: url)
+                let jsonData = try JSONSerialization.jsonObject(with: data, options: .init(rawValue: 0))
+                if let json = jsonData as? [[String:String]]
+                {
+                    for list in json{
+                        let data = CountiesWithPhoneModel.init(dial_code: (list["dial_code"] ?? ""), countryName: (list["name"] as? String ?? ""), code: (list["code"] as? String ?? ""))
+                        country_code.append(data)
+                    }
+                    return (country_code,"")
+                }
+            }
+            catch
+            {
+                print(error.localizedDescription)
+            }
+        }
+        return ([],"error")
+    }
+    
     func showInputDialog(title:String? = nil,
                          subtitle:String? = nil,
                          actionTitle:String? = "Add",
@@ -226,7 +252,7 @@ extension UIViewController {
         dialogMessage.setTitle(font: UIFont(name: "Outfit-Regular", size: 14), color:UIColor(named: "#787878_lbl_grey"))
         self.present(dialogMessage, animated: true, completion: nil)
     }
-   
+    
 }
 
 extension UIAlertController {
@@ -275,4 +301,92 @@ extension UIAlertController {
         self.view.tintColor = color
     }
 }
+
+
+
+extension String {
+    func isValidEmail() -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
+    func validateUrl (urlString: String?) -> Bool {
+        let urlRegEx = "(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+"
+        return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: urlString)
+    }
+    
+    func isValidPhone() -> Bool {
+        let phoneRegex = "^[0-9+]{0,1}+[0-9]{5,16}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+        return phoneTest.evaluate(with:self)
+    }
+}
+
+extension UITextField {
+    func datePicker<T>(target: T,
+                       doneAction: Selector,
+                       cancelAction: Selector,
+                       datePickerMode: UIDatePicker.Mode = .date) {
+        let screenWidth = UIScreen.main.bounds.width
+        
+        func buttonItem(withSystemItemStyle style: UIBarButtonItem.SystemItem) -> UIBarButtonItem {
+            let buttonTarget = style == .flexibleSpace ? nil : target
+            let action: Selector? = {
+                switch style {
+                case .cancel:
+                    return cancelAction
+                case .done:
+                    return doneAction
+                default:
+                    return nil
+                }
+            }()
+            let barButtonItem = UIBarButtonItem(barButtonSystemItem: style,
+                                                target: buttonTarget,
+                                                action: action)
+            
+            return barButtonItem
+        }
+        
+        let datePicker = UIDatePicker(frame: CGRect(x: 0,
+                                                    y: 0,
+                                                    width: screenWidth,
+                                                    height: 216))
+        datePicker.datePickerMode = datePickerMode
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
+        // datePicker.locale = Locale(identifier: "en-US")
+        let calendar = Calendar(identifier: .gregorian)
+        var comps = DateComponents()
+        comps.year = -1
+        let maxDate = calendar.date(byAdding: comps, to: Date())
+        comps.year = -100
+        let minDate = calendar.date(byAdding: comps, to: Date())
+        datePicker.maximumDate = maxDate
+        datePicker.minimumDate = minDate
+        //        if comming == "Event"{
+        //            datePicker.minimumDate = Calendar.current.date(byAdding: .year, value:0, to: Date())
+        //            datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 30, to: Date())
+        //        }else{
+        //            debugPrint("Something")
+        //        }
+        self.inputView = datePicker
+        let toolBar = UIToolbar(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: screenWidth,
+                                              height: 44))
+        toolBar.setItems([buttonItem(withSystemItemStyle: .cancel),
+                          buttonItem(withSystemItemStyle: .flexibleSpace),
+                          buttonItem(withSystemItemStyle: .done)],
+                         animated: true)
+        self.inputAccessoryView = toolBar
+    }
+    var isBlank: Bool {
+        return (self.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+}
+
 
