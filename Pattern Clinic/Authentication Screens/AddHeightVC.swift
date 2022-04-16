@@ -30,11 +30,28 @@ class AddHeightVC: CustomiseViewController {
         }
     }
     var screenApper = screenCome.Signup
+    var data_Info :DetailsPass?
     @IBOutlet weak var headerView:UIView!
     @IBOutlet weak var headerHeight:NSLayoutConstraint!
+    @IBOutlet weak var heightLbl:UILabel!
+    var viewModel :RegistrationViewModel!{
+        didSet{
+            self.viewModel.full_name.value = self.data_Info?.FirstName ?? ""
+            self.viewModel.last_name.value = self.data_Info?.LastName ?? ""
+            self.viewModel.username.value  = self.data_Info?.Email ?? ""
+            self.viewModel.country_Name.value  = self.data_Info?.Country ?? ""
+            self.viewModel.SK.value  = self.data_Info?.SK ?? ""
+            self.viewModel.dob.value  = self.data_Info?.dob ?? ""
+            self.viewModel.gender.value  = self.data_Info?.gender ?? ""
+            self.viewModel.weight.value = self.data_Info?.Weight ?? ""
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.viewModel = RegistrationViewModel.init(type: .addHeight)
+        self.setUpVM(model: self.viewModel)
+        
         ruler?.direction = .horizontal
         ruler?.tintColor = UIColor(red: 0.15, green: 0.18, blue: 0.48, alpha: 1.0)
         //  controlHConstraint?.constant = 240.0
@@ -59,19 +76,33 @@ class AddHeightVC: CustomiseViewController {
             self.next_Btn.setTitle("Submit", for: .normal)
             
         }
+        
+        self.viewModel.didFinishFetch = { [weak self] in
+            guard let self = self else {return}
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else {return}
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DevicesListVC") as? DevicesListVC else {return}
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     
-
+    
     @IBAction func next_Btn(_ sender:UIButton){
         switch screenApper {
         case .Signup:
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DevicesListVC") as? DevicesListVC else {return}
-            self.navigationController?.pushViewController(vc, animated: true)
+            if self.viewModel.isValid{
+                self.viewModel.createProfile()
+               
+            }else{
+                self.showErrorMessages(message: self.viewModel.brokenRules.first?.message ?? "")
+            }
+           
         case .Edit:
             self.navigationController?.popViewController(animated: true)
         }
     }
-
+    
 }
 extension AddHeightVC:NMMultiUnitRulerDataSource, NMMultiUnitRulerDelegate{
     
@@ -88,6 +119,8 @@ extension AddHeightVC:NMMultiUnitRulerDataSource, NMMultiUnitRulerDelegate{
     }
     
     func valueChanged(measurement: NSMeasurement) {
+        self.heightLbl.text = "\(measurement.doubleValue)"
+        self.viewModel.height.value = "\(measurement.doubleValue)"
         print("value changed to \(measurement.doubleValue)")
     }
     

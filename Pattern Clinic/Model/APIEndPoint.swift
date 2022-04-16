@@ -12,20 +12,16 @@ enum NetworkEnvironment : String {
     case development  = "http://patternclinicapis.harishparas.com/api/"
 }
 
-enum OtherURLS:String {
-    case image          = "public/uploads/user_images/"
-    case iconImage      = "public/uploads/app_icons/"
-    case roundImage     = "public/uploads/app_icons/round/"
-    case qRIMage        = "public/uploads/user_qrcode/"
-    case profile        = "profile/"
-    case nfcadd         = "nfc/"
-    case exportConatact = "api/export_connect?account_id="
-}
+//enum OtherURLS:String {
+//    
+//}
 enum APIEndPoint {
     // Registraton
     case logIn(param:[String:Any])
     case forgetPassword(param:[String:Any])
     case createProfile(param:[String:Any])
+    case getDectorList(param:[String:Any])
+    case getcoachList(param:[String:Any])
     
 }
 extension APIEndPoint:EndPointType {
@@ -45,6 +41,11 @@ extension APIEndPoint:EndPointType {
             return "Basic/ForgotPassword"
         case .createProfile:
             return "Basic/UpdateProfile"
+        case .getDectorList:
+            return "Basic/DoctorsList"
+        case .getcoachList:
+            return "Basic/CoachList"
+            
         }
     }
     var httpMethod: HTTPMethod {
@@ -59,6 +60,11 @@ extension APIEndPoint:EndPointType {
             return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
         case .createProfile(param: let param):
             return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+        case .getDectorList(param : let param):
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+        case .getcoachList(param: let param):
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+            
         }
     }
     var headers: HTTPHeaders? {

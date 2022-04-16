@@ -100,6 +100,7 @@ extension PatternPlus_TeamVC:UITableViewDataSource,UITableViewDelegate{
                 }
                 
             }
+            vc.indexTag = indexPath.row
             self.present(vc, animated: true, completion:nil)
         }
     }

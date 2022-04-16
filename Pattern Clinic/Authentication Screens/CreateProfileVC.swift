@@ -14,6 +14,11 @@ class CreateProfileVC: CustomiseViewController {
         }
     }
     var viewModel:RegistrationViewModel!
+    {
+        didSet{
+            self.viewModel?.username.bindAndFire{[unowned self] in self.txt_Email.text = $0}
+        }
+    }
     @IBOutlet weak var txt_Email:BindingAnimatable!{
         didSet{
             txt_Email.bind{[unowned self] in self.viewModel.username.value = $0 }
@@ -21,19 +26,27 @@ class CreateProfileVC: CustomiseViewController {
     }
     @IBOutlet weak var txt_fullName:BindingAnimatable!{
         didSet{
-            
+            txt_fullName.bind{[unowned self] in self.viewModel.full_name.value = $0 }
         }
     }
-    @IBOutlet weak var txt_Lastname:BindingAnimatable!
+    @IBOutlet weak var txt_Lastname:BindingAnimatable!{
+        didSet{
+            txt_Lastname.bind{[unowned self] in self.viewModel.last_name.value = $0 }
+        }
+    }
     @IBOutlet weak var txt_Country :BindingAnimatable!
     @IBOutlet weak var txt_DOB     :BindingAnimatable!
     @IBOutlet weak var txt_Gender  :BindingAnimatable!
+    @IBOutlet weak var she_Btn:UIButton!
+    @IBOutlet weak var he_Btn:UIButton!
+    @IBOutlet weak var they_Btn:UIButton!
     
     @IBOutlet weak var userImg:UIImageView!
     var fontCamera    = false
     var images        = [String:Any]()
     var pickedImage   : UIImage?
     var gradePicker: UIPickerView!
+    var userdetails : LoginResponseModel?
     
     let gradePickerValues = ["Male", "Female"]
     
@@ -45,7 +58,7 @@ class CreateProfileVC: CustomiseViewController {
         self.setUpVM(model: self.viewModel)
         gradePicker.dataSource = self
         gradePicker.delegate = self
-        
+        self.viewModel.username.value = self.userdetails?.patientInfo?.userName  ?? ""
         txt_Gender.inputView = gradePicker
         txt_Gender.text = gradePickerValues[0]
         self.txt_DOB.datePicker(target: self,doneAction: #selector(doneAction),cancelAction: #selector(cancelAction),datePickerMode: .date)
@@ -77,9 +90,27 @@ class CreateProfileVC: CustomiseViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func select_Birth(_ sender :UIButton){
+        let btnTag = sender.tag
+        switch btnTag{
+        case 1:
+            self.she_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
+            self.he_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.they_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+        case 2:
+            self.he_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
+            self.she_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.they_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+        default:
+            self.they_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
+            self.he_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.she_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+        }
+    }
+    
     //MARK: - DatePicker Close  button Action
     @objc func cancelAction(textfield:UITextField){
-            self.txt_DOB.resignFirstResponder()
+        self.txt_DOB.resignFirstResponder()
     }
     
     fileprivate func addTapgesture(imageView:UIImageView){
@@ -98,8 +129,19 @@ class CreateProfileVC: CustomiseViewController {
     }
     
     @IBAction func next_Btn(_ sender:UIButton){
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddWeightVC") as? AddWeightVC else {return}
-        self.navigationController?.pushViewController(vc, animated: true)
+        if self.images.count == 0{
+            self.showErrorMessages(message: "Upload user profile photo")
+        }else{
+            if self.viewModel.isValid{
+                let filledData = DetailsPass(FirstName: self.viewModel.full_name.value, ProfilePic: self.pickedImage, LastName: self.viewModel.last_name.value, Email: self.viewModel.username.value, Country: self.viewModel.country_Name.value, dob:self.viewModel.dob.value, gender:self.viewModel.gender.value, SK: self.userdetails?.patientInfo?.sk ?? "", Weight: "", Height: "")
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddWeightVC") as? AddWeightVC else {return}
+                vc.data_Info = filledData
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                self.showErrorMessages(message: self.viewModel.brokenRules.first?.message ?? "")
+            }
+        }
+        
     }
 }
 
@@ -119,6 +161,22 @@ extension CreateProfileVC:UIPickerViewDelegate, UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         txt_Gender.text = gradePickerValues[row]
+        self.viewModel.gender.value = gradePickerValues[row]
         self.view.endEditing(true)
     }
+}
+
+
+struct DetailsPass{
+    var FirstName:String?
+    var ProfilePic:UIImage?
+    var LastName:String?
+    var Email:String?
+    var Country:String?
+    var dob:String?
+    var gender:String?
+    var SK:String?
+    var Weight:String?
+    var Height:String?
+    
 }

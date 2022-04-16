@@ -13,6 +13,8 @@ class RegistrationViewModel :NSObject, ViewModel {
         case SignIn
         case ForgetPassword
         case CreateProfile
+        case addHeight
+        case addWeight
     }
     var modelType         : ModelType
     var brokenRules       : [BrokenRule]    = [BrokenRule]()
@@ -61,6 +63,8 @@ class RegistrationViewModel :NSObject, ViewModel {
         }
     }
     var isSocialAccountVerified = false
+    var getDoctorsList:GetDoctorsList?
+    var login_Info:LoginResponseModel?
     var showText = "Please Wait..."
 }
 
@@ -85,7 +89,29 @@ extension RegistrationViewModel {
                 self.brokenRules.append(BrokenRule(propertyName: "InvalidEmail", message: "⚠️ Enter valid Email Address"))
             }
         case .CreateProfile:
-            break
+            if full_name.value == "" || full_name.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "Enter FirstName"))
+            }
+            if last_name.value == "" || last_name.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "Enter LastName"))
+            }
+            if country_Name.value == "" || country_Name.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "Select Your Country"))
+            }
+            if dob.value == "" || dob.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "Select Your DOB"))
+            }
+            if gender.value == "" || gender.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "Select Your Gender"))
+            }
+        case .addWeight:
+            if weight.value == "" || weight.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "Add your weight"))
+            }
+        case .addHeight:
+            if height.value == "" || height.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "add your height"))
+            }
         }
     }
 }
@@ -99,6 +125,7 @@ extension RegistrationViewModel {
             guard let self = self else {return}
             switch result{
             case .success(let res):
+                self.login_Info = res
                 UserDefaults.hasLogin = true
                 UserDefaults.userToken = res.authToken ?? ""
                 Indicator.shared.hide()
@@ -135,11 +162,55 @@ extension RegistrationViewModel {
     }
     
     func createProfile(){
+        Indicator.shared.show(showText)
         let model = NetworkManager.sharedInstance
-        model.createProfile(SK: SK.value, Height:height.value, AuthToken:UserDefaults.userToken, Weight: weight.value, FirstName: full_name.value, LastName: last_name.value, Email:username.value, Country: country_Name.value, ProfilePic:"") { [weak self] (result) in
+        model.createProfile(SK: SK.value, Height:height.value, AuthToken:UserDefaults.userToken, Weight: weight.value, FirstName: full_name.value, LastName: last_name.value, Email:username.value, Country: country_Name.value, ProfilePic:"",DOB: dob.value,Gender: gender.value,ReferAs:"") { [weak self] (result) in
             guard let self = self else {return}
             switch result{
             case .success(let res):
+                self.didFinishFetch?()
+                Indicator.shared.hide()
+            case .failure(let err):
+                switch err {
+                case .errorReport(let desc):
+                    Indicator.shared.hide()
+                    self.error = desc
+                }
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func getDectors_Info(){
+        let model = NetworkManager.sharedInstance
+        Indicator.shared.show(showText)
+        model.getDoctorsList { [weak self] (result) in
+            guard let self = self else {return}
+            switch result{
+            case .success(let res):
+                self.getDoctorsList = res
+                self.didFinishFetch?()
+                Indicator.shared.hide()
+            case .failure(let err):
+                switch err {
+                case .errorReport(let desc):
+                    Indicator.shared.hide()
+                    self.error = desc
+                }
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func getCoatchList(){
+        Indicator.shared.show(showText)
+        let model = NetworkManager.sharedInstance
+        model.getCoatchList {  [weak self] (result) in
+            guard let self = self else {return}
+            Indicator.shared.hide()
+            switch result{
+            case .success(let res):
+                self.getDoctorsList = res
                 self.didFinishFetch?()
                 Indicator.shared.hide()
             case .failure(let err):

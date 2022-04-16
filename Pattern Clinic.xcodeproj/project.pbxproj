@@ -34,6 +34,7 @@
 		891E6E0D28094889004075D3 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891E6E0C28094889004075D3 /* ImagePickerController.swift */; };
 		891E6E122809583B004075D3 /* CountryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 891E6E112809583B004075D3 /* CountryCodes.json */; };
 		891E6E142809584B004075D3 /* CountryListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891E6E132809584B004075D3 /* CountryListTable.swift */; };
+		891FEF9E280A9D540035BA41 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 891FEF9D280A9D540035BA41 /* SDWebImage */; };
 		892ADB4AF0ECC6F0A6B94D93 /* Pods_Pattern_ClinicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1A50DA47E50A8028423058 /* Pods_Pattern_ClinicTests.framework */; };
 		895CC7642808331A00A37449 /* HealthTripdetails1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CC7632808331A00A37449 /* HealthTripdetails1VC.swift */; };
 		8962695B280432F600DA7ACA /* PersonalInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962695A280432F600DA7ACA /* PersonalInformationVC.swift */; };
@@ -252,6 +253,7 @@
 			files = (
 				8901DE3427F48D73008FF052 /* IBAnimatable in Frameworks */,
 				89AE41B627F6FF2700C5C120 /* IQKeyboardManagerSwift in Frameworks */,
+				891FEF9E280A9D540035BA41 /* SDWebImage in Frameworks */,
 				86FFCAAB11A4D567B73646B3 /* Pods_Pattern_Clinic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,6 +592,7 @@
 			packageProductDependencies = (
 				8901DE3327F48D73008FF052 /* IBAnimatable */,
 				89AE41B527F6FF2700C5C120 /* IQKeyboardManagerSwift */,
+				891FEF9D280A9D540035BA41 /* SDWebImage */,
 			);
 			productName = "Pattern Clinic";
 			productReference = 8901DDEA27F484C4008FF052 /* Pattern Clinic.app */;
@@ -669,6 +672,7 @@
 			packageReferences = (
 				8901DE3227F48D73008FF052 /* XCRemoteSwiftPackageReference "IBAnimatable" */,
 				89AE41B427F6FF2700C5C120 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				891FEF9C280A9D540035BA41 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 8901DDEB27F484C4008FF052 /* Products */;
 			projectDirPath = "";
@@ -1272,6 +1276,14 @@
 				kind = branch;
 			};
 		};
+		891FEF9C280A9D540035BA41 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		89AE41B427F6FF2700C5C120 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1287,6 +1299,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8901DE3227F48D73008FF052 /* XCRemoteSwiftPackageReference "IBAnimatable" */;
 			productName = IBAnimatable;
+		};
+		891FEF9D280A9D540035BA41 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 891FEF9C280A9D540035BA41 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 		89AE41B527F6FF2700C5C120 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;

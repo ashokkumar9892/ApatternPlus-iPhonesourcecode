@@ -13,7 +13,7 @@ class AddWeightVC: CustomiseViewController {
     @IBOutlet weak var ruler: NMMultiUnitRuler?
     var rangeStart = Measurement(value: 30.0, unit: UnitMass.kilograms)
     var rangeLength = Measurement(value: Double(90), unit: UnitMass.kilograms)
-    
+    var data_Info :DetailsPass?
     var colorOverridesEnabled = false
     var moreMarkers = false
     var direction: NMLayerDirection = .horizontal
@@ -39,8 +39,12 @@ class AddWeightVC: CustomiseViewController {
     }
     
     var segments = Array<NMSegmentUnit>()
+    @IBOutlet weak var weightLbl:UILabel!
+    var viewModel :RegistrationViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel = RegistrationViewModel.init(type: .addWeight)
+        self.setUpVM(model: self.viewModel)
         ruler?.direction = .horizontal
         ruler?.tintColor = UIColor(red: 0.15, green: 0.18, blue: 0.48, alpha: 1.0)
         //  controlHConstraint?.constant = 240.0
@@ -65,6 +69,7 @@ class AddWeightVC: CustomiseViewController {
             self.next_Btn.setTitle("Submit", for: .normal)
             
         }
+        
     }
     
     
@@ -72,8 +77,15 @@ class AddWeightVC: CustomiseViewController {
     {
         switch screenApper {
         case .Signup:
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddHeightVC") as? AddHeightVC else {return}
-            self.navigationController?.pushViewController(vc, animated: true)
+            if self.viewModel.isValid{
+                let filledData = DetailsPass(FirstName: data_Info?.FirstName ?? "", ProfilePic: data_Info?.ProfilePic, LastName: data_Info?.LastName ?? "", Email: data_Info?.Email ?? "", Country: data_Info?.Country ?? "",dob:self.viewModel.dob.value, gender:self.viewModel.gender.value, SK: data_Info?.SK ?? "", Weight:self.viewModel.weight.value, Height: "")
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddHeightVC") as? AddHeightVC else {return}
+                vc.data_Info = filledData
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                self.showErrorMessages(message: self.viewModel.brokenRules.first?.message ?? "")
+            }
+            
         case .Edit:
             self.navigationController?.popViewController(animated: true)
         }
@@ -96,6 +108,8 @@ extension AddWeightVC:NMMultiUnitRulerDataSource, NMMultiUnitRulerDelegate{
     }
     
     func valueChanged(measurement: NSMeasurement) {
+        self.weightLbl.text = "\(measurement.doubleValue)"
+        self.viewModel.weight.value = "\(measurement.doubleValue)"
         print("value changed to \(measurement.doubleValue)")
     }
     

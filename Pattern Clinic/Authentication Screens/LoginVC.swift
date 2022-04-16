@@ -31,6 +31,7 @@ class LoginVC:CustomiseViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else {return}
                 guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateProfileVC") as? CreateProfileVC else {return}
+                vc.userdetails = self.viewModel.login_Info ?? nil
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
@@ -52,14 +53,11 @@ class LoginVC:CustomiseViewController {
     }
     
     @IBAction func login_Btn(_ sender :UIButton){
-        //        if self.viewModel.isValid{
-        //            self.viewModel.signIn()
-        //        }else{
-        //            self.showErrorMessages(message: self.viewModel.brokenRules.first?.message ?? "")
-        //        }
-        
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateProfileVC") as? CreateProfileVC else {return}
-        self.navigationController?.pushViewController(vc, animated: true)
+        if self.viewModel.isValid{
+            self.viewModel.signIn()
+        }else{
+            self.showErrorMessages(message: self.viewModel.brokenRules.first?.message ?? "")
+        }
     }
     
     @IBAction func forgetpassword_Btn(_ sender :UIButton){

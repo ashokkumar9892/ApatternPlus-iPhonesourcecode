@@ -32,12 +32,7 @@ struct NetworkManager {
     static let sharedInstance = NetworkManager()
     private init() {}
     static let environment :NetworkEnvironment = .development
-    static let imageBaseURL:String             = environment.rawValue + OtherURLS.image.rawValue
-    static let iconImageBaseURL:String         = environment.rawValue + OtherURLS.iconImage.rawValue
-    static let roundImageBaseURL:String        = environment.rawValue + OtherURLS.roundImage.rawValue
-    static let QRImageBaseURL:String           = environment.rawValue + OtherURLS.qRIMage.rawValue
-    static let profileBaseURL:String           = environment.rawValue + OtherURLS.profile.rawValue
-    static let deviceBaseURL :String           = environment.rawValue + OtherURLS.nfcadd.rawValue
+    
     static let contentType = "application/json"
     let router = Router<APIEndPoint>()
     

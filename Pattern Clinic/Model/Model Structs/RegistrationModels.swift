@@ -17,10 +17,10 @@ struct LoginResponseModel: APIModel {
 }
 
 struct PatientInfo: Codable {
-    let profilePic: String?
-    let userName, firstName, lastName, email: String
-    let country: String?
-    let height, weight, sk: String
+   // let profilePic: String?
+    let userName, firstName, lastName, email: String?
+   // let country: String?
+    let height, sk: String?
 }
 
 
@@ -38,4 +38,20 @@ struct CountiesWithPhoneModel {
 
 struct CityCodable:Codable {
     var id, name :String?
+}
+
+
+// MARK: - GetDoctorsList
+struct GetDoctorsList: APIModel {
+    let doctorInfo: [DoctorInfo]?
+    let response: Int?
+    let errorMessage: String?
+}
+
+// MARK: - DoctorInfo
+struct DoctorInfo: Codable {
+    let designation: String?
+    let userName: String?
+    let profileImage: String?
+    let sk: String?
 }

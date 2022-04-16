@@ -93,6 +93,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWE-ra-FAg" customClass="BindingAnimatable" customModule="Pattern_Clinic" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="30" width="285" height="37"/>
                                                                         <color key="backgroundColor" name="test_FieldBackGround"/>
+                                                                        <color key="textColor" name="lbl_blackcolour"/>
                                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -121,6 +122,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-ru-qlY" customClass="BindingAnimatable" customModule="Pattern_Clinic" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="30" width="285" height="37"/>
                                                                         <color key="backgroundColor" name="test_FieldBackGround"/>
+                                                                        <color key="textColor" name="lbl_blackcolour"/>
                                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -262,7 +264,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLR-Qn-vE7">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLR-Qn-vE7">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
                                                 </imageView>
                                             </subviews>
@@ -709,6 +711,11 @@
                                                         <constraint firstItem="NPV-4f-pId" firstAttribute="leading" secondItem="8Ci-1d-V91" secondAttribute="leading" constant="12" id="wxq-nr-bOO"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="dectorImg" destination="NPV-4f-pId" id="cef-dP-94j"/>
+                                                    <outlet property="dectorName" destination="wy8-Qh-vtC" id="xQn-0Y-tXc"/>
+                                                    <outlet property="designation" destination="1Mm-yw-Kt2" id="Ouy-RE-FSn"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -741,6 +748,9 @@
                             <constraint firstItem="kop-QI-Cbs" firstAttribute="trailing" secondItem="n7k-h7-bDk" secondAttribute="trailing" id="hYB-9U-lyE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dectorsTable" destination="OVa-Nf-XvP" id="N7Z-48-Buj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XI-Nf-Gle" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1334,29 +1344,38 @@
                                                     <action selector="getCountry_List:" destination="6nU-QT-uqz" eventType="touchUpInside" id="oMS-xn-q66"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5S-jh-307">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5S-jh-307">
                                                 <rect key="frame" x="16" y="814.5" width="52" height="21"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="  She" image="radio_off">
                                                     <color key="titleColor" name="lbl_blackcolour"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="select_Birth:" destination="6nU-QT-uqz" eventType="touchUpInside" id="tb9-C4-f3Y"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvS-xe-dHP">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvS-xe-dHP">
                                                 <rect key="frame" x="102" y="814.5" width="46" height="21"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="  He" image="radio_on">
                                                     <color key="titleColor" name="lbl_blackcolour"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="select_Birth:" destination="6nU-QT-uqz" eventType="touchUpInside" id="TAj-Xu-ije"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7l-68-AXK">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7l-68-AXK">
                                                 <rect key="frame" x="182" y="814.5" width="61" height="21"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="  They" image="radio_off">
                                                     <color key="titleColor" name="lbl_blackcolour"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="select_Birth:" destination="6nU-QT-uqz" eventType="touchUpInside" id="KRD-fz-ttF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ST6-gM-hiC">
                                                 <rect key="frame" x="94.5" y="865.5" width="131" height="28"/>
@@ -1446,7 +1465,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="he_Btn" destination="mvS-xe-dHP" id="uVm-YL-ptS"/>
+                        <outlet property="she_Btn" destination="x5S-jh-307" id="tD9-Dt-6Qd"/>
                         <outlet property="support_Btn" destination="ST6-gM-hiC" id="8UU-Uw-b0y"/>
+                        <outlet property="they_Btn" destination="E7l-68-AXK" id="uph-eL-1vr"/>
                         <outlet property="txt_Country" destination="Phd-30-xT3" id="c9j-qg-gEl"/>
                         <outlet property="txt_DOB" destination="ajN-Kz-rTm" id="zEH-Fk-Uj3"/>
                         <outlet property="txt_Email" destination="Nfg-gQ-OYV" id="bSp-CP-0Cn"/>
@@ -1687,6 +1709,7 @@
                         <outlet property="previous_Btn" destination="xaz-A9-8el" id="oeJ-Gq-eOg"/>
                         <outlet property="ruler" destination="2Zx-nJ-qke" id="PBN-Ug-iQm"/>
                         <outlet property="support_Btn" destination="lnc-CC-gYs" id="oqw-YD-MFt"/>
+                        <outlet property="weightLbl" destination="0Bp-Dq-lMT" id="Xdy-SN-04a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9f-mb-0tT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1862,6 +1885,7 @@
                     <connections>
                         <outlet property="headerHeight" destination="Rlz-TQ-dVi" id="oKd-bX-ws0"/>
                         <outlet property="headerView" destination="cjW-z8-pJV" id="LK5-P6-JXJ"/>
+                        <outlet property="heightLbl" destination="Fg0-NH-CIh" id="Dhn-DO-1fU"/>
                         <outlet property="next_Btn" destination="sRz-6h-c2I" id="Lwc-GN-WgX"/>
                         <outlet property="previous_Btn" destination="XlU-BO-dpX" id="xdh-22-sT3"/>
                         <outlet property="ruler" destination="0JA-S4-XjB" id="5YK-xw-7jW"/>
@@ -2178,7 +2202,7 @@
         <!--Country List Table-->
         <scene sceneID="qmB-WP-Pch">
             <objects>
-                <viewController storyboardIdentifier="CountryListTable" id="Jtw-T2-iQB" customClass="CountryListTable" customModule="POD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountryListTable" id="Jtw-T2-iQB" customClass="CountryListTable" customModule="Pattern_Clinic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aqz-jk-Qk8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2198,7 +2222,7 @@
                                 <rect key="frame" x="0.0" y="142" width="320" height="426"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" id="Mcp-dx-iS9" customClass="CountryCell" customModule="POD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" id="Mcp-dx-iS9" customClass="CountryCell" customModule="Pattern_Clinic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mcp-dx-iS9" id="Xh6-vW-k02">
@@ -2244,7 +2268,7 @@
                                             <outlet property="flag" destination="Rgb-iJ-pDc" id="QIf-un-ued"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityCell" rowHeight="74" id="Ekx-4l-xjp" customClass="CityCell" customModule="POD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityCell" rowHeight="74" id="Ekx-4l-xjp" customClass="CityCell" customModule="Pattern_Clinic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ekx-4l-xjp" id="r0b-J4-Vtn">
