@@ -104,6 +104,11 @@ class CustomiseViewController : UIViewController {
         }
     }
     
+    @IBAction func contact_Btn(_ sender :UIButton){
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactSupportVC") as? ContactSupportVC else {return}
+        vc.modalPresentationStyle = .custom
+        self.present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func navigationBarBackAction(_ sender:UIButton) {
         navigationController?.popViewController(animated: true)

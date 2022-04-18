@@ -57,6 +57,7 @@
 		8998951128058A4300602E97 /* HealthTipsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8998951028058A4300602E97 /* HealthTipsListVC.swift */; };
 		89989513280597BE00602E97 /* HealthTipDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89989512280597BE00602E97 /* HealthTipDetailsVC.swift */; };
 		899895152805996F00602E97 /* CoachAppointments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899895142805996F00602E97 /* CoachAppointments.storyboard */; };
+		89AA5E6D280D7C1500D5B331 /* ContactSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA5E6C280D7C1500D5B331 /* ContactSupportVC.swift */; };
 		89AE41B627F6FF2700C5C120 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 89AE41B527F6FF2700C5C120 /* IQKeyboardManagerSwift */; };
 		89AE41B927F7134A00C5C120 /* AP App screens 9.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89AE41B827F7134A00C5C120 /* AP App screens 9.gif */; };
 		89AE41BB27F7148B00C5C120 /* TutorialScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE41BA27F7148B00C5C120 /* TutorialScreenVC.swift */; };
@@ -187,6 +188,7 @@
 		8998951028058A4300602E97 /* HealthTipsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTipsListVC.swift; sourceTree = "<group>"; };
 		89989512280597BE00602E97 /* HealthTipDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTipDetailsVC.swift; sourceTree = "<group>"; };
 		899895142805996F00602E97 /* CoachAppointments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoachAppointments.storyboard; sourceTree = "<group>"; };
+		89AA5E6C280D7C1500D5B331 /* ContactSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupportVC.swift; sourceTree = "<group>"; };
 		89AE41B827F7134A00C5C120 /* AP App screens 9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "AP App screens 9.gif"; sourceTree = "<group>"; };
 		89AE41BA27F7148B00C5C120 /* TutorialScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenVC.swift; sourceTree = "<group>"; };
 		89AE41BC27F71EC000C5C120 /* AP App screens 8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "AP App screens 8.gif"; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				899680F927FB0B47000745B3 /* PatternPlus_TeamVC.swift */,
 				89E1F48527FDC3BD00DCFC91 /* DectorsListVC.swift */,
 				898D6C3927FEE936004F469E /* PendingStatusVC.swift */,
+				89AA5E6C280D7C1500D5B331 /* ContactSupportVC.swift */,
 			);
 			path = "Authentication Screens";
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				89BD85052809312600BC999D /* ViewModelProtocols.swift in Sources */,
 				89BB25CC27F5879900786A13 /* ResetPasswordVC.swift in Sources */,
 				89BB25C827F5877800786A13 /* CreateProfileVC.swift in Sources */,
+				89AA5E6D280D7C1500D5B331 /* ContactSupportVC.swift in Sources */,
 				898D6C3C27FEFFA2004F469E /* NutritionTrackingVC.swift in Sources */,
 				89BD85032809310600BC999D /* RegistrationViewModel.swift in Sources */,
 				89C7087F27FC5C390091EFE2 /* MenuVC .swift in Sources */,

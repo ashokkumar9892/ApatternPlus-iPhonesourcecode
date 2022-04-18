@@ -23,6 +23,9 @@ class RegistrationViewModel :NSObject, ViewModel {
     var full_name         : Dynamic<String> = Dynamic("")
     var last_name         : Dynamic<String> = Dynamic("")
     var country_Name      : Dynamic<String> = Dynamic("")
+    var userProfile_Pic   : Dynamic<String> = Dynamic("")
+    var confirmationcode  : Dynamic<String> = Dynamic("")
+    
     var dob               : Dynamic<String> = Dynamic("")
     var height            : Dynamic<String> = Dynamic("")
     var weight            : Dynamic<String> = Dynamic("")
@@ -164,7 +167,7 @@ extension RegistrationViewModel {
     func createProfile(){
         Indicator.shared.show(showText)
         let model = NetworkManager.sharedInstance
-        model.createProfile(SK: SK.value, Height:height.value, AuthToken:UserDefaults.userToken, Weight: weight.value, FirstName: full_name.value, LastName: last_name.value, Email:username.value, Country: country_Name.value, ProfilePic:"",DOB: dob.value,Gender: gender.value,ReferAs:"") { [weak self] (result) in
+        model.createProfile(SK: SK.value, Height:height.value, AuthToken:UserDefaults.userToken, Weight: weight.value, FirstName: full_name.value, LastName: last_name.value, Email:username.value, Country: country_Name.value, ProfilePic:userProfile_Pic.value,DOB: dob.value,Gender: gender.value,ReferAs:"") { [weak self] (result) in
             guard let self = self else {return}
             switch result{
             case .success(let res):
@@ -211,6 +214,26 @@ extension RegistrationViewModel {
             switch result{
             case .success(let res):
                 self.getDoctorsList = res
+                self.didFinishFetch?()
+                Indicator.shared.hide()
+            case .failure(let err):
+                switch err {
+                case .errorReport(let desc):
+                    Indicator.shared.hide()
+                    self.error = desc
+                }
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func resetPassword(){
+        Indicator.shared.show(showText)
+        let model = NetworkManager.sharedInstance
+        model.resetPassword(username: username.value, confirmationcode:confirmationcode.value, newpassword: password.value) { [weak self] (result) in
+            guard let self = self else {return}
+            switch result{
+            case .success( _ ):
                 self.didFinishFetch?()
                 Indicator.shared.hide()
             case .failure(let err):

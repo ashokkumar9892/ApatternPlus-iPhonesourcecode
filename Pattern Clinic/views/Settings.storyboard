@@ -33,10 +33,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skb-pl-FpG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRz-uR-3M2">
-                                        <rect key="frame" x="258" y="18" width="50" height="50"/>
+                                        <rect key="frame" x="258" y="38" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mRz-uR-3M2" secondAttribute="height" multiplier="1:1" id="NXe-tl-aeB"/>
                                             <constraint firstAttribute="height" constant="50" id="r9x-ql-CTA"/>
@@ -48,7 +48,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prI-fm-odA">
-                                        <rect key="frame" x="123.5" y="31.5" width="73.5" height="23.5"/>
+                                        <rect key="frame" x="123.5" y="50.5" width="73" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="button_Colour"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Dpj-xI-Gg0"/>
+                                    <constraint firstAttribute="height" constant="100" id="Dpj-xI-Gg0"/>
                                     <constraint firstItem="prI-fm-odA" firstAttribute="centerX" secondItem="Skb-pl-FpG" secondAttribute="centerX" id="NZ0-Sm-QAU"/>
                                     <constraint firstAttribute="trailing" secondItem="mRz-uR-3M2" secondAttribute="trailing" constant="12" id="VHO-eP-JSM"/>
                                     <constraint firstItem="prI-fm-odA" firstAttribute="centerY" secondItem="mRz-uR-3M2" secondAttribute="centerY" id="VdO-8b-WEo"/>
@@ -64,34 +64,34 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCe-ii-Bmd">
-                                <rect key="frame" x="0.0" y="80" width="320" height="488"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQc-TY-PBC">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="496"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="505"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sP-9Y-85d">
-                                                <rect key="frame" x="18" y="24" width="101" height="21"/>
+                                                <rect key="frame" x="18" y="24" width="102.5" height="23"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="18"/>
                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTq-0I-XV5" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="18" y="65" width="284" height="77.5"/>
+                                                <rect key="frame" x="18" y="67" width="284" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ability to receive notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps5-Dr-gqE">
-                                                        <rect key="frame" x="12" y="12" width="260" height="17.5"/>
+                                                        <rect key="frame" x="12" y="12" width="260" height="19"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="15"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on/off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsO-aB-4It">
-                                                        <rect key="frame" x="12" y="37.5" width="77.5" height="19"/>
+                                                        <rect key="frame" x="12" y="39" width="78.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" name="lbl_blackcolour"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izA-La-i3r">
-                                                        <rect key="frame" x="223" y="31.5" width="51" height="31"/>
+                                                        <rect key="frame" x="223" y="34" width="51" height="31"/>
                                                         <color key="onTintColor" name="button_Colour"/>
                                                     </switch>
                                                 </subviews>
@@ -119,13 +119,16 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrk-Q2-Xzp" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="18" y="203.5" width="284" height="268.5"/>
+                                                <rect key="frame" x="18" y="210" width="284" height="271"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qNj-lj-1qD">
-                                                        <rect key="frame" x="0.0" y="12" width="284" height="244.5"/>
+                                                        <rect key="frame" x="0.0" y="12" width="284" height="247"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fN-YC-LbN" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="284" height="37"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="37" id="mwJ-DH-OlQ"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -194,7 +197,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIJ-zw-iUD" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="160.5" width="284" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="160.5" width="284" height="37"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -209,14 +212,14 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-Ha-ype">
-                                                                <rect key="frame" x="0.0" y="205" width="284" height="0.5"/>
+                                                                <rect key="frame" x="0.0" y="205.5" width="284" height="0.5"/>
                                                                 <color key="backgroundColor" name="Light_TitleGrey"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayE-Nb-XiX" customClass="CustomRightAndLeftImageButton" customModule="Pattern_Clinic" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="213.5" width="284" height="31"/>
+                                                                <rect key="frame" x="0.0" y="214" width="284" height="33"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -261,7 +264,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEr-Yh-IYw">
-                                                <rect key="frame" x="18" y="162.5" width="66.5" height="21"/>
+                                                <rect key="frame" x="18" y="167" width="64" height="23"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="18"/>
                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                 <nil key="highlightedColor"/>
@@ -303,7 +306,6 @@
                             <constraint firstItem="FCe-ii-Bmd" firstAttribute="leading" secondItem="t4R-Sx-IzO" secondAttribute="leading" id="f0j-Kd-c9U"/>
                             <constraint firstItem="Skb-pl-FpG" firstAttribute="leading" secondItem="t4R-Sx-IzO" secondAttribute="leading" id="hLi-iD-NLC"/>
                             <constraint firstItem="Skb-pl-FpG" firstAttribute="top" secondItem="Xne-EA-JYt" secondAttribute="top" id="oeX-fV-xJ0"/>
-                            <constraint firstItem="5fN-YC-LbN" firstAttribute="height" secondItem="Xne-EA-JYt" secondAttribute="height" multiplier="0.065" id="uAA-k9-zdb"/>
                             <constraint firstItem="FCe-ii-Bmd" firstAttribute="trailing" secondItem="t4R-Sx-IzO" secondAttribute="trailing" id="uw7-Y2-1p5"/>
                         </constraints>
                     </view>
@@ -357,7 +359,7 @@
                                         <color key="textColor" name="#787878_lbl_grey"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ZO-zq-pcI" customClass="AnimatableTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ZO-zq-pcI" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="30" width="288" height="36.5"/>
                                         <color key="backgroundColor" name="test_FieldBackGround"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -369,6 +371,10 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightImageRightPadding">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="eye_show"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5L-Zg-iOG">
@@ -377,7 +383,7 @@
                                         <color key="textColor" name="#787878_lbl_grey"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9FN-hk-J6Y" customClass="AnimatableTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9FN-hk-J6Y" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="108.5" width="288" height="37"/>
                                         <color key="backgroundColor" name="test_FieldBackGround"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -389,6 +395,10 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightImageRightPadding">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="eye_show"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9p-iE-jcn">
@@ -397,7 +407,7 @@
                                         <color key="textColor" name="#787878_lbl_grey"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KPL-kl-iQN" customClass="AnimatableTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KPL-kl-iQN" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="188.5" width="288" height="37"/>
                                         <color key="backgroundColor" name="test_FieldBackGround"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -409,6 +419,10 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightImageRightPadding">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="eye_show"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
@@ -770,10 +784,10 @@
             <size key="intrinsicContentSize" width="12" height="18.5"/>
         </designable>
         <designable name="5fN-YC-LbN">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="7Ob-yk-nHN">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="9FN-hk-J6Y">
             <size key="intrinsicContentSize" width="12" height="18.5"/>
@@ -791,21 +805,22 @@
             <size key="intrinsicContentSize" width="12" height="18.5"/>
         </designable>
         <designable name="ayE-Nb-XiX">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="eO2-HM-Jw8">
             <size key="intrinsicContentSize" width="12" height="18.5"/>
         </designable>
         <designable name="gsM-m5-7pb">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="qIJ-zw-iUD">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
     </designables>
     <resources>
         <image name="arrow_right" width="7.5" height="13.5"/>
         <image name="back_icon" width="20.5" height="13.5"/>
+        <image name="eye_show" width="16.5" height="16"/>
         <image name="menu_White" width="23.5" height="16"/>
         <namedColor name="#787878_lbl_grey">
             <color red="0.47099998593330383" green="0.47099998593330383" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

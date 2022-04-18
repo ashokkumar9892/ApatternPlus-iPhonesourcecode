@@ -131,6 +131,18 @@ extension UITableView {
 }
 
 
+extension UIViewController {
+
+    func base64ToImage(_ base64String: String) -> UIImage? {
+        guard let imageData = Data(base64Encoded: base64String) else { return nil }
+        return UIImage(data: imageData)
+    }
+
+    func imageToBase64(_ image: UIImage) -> String? {
+        return image.jpegData(compressionQuality: 1)?.base64EncodedString()
+    }
+
+}
 
 import UIKit
 class TableViewDataSource<Cell :UITableViewCell,ViewModel> : NSObject, UITableViewDataSource {

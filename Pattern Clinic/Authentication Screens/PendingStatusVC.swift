@@ -30,7 +30,7 @@ class PendingStatusVC: CustomiseViewController {
         })
     }
     
-    @IBAction func contact_Btn(_ sender :UIButton){
+    @IBAction func contact_Btn1(_ sender :UIButton){
         
     }
 }

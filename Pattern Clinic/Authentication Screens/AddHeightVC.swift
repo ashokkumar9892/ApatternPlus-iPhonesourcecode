@@ -51,7 +51,11 @@ class AddHeightVC: CustomiseViewController {
         super.viewDidLoad()
         self.viewModel = RegistrationViewModel.init(type: .addHeight)
         self.setUpVM(model: self.viewModel)
+        if  let stringImg = imageToBase64(self.data_Info?.ProfilePic ?? UIImage()){
+            self.viewModel.userProfile_Pic.value = stringImg
+        }
         
+       
         ruler?.direction = .horizontal
         ruler?.tintColor = UIColor(red: 0.15, green: 0.18, blue: 0.48, alpha: 1.0)
         //  controlHConstraint?.constant = 240.0

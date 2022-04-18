@@ -22,7 +22,7 @@ enum APIEndPoint {
     case createProfile(param:[String:Any])
     case getDectorList(param:[String:Any])
     case getcoachList(param:[String:Any])
-    
+    case resetPasswordApi(param:[String:Any])
 }
 extension APIEndPoint:EndPointType {
     var environmentBaseURL : String {
@@ -45,7 +45,8 @@ extension APIEndPoint:EndPointType {
             return "Basic/DoctorsList"
         case .getcoachList:
             return "Basic/CoachList"
-            
+        case .resetPasswordApi:
+            return "Basic/ResetPassword"
         }
     }
     var httpMethod: HTTPMethod {
@@ -64,7 +65,8 @@ extension APIEndPoint:EndPointType {
             return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
         case .getcoachList(param: let param):
             return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
-            
+        case .resetPasswordApi(param: let param):
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
         }
     }
     var headers: HTTPHeaders? {

@@ -24,6 +24,15 @@ extension NetworkManager {
         handleAPICalling(request: .forgetPassword(param: param), completion: completion)
     }
     
+    func resetPassword(username:String,confirmationcode:String = "",newpassword:String = "",completion: @escaping ((Result<Basic_Model,APIError>) -> Void)){
+        let param = [
+            "username"             : username,
+            "newpassword"          : newpassword,
+            "confirmationcode"     : confirmationcode
+        ]
+        handleAPICalling(request: .resetPasswordApi(param: param), completion: completion)
+    }
+    
     func createProfile(SK:String = "",Height:String = "",AuthToken:String = "",Weight:String = "",FirstName:String = "",LastName:String,Email:String = "",Country:String = "",ProfilePic:String = "",DOB:String = "", Gender:String = "",ReferAs:String = "",completion: @escaping ((Result<LoginResponseModel,APIError>) -> Void)){
         let param = [
             "SK"         :  SK,

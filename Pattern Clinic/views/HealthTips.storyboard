@@ -453,7 +453,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QMD-xj-CwH" firstAttribute="height" secondItem="pFg-Ho-GXf" secondAttribute="height" multiplier="0.065" id="73P-6M-219"/>
-                            <constraint firstItem="JMj-Uo-Gar" firstAttribute="bottom" secondItem="ne3-Ri-yAQ" secondAttribute="bottom" id="8IX-1G-DAR"/>
+                            <constraint firstItem="JMj-Uo-Gar" firstAttribute="bottom" secondItem="pFg-Ho-GXf" secondAttribute="bottom" id="8IX-1G-DAR"/>
                             <constraint firstItem="JMj-Uo-Gar" firstAttribute="leading" secondItem="ne3-Ri-yAQ" secondAttribute="leading" id="EZR-Ff-7DI"/>
                             <constraint firstItem="ne3-Ri-yAQ" firstAttribute="trailing" secondItem="JMj-Uo-Gar" secondAttribute="trailing" id="vTb-tu-yiq"/>
                         </constraints>
@@ -534,7 +534,7 @@
                             <constraint firstItem="XNi-pI-WY7" firstAttribute="width" secondItem="UMl-Ut-3Ou" secondAttribute="width" id="LHi-Oa-bab"/>
                             <constraint firstItem="x6f-va-wSx" firstAttribute="trailing" secondItem="GNf-Wq-OSQ" secondAttribute="trailing" id="b8l-Nz-NEI"/>
                             <constraint firstItem="XNi-pI-WY7" firstAttribute="centerX" secondItem="x6f-va-wSx" secondAttribute="centerX" id="isB-6w-Ldp"/>
-                            <constraint firstItem="GNf-Wq-OSQ" firstAttribute="bottom" secondItem="x6f-va-wSx" secondAttribute="bottom" id="mEP-rE-wPb"/>
+                            <constraint firstItem="GNf-Wq-OSQ" firstAttribute="bottom" secondItem="UMl-Ut-3Ou" secondAttribute="bottom" id="mEP-rE-wPb"/>
                             <constraint firstItem="XNi-pI-WY7" firstAttribute="height" secondItem="UMl-Ut-3Ou" secondAttribute="height" id="pLn-9h-Onu"/>
                             <constraint firstItem="GNf-Wq-OSQ" firstAttribute="leading" secondItem="x6f-va-wSx" secondAttribute="leading" id="wQ6-cE-UWk"/>
                         </constraints>
