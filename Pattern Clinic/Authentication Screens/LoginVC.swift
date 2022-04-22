@@ -20,7 +20,7 @@ class LoginVC:CustomiseViewController {
         }
     }
     var iconClick = true
-    
+    var tap = UITapGestureRecognizer()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = RegistrationViewModel.init(type: .SignIn)
@@ -38,15 +38,21 @@ class LoginVC:CustomiseViewController {
     }
     
     fileprivate func addTapgesture(view:UIView){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         view.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         if(iconClick == true) {
             txt_Password.isSecureTextEntry = false
+            txt_Password.rightImage = UIImage(named: "eye_off")
+            self.txt_Password.rightView?.removeGestureRecognizer(tap)
+            self.addTapgesture(view: self.txt_Password.rightView ?? UIView())
         } else {
             txt_Password.isSecureTextEntry = true
+            txt_Password.rightImage = UIImage(named: "eye_show")
+            self.txt_Password.rightView?.removeGestureRecognizer(tap)
+            self.addTapgesture(view: self.txt_Password.rightView ?? UIView())
         }
         
         iconClick = !iconClick

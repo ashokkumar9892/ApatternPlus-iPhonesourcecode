@@ -24,14 +24,15 @@ class HomeVC: CustomiseViewController {
         self.addTapgesture(view:self.score_View)
         self.addTapgesture(view:self.progressTracker)
         self.addTapgesture(view:self.graphView)
-      //  self.changeStatusColor(colour: UIColor(hexString: "#0000EE"))
+        //  self.changeStatusColor(colour: UIColor(hexString: "#0000EE"))
         
     }
+    
     @IBAction func viewAll_Btn(_ sender :UIButton){
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TodayActivityListVC") as? TodayActivityListVC else {return}
         self.navigationController?.pushViewController(vc, animated: true)
     }
-  
+    
     @IBAction func accountability_Btn(_ sender :UIButton){
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TrendsVC") as? TrendsVC else {return}
         self.navigationController?.pushViewController(vc, animated: true)
@@ -45,7 +46,7 @@ class HomeVC: CustomiseViewController {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "NutritionTrackingVC") as? NutritionTrackingVC else {return}
         self.navigationController?.pushViewController(vc, animated: true)
     }
-   
+    
     fileprivate func addTapgesture(view:UIView){
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         view.addGestureRecognizer(tap)
@@ -63,8 +64,14 @@ class HomeVC: CustomiseViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-
+    
+    @IBAction func forword_Btn(_ sender:UIButton){
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourMetricsVC") as? YourMetricsVC else {return}
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
+
 extension HomeVC:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -94,6 +101,7 @@ extension HomeVC:UITableViewDataSource,UITableViewDelegate{
         if sender.tag != 0{
             guard let vc = StoryBoardSelection.sharedInstance.healthStoryBoard.instantiateViewController(withIdentifier: "CompletePopUpVC") as? CompletePopUpVC  else{return}
             vc.modalPresentationStyle = .custom
+            
             self.present(vc, animated: true, completion:nil)
         }
     }

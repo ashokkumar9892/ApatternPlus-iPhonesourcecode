@@ -51,9 +51,14 @@ class AddHeightVC: CustomiseViewController {
         super.viewDidLoad()
         self.viewModel = RegistrationViewModel.init(type: .addHeight)
         self.setUpVM(model: self.viewModel)
-        if  let stringImg = imageToBase64(self.data_Info?.ProfilePic ?? UIImage()){
-            self.viewModel.userProfile_Pic.value = stringImg
+        if data_Info?.ProfilePic == nil{
+            self.viewModel.userProfile_Pic.value = self.data_Info?.base64String ?? ""
+        }else{
+            if  let stringImg = imageToBase64(self.data_Info?.ProfilePic ?? UIImage()){
+                self.viewModel.userProfile_Pic.value = stringImg
+            }
         }
+       
         
        
         ruler?.direction = .horizontal

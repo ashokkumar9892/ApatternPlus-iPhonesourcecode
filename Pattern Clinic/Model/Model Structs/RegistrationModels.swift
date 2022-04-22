@@ -17,9 +17,10 @@ struct LoginResponseModel: APIModel {
 }
 
 struct PatientInfo: Codable {
-   // let profilePic: String?
+    let profilePic: String?
+    var gender:String?
     let userName, firstName, lastName, email: String?
-   // let country: String?
+    let country,dob,referAs,weight: String?
     let height, sk: String?
 }
 

@@ -85,18 +85,25 @@ extension DevicesListVC:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch screenApper {
-        case .Signup:
-            self.device_List[indexPath.row].flag = false
-            self.submit_btn.backgroundColor = UIColor(named:"button_Colour")
-            self.submit_btn.isUserInteractionEnabled = true
-            self.device_table.reloadData()
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "WatchConnectscucessPopVC") as? WatchConnectscucessPopVC else {return}
-                self.navigationController?.pushViewController(vc, animated: true)
-            })
-        case .Edit:
-            break
+        if indexPath.row == 0{
+            switch screenApper {
+            case .Signup:
+                self.device_List[indexPath.row].flag = false
+                self.device_table.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "WatchConnectscucessPopVC") as? WatchConnectscucessPopVC else {return}
+                    vc.callBack_info = { [weak self] in
+                        guard let self = self else {return}
+                        Dispatch.main{
+                            self.submit_btn.backgroundColor = UIColor(named:"button_Colour")
+                            self.submit_btn.isUserInteractionEnabled = true
+                        }
+                    }
+                    self.navigationController?.pushViewController(vc, animated: true)
+                })
+            case .Edit:
+                break
+            }
         }
     }
 }

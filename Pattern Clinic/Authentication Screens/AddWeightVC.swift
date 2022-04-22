@@ -78,7 +78,7 @@ class AddWeightVC: CustomiseViewController {
         switch screenApper {
         case .Signup:
             if self.viewModel.isValid{
-                let filledData = DetailsPass(FirstName: data_Info?.FirstName ?? "", ProfilePic: data_Info?.ProfilePic, LastName: data_Info?.LastName ?? "", Email: data_Info?.Email ?? "", Country: data_Info?.Country ?? "",dob:self.data_Info?.dob ?? "", gender:self.data_Info?.gender ?? "", SK: data_Info?.SK ?? "", Weight:self.data_Info?.Weight ?? "", Height: "")
+                let filledData = DetailsPass(FirstName: data_Info?.FirstName ?? "", ProfilePic: data_Info?.ProfilePic, LastName: data_Info?.LastName ?? "", Email: data_Info?.Email ?? "", Country: data_Info?.Country ?? "",dob:self.data_Info?.dob ?? "", gender:self.data_Info?.gender ?? "", SK: data_Info?.SK ?? "", Weight:self.viewModel.weight.value, Height: "",username: self.data_Info?.username ?? "",base64String: self.data_Info?.base64String ?? "")
                 guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddHeightVC") as? AddHeightVC else {return}
                 vc.data_Info = filledData
                 self.navigationController?.pushViewController(vc, animated: true)

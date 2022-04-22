@@ -33,9 +33,10 @@ extension NetworkManager {
         handleAPICalling(request: .resetPasswordApi(param: param), completion: completion)
     }
     
-    func createProfile(SK:String = "",Height:String = "",AuthToken:String = "",Weight:String = "",FirstName:String = "",LastName:String,Email:String = "",Country:String = "",ProfilePic:String = "",DOB:String = "", Gender:String = "",ReferAs:String = "",completion: @escaping ((Result<LoginResponseModel,APIError>) -> Void)){
+    func createProfile(SK:String = "",Height:String = "",AuthToken:String = "",Weight:String = "",FirstName:String = "",LastName:String,Email:String = "",Country:String = "",ProfilePic:String = "",DOB:String = "", Gender:String = "",ReferAs:String = "",username:String = "",completion: @escaping ((Result<LoginResponseModel,APIError>) -> Void)){
         let param = [
             "SK"         :  SK,
+            "username"   :  username,
             "Height"     :  Height,
             "AuthToken"  :  AuthToken,
             "Weight"     :  Weight,
@@ -43,10 +44,10 @@ extension NetworkManager {
             "LastName"   :  LastName,
             "Email"      :  Email,
             "Country"    :  Country,
-            "ProfilePic" : ProfilePic,
-            "DOB"        : DOB,
-            "Gender"     : Gender,
-            "ReferAs"    : ReferAs
+            "ProfilePic" :  ProfilePic,
+            "DOB"        :  DOB,
+            "Gender"     :  Gender,
+            "ReferAs"    :  ReferAs
          ]
         handleAPICalling(request: .createProfile(param: param), completion: completion)
     }

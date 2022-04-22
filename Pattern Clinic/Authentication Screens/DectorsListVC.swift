@@ -8,20 +8,18 @@
 import UIKit
 
 class DectorsListVC: CustomiseViewController {
-    var callback_Closer:(() -> ())?
+    var callback_Closer: ((_ doctorName:String,_ doctorImg:String,_ tag:Int) -> Void)?
+    var coatch_Closer: ((_ coatchName:String,_ coatchImg:String,_ tag:Int) -> Void)?
     var viewModel:RegistrationViewModel!
     @IBOutlet weak var dectorsTable:UITableView!
+    @IBOutlet weak var back_View:UIView!
     var indexTag :Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = RegistrationViewModel(type:.SignIn)
         self.setUpVM(model: self.viewModel)
-        if indexTag == 0{
-            self.viewModel.getDectors_Info()
-        }else{
-            self.viewModel.getCoatchList()
-        }
         
+        self.addTapgesture(view:self.back_View)
         self.viewModel.didFinishFetch = { [weak self] in
             guard let self = self else {return}
             DispatchQueue.main.async { [weak self] in
@@ -29,6 +27,23 @@ class DectorsListVC: CustomiseViewController {
                 self.dectorsTable.reloadData()
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if indexTag == 0{
+            self.viewModel.getDectors_Info()
+        }else{
+            self.viewModel.getCoatchList()
+        }
+    }
+    
+    fileprivate func addTapgesture(view:UIView){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -52,7 +67,11 @@ extension DectorsListVC:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.callback_Closer?()
+        if indexTag == 0{
+            self.callback_Closer?(self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row].userName ?? "", self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row].profileImage ?? "", indexTag ?? 0)
+        }else{
+            self.coatch_Closer?(self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row].userName ?? "", self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row].profileImage ?? "",indexTag ?? 0)
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }

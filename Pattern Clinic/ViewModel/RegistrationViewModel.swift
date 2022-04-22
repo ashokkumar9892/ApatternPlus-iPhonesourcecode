@@ -27,6 +27,7 @@ class RegistrationViewModel :NSObject, ViewModel {
     var confirmationcode  : Dynamic<String> = Dynamic("")
     
     var dob               : Dynamic<String> = Dynamic("")
+    var refer             : Dynamic<String> = Dynamic("")
     var height            : Dynamic<String> = Dynamic("")
     var weight            : Dynamic<String> = Dynamic("")
     var gender            : Dynamic<String> = Dynamic("")
@@ -167,10 +168,10 @@ extension RegistrationViewModel {
     func createProfile(){
         Indicator.shared.show(showText)
         let model = NetworkManager.sharedInstance
-        model.createProfile(SK: SK.value, Height:height.value, AuthToken:UserDefaults.userToken, Weight: weight.value, FirstName: full_name.value, LastName: last_name.value, Email:username.value, Country: country_Name.value, ProfilePic:userProfile_Pic.value,DOB: dob.value,Gender: gender.value,ReferAs:"") { [weak self] (result) in
+        model.createProfile(SK: SK.value, Height:height.value, AuthToken:UserDefaults.userToken, Weight: weight.value, FirstName: full_name.value, LastName: last_name.value, Email:username.value, Country: country_Name.value, ProfilePic:userProfile_Pic.value,DOB: dob.value,Gender: gender.value,ReferAs:refer.value,username: username.value) { [weak self] (result) in
             guard let self = self else {return}
             switch result{
-            case .success(let res):
+            case .success( _ ):
                 self.didFinishFetch?()
                 Indicator.shared.hide()
             case .failure(let err):

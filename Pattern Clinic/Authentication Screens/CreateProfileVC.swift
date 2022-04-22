@@ -17,6 +17,13 @@ class CreateProfileVC: CustomiseViewController {
     {
         didSet{
             self.viewModel?.username.bindAndFire{[unowned self] in self.txt_Email.text = $0}
+            self.viewModel?.full_name.bindAndFire{[unowned self] in self.txt_fullName.text = $0}
+            self.viewModel?.last_name.bindAndFire{[unowned self] in self.txt_Lastname.text = $0}
+            self.viewModel?.country_Name.bindAndFire{[unowned self] in self.txt_Country.text = $0}
+            self.viewModel?.dob.bindAndFire{[unowned self] in self.txt_DOB.text = $0}
+            self.viewModel?.gender.bindAndFire{[unowned self] in self.txt_Gender.text = $0}
+            // self.viewModel?.gender.bindAndFire{[unowned self] in self.txt_Gender.text = $0}
+            
         }
     }
     @IBOutlet weak var txt_Email:BindingAnimatable!{
@@ -58,9 +65,22 @@ class CreateProfileVC: CustomiseViewController {
         self.setUpVM(model: self.viewModel)
         gradePicker.dataSource = self
         gradePicker.delegate = self
-        self.viewModel.username.value = self.userdetails?.patientInfo?.userName  ?? ""
+        self.viewModel.username.value        = self.userdetails?.patientInfo?.userName  ?? ""
+        self.viewModel.full_name.value       = self.userdetails?.patientInfo?.firstName ?? ""
+        self.viewModel.last_name.value       = self.userdetails?.patientInfo?.lastName  ?? ""
+        self.viewModel.dob.value             = self.userdetails?.patientInfo?.dob  ?? ""
+        self.viewModel.gender.value          = self.userdetails?.patientInfo?.gender  ?? ""
+        self.viewModel.country_Name.value    = self.userdetails?.patientInfo?.country ?? ""
+        self.viewModel.userProfile_Pic.value = self.userdetails?.patientInfo?.profilePic ?? ""
+        Dispatch.background {
+            let userImg = self.base64ToImage(self.userdetails?.patientInfo?.profilePic ?? "")
+            Dispatch.main {
+                self.userImg.image = userImg
+            }
+        }
         txt_Gender.inputView = gradePicker
         txt_Gender.text = gradePickerValues[0]
+        self.viewModel.gender.value = gradePickerValues[0]
         self.txt_DOB.datePicker(target: self,doneAction: #selector(doneAction),cancelAction: #selector(cancelAction),datePickerMode: .date)
         
     }
@@ -129,11 +149,11 @@ class CreateProfileVC: CustomiseViewController {
     }
     
     @IBAction func next_Btn(_ sender:UIButton){
-        if self.images.count == 0{
+        if self.images.count == 0 && self.userdetails?.patientInfo?.profilePic == nil{
             self.showErrorMessages(message: "Upload user profile photo")
         }else{
             if self.viewModel.isValid{
-                let filledData = DetailsPass(FirstName: self.viewModel.full_name.value, ProfilePic: self.pickedImage, LastName: self.viewModel.last_name.value, Email: self.viewModel.username.value, Country: self.viewModel.country_Name.value, dob:self.viewModel.dob.value, gender:self.viewModel.gender.value, SK: self.userdetails?.patientInfo?.sk ?? "", Weight: "", Height: "")
+                let filledData = DetailsPass(FirstName: self.viewModel.full_name.value, ProfilePic: self.pickedImage, LastName: self.viewModel.last_name.value, Email: self.viewModel.username.value, Country: self.viewModel.country_Name.value, dob:self.viewModel.dob.value, gender:self.viewModel.gender.value, SK: self.userdetails?.patientInfo?.sk ?? "", Weight: "", Height: "",username: self.userdetails?.patientInfo?.userName ?? "",base64String: self.viewModel.userProfile_Pic.value)
                 guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddWeightVC") as? AddWeightVC else {return}
                 vc.data_Info = filledData
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -178,5 +198,7 @@ struct DetailsPass{
     var SK:String?
     var Weight:String?
     var Height:String?
+    var username:String?
+    var base64String:String?
     
 }

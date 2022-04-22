@@ -17,9 +17,9 @@ final class Indicator {
     
     private init() {
         blurImg.frame           = UIScreen.main.bounds
-        blurImg.backgroundColor = UIColor.white
+        blurImg.backgroundColor = UIColor.lightGray
         blurImg.isUserInteractionEnabled = true
-        blurImg.alpha           = 1.0
+        blurImg.alpha           = 0.4
         indicator.style         = .whiteLarge
         indicator.center        = blurImg.center
         indicator.color         = UIColor(named: "button_Colour")
