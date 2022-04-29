@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import KYDrawerController
 import SDWebImage
-
+import VeepooBleSDK
 
 
 class CustomiseViewController : UIViewController {
@@ -44,6 +44,9 @@ class CustomiseViewController : UIViewController {
     func logOut(){
         let storyBoard = StoryBoardSelection.sharedInstance.mainStoryBoard
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else{return}
+        UserDefaults.User      = nil
+        UserDefaults.hasLogin  = false
+        UserDefaults.userToken = ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func openViewControllerBasedOnStoryBoard(_ strIdentifier:String, _ storyBoard:String) -> UIViewController {

@@ -1,8 +1,8 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/KYDrawerController" "${PODS_CONFIGURATION_BUILD_DIR}/NMMultiUnitRuler" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyGif"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/FMDB" "${PODS_CONFIGURATION_BUILD_DIR}/KYDrawerController" "${PODS_CONFIGURATION_BUILD_DIR}/MJExtension" "${PODS_CONFIGURATION_BUILD_DIR}/NMMultiUnitRuler" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyGif" "${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation" "${PODS_CONFIGURATION_BUILD_DIR}/iOSDFULibrary"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/KYDrawerController/KYDrawerController.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/NMMultiUnitRuler/NMMultiUnitRuler.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyGif/SwiftyGif.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "KYDrawerController" -framework "NMMultiUnitRuler" -framework "SwiftyGif" -framework "UIKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KYDrawerController/KYDrawerController.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MJExtension/MJExtension.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/NMMultiUnitRuler/NMMultiUnitRuler.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyGif/SwiftyGif.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation/ZIPFoundation.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/iOSDFULibrary/iOSDFULibrary.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -l"sqlite3" -framework "AFNetworking" -framework "FMDB" -framework "KYDrawerController" -framework "MJExtension" -framework "NMMultiUnitRuler" -framework "SwiftyGif" -framework "UIKit" -framework "ZIPFoundation" -framework "iOSDFULibrary"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

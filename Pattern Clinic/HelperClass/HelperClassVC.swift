@@ -83,7 +83,16 @@ extension UIButton {
     }
 }
 
-
+extension Locale {
+    func countryCode(by countryName: String) -> String? {
+        return Locale.isoRegionCodes.first(where: { code -> Bool in
+            guard let localizedCountryName = localizedString(forRegionCode: code) else {
+                return false
+            }
+            return localizedCountryName.lowercased() == countryName.lowercased()
+        })
+    }
+}
 
 
 @IBDesignable

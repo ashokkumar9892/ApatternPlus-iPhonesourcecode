@@ -24,6 +24,7 @@ enum APIEndPoint {
     case getcoachList(param:[String:Any])
     case resetPasswordApi(param:[String:Any])
     case GetUserProfile(param:[String:Any])
+    case SaveAPTeam(param:[String:Any])
 }
 extension APIEndPoint:EndPointType {
     var environmentBaseURL : String {
@@ -50,6 +51,8 @@ extension APIEndPoint:EndPointType {
             return "Basic/ResetPassword"
         case .GetUserProfile:
             return "GetUserProfile"
+        case .SaveAPTeam:
+            return "Basic/SelectAPTeam"
         }
     }
     var httpMethod: HTTPMethod {
@@ -59,22 +62,29 @@ extension APIEndPoint:EndPointType {
         switch self {
             // Registration
         case .logIn(param: let param):
-            return .requestParametersAndHeaders(bodyParameters:param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+            return .requestParametersAndHeaders(bodyParameters:param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         case .forgetPassword(param: let param):
-            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         case .createProfile(param: let param):
-            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
         case .getDectorList(param : let param):
-            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
         case .getcoachList(param: let param):
-            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         case .resetPasswordApi(param: let param):
-            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         case .GetUserProfile(param: let param):
-            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: ["Content-Type":NetworkManager.contentType])
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
+        case .SaveAPTeam(param: let param):
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         }
     }
     var headers: HTTPHeaders? {
-        return nil
+        switch self {
+        case .logIn,.forgetPassword,.resetPasswordApi:
+            return nil
+        default:
+            return ["Content-Type":NetworkManager.contentType]
+        }
     }
 }

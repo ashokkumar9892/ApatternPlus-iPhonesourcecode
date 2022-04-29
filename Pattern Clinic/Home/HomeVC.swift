@@ -17,9 +17,17 @@ class HomeVC: CustomiseViewController {
     @IBOutlet weak var score_View:UIView!
     @IBOutlet weak var progressTracker:UIView!
     @IBOutlet weak var graphView:UIView!
-    
+    @IBOutlet weak var userImg:UIImageView!
+    @IBOutlet weak var userNamelbl:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Dispatch.background {
+            let userImg = self.base64ToImage(UserDefaults.User?.patientInfo?.profilePic ?? "")
+            Dispatch.main {
+                self.userImg.image = userImg
+                self.userNamelbl.text = "\(UserDefaults.User?.patientInfo?.firstName ?? "" ) \(UserDefaults.User?.patientInfo?.lastName ?? "" )"
+            }
+        }
         self.tableheight.constant = 260
         self.addTapgesture(view:self.score_View)
         self.addTapgesture(view:self.progressTracker)

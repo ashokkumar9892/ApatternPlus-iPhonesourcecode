@@ -15,6 +15,7 @@ class RegistrationViewModel :NSObject, ViewModel {
         case CreateProfile
         case addHeight
         case addWeight
+        case savePatteren
     }
     var modelType         : ModelType
     var brokenRules       : [BrokenRule]    = [BrokenRule]()
@@ -33,6 +34,11 @@ class RegistrationViewModel :NSObject, ViewModel {
     var gender            : Dynamic<String> = Dynamic("")
     var confirmPasswrd    : Dynamic<String> = Dynamic("")
     var SK                : Dynamic<String> = Dynamic("")
+    var DoctorId          : Dynamic<String> = Dynamic("")
+    var DoctorName        : Dynamic<String> = Dynamic("")
+    var CoachId           : Dynamic<String> = Dynamic("")
+    var CoachName         : Dynamic<String> = Dynamic("")
+    var Country           : Dynamic<String> = Dynamic("")
     
     private var emailCode : String          = ""
     var isValid           : Bool {
@@ -116,6 +122,8 @@ extension RegistrationViewModel {
             if height.value == "" || height.value == " "{
                 self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "add your height"))
             }
+        case .savePatteren:
+            break
         }
     }
 }
@@ -130,6 +138,7 @@ extension RegistrationViewModel {
             switch result{
             case .success(let res):
                 self.login_Info = res
+                UserDefaults.User = self.login_Info
                 UserDefaults.hasLogin = true
                 UserDefaults.userToken = res.authToken ?? ""
                 Indicator.shared.hide()
@@ -232,6 +241,26 @@ extension RegistrationViewModel {
         Indicator.shared.show(showText)
         let model = NetworkManager.sharedInstance
         model.resetPassword(username: username.value, confirmationcode:confirmationcode.value, newpassword: password.value) { [weak self] (result) in
+            guard let self = self else {return}
+            switch result{
+            case .success( _ ):
+                self.didFinishFetch?()
+                Indicator.shared.hide()
+            case .failure(let err):
+                switch err {
+                case .errorReport(let desc):
+                    Indicator.shared.hide()
+                    self.error = desc
+                }
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func saveAPatternTeam(){
+        Indicator.shared.show(showText)
+        let model = NetworkManager.sharedInstance
+        model.saveAPatternPlusTeam(SK:UserDefaults.User?.patientInfo?.sk ?? "", DoctorId:DoctorId.value, DoctorName: DoctorName.value, CoachId:CoachId.value, CoachName: CoachName.value, Country: Country.value) { [weak self] (result) in
             guard let self = self else {return}
             switch result{
             case .success( _ ):

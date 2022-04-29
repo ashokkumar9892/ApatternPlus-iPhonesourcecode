@@ -8,8 +8,8 @@
 import UIKit
 
 class DectorsListVC: CustomiseViewController {
-    var callback_Closer: ((_ doctorName:String,_ doctorImg:String,_ tag:Int) -> Void)?
-    var coatch_Closer: ((_ coatchName:String,_ coatchImg:String,_ tag:Int) -> Void)?
+    var callback_Closer: ((_ doctorName:String,_ doctorImg:String,_ tag:Int,_ doctor_Id:String) -> Void)?
+    var coatch_Closer: ((_ coatchName:String,_ coatchImg:String,_ tag:Int,_  coatch_Id:String) -> Void)?
     var viewModel:RegistrationViewModel!
     @IBOutlet weak var dectorsTable:UITableView!
     @IBOutlet weak var back_View:UIView!
@@ -68,9 +68,13 @@ extension DectorsListVC:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexTag == 0{
-            self.callback_Closer?(self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row].userName ?? "", self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row].profileImage ?? "", indexTag ?? 0)
+            if let dector_Details = self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row]{
+                self.callback_Closer?(dector_Details.userName ?? "", dector_Details.profileImage ?? "", indexTag ?? 0, dector_Details.sk ?? "")
+            }
         }else{
-            self.coatch_Closer?(self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row].userName ?? "", self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row].profileImage ?? "",indexTag ?? 0)
+            if let coatch_Details = self.viewModel.getDoctorsList?.doctorInfo?[indexPath.row]{
+                self.coatch_Closer?(coatch_Details.userName ?? "", coatch_Details.profileImage ?? "",indexTag ?? 0, coatch_Details.sk ?? "")
+            }
         }
         self.dismiss(animated: true, completion: nil)
     }

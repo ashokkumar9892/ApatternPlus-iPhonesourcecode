@@ -17,6 +17,7 @@ class AddWeightVC: CustomiseViewController {
     var colorOverridesEnabled = false
     var moreMarkers = false
     var direction: NMLayerDirection = .horizontal
+    @IBOutlet weak var weightType:UILabel!
     @IBOutlet weak var kg_Btn:AnimatableButton!{
         didSet{
             self.kg_Btn.roundCorners(corners: [.topLeft, .topRight], flag: true)
@@ -27,16 +28,13 @@ class AddWeightVC: CustomiseViewController {
             self.support_Btn.underline()
         }
     }
+    var internalFlag = true
     @IBOutlet weak var previous_Btn:UIButton!
     @IBOutlet weak var next_Btn:UIButton!
     var screenApper = screenCome.Signup
     @IBOutlet weak var headerView:UIView!
     @IBOutlet weak var headerHeight:NSLayoutConstraint!
-    @IBOutlet weak var lbl_Btn:AnimatableButton!{
-        didSet{
-            self.lbl_Btn.roundCorners(corners: [.topLeft, .topRight], flag: false)
-        }
-    }
+    @IBOutlet weak var lbl_Btn:AnimatableButton!
     
     var segments = Array<NMSegmentUnit>()
     @IBOutlet weak var weightLbl:UILabel!
@@ -72,6 +70,38 @@ class AddWeightVC: CustomiseViewController {
         
     }
     
+    @IBAction func kg_Lbs_btn(_ sender :UIButton){
+        if sender.tag == 1{
+            internalFlag = true
+            rangeStart = Measurement(value: 30.0, unit: UnitMass.kilograms)
+            rangeLength = Measurement(value: Double(90), unit: UnitMass.kilograms)
+            self.kg_Btn.backgroundColor = UIColor(named: "blue_Back")
+            self.kg_Btn.setTitleColor(UIColor(hexString: "#0000EE"), for: .normal)
+            self.lbl_Btn.backgroundColor = UIColor(hexString: "#FFFFFF")
+            self.lbl_Btn.setTitleColor(UIColor(hexString: "#515151"), for: .normal)
+            
+        }else{
+            internalFlag = false
+            self.lbl_Btn.backgroundColor = UIColor(named: "blue_Back")
+            self.lbl_Btn.setTitleColor(UIColor(hexString: "#0000EE"), for: .normal)
+            self.kg_Btn.backgroundColor = UIColor(hexString: "#FFFFFF")
+            self.kg_Btn.setTitleColor(UIColor(hexString: "#515151"), for: .normal)
+            rangeStart = Measurement(value: 60.0, unit: UnitMass.kilograms)
+            rangeLength = Measurement(value: Double(180), unit: UnitMass.kilograms)
+        }
+         
+        ruler?.direction = .horizontal
+        ruler?.tintColor = UIColor(red: 0.15, green: 0.18, blue: 0.48, alpha: 1.0)
+        //  controlHConstraint?.constant = 240.0
+        segments = self.createSegments()
+        ruler?.delegate = self
+        ruler?.dataSource = self
+        let initialValue = (self.rangeForUnit(UnitMass.kilograms).location + self.rangeForUnit(UnitMass.kilograms).length) / 2
+        ruler?.measurement = NSMeasurement(
+            doubleValue: Double(initialValue),
+            unit: UnitMass.kilograms)
+        self.view.layoutSubviews()
+    }
     
     @IBAction func continue_Btn(_ sender :UIButton)
     {
@@ -108,6 +138,11 @@ extension AddWeightVC:NMMultiUnitRulerDataSource, NMMultiUnitRulerDelegate{
     }
     
     func valueChanged(measurement: NSMeasurement) {
+        if internalFlag == true{
+            self.weightType.text = "KG"
+        }else{
+            self.weightType.text = "Lbs"
+        }
         self.weightLbl.text = "\(measurement.doubleValue)"
         self.viewModel.weight.value = "\(measurement.doubleValue)"
         print("value changed to \(measurement.doubleValue)")
@@ -143,6 +178,7 @@ extension AddWeightVC:NMMultiUnitRulerDataSource, NMMultiUnitRulerDelegate{
         return [kgSegment, lbsSegment]
     }
     
+   
     
     func rangeForUnit(_ unit: Dimension) -> NMRange<Float> {
         let locationConverted = rangeStart.converted(to: unit as! UnitMass)

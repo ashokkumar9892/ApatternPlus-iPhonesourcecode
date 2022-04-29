@@ -25,8 +25,11 @@ class PatternPlus_TeamVC: CustomiseViewController {
     @IBOutlet weak var headerHeight:NSLayoutConstraint!
     @IBOutlet weak var titleLbl:UILabel!
     var listArray = [DoctorCoatchDetails]()
+    var viewModel:RegistrationViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel = RegistrationViewModel.init(type: .savePatteren)
+        self.setUpVM(model: self.viewModel)
         switch screenApper {
         case .Signup:
             self.headerHeight.constant = 0
@@ -54,8 +57,15 @@ class PatternPlus_TeamVC: CustomiseViewController {
     }
     
     @IBAction func submit_Btn(_ sender :UIButton){
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "PendingStatusVC") as? PendingStatusVC  else{return}
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.viewModel.saveAPatternTeam()
+        self.viewModel.didFinishFetch = { [weak self] in
+            guard let self = self else {return}
+            Dispatch.main{
+                let storyboard = StoryBoardSelection.sharedInstance.sideMenuStoryBoard
+                guard let vc = storyboard.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController  else{return}
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 
@@ -110,12 +120,14 @@ extension PatternPlus_TeamVC:UITableViewDataSource,UITableViewDelegate{
     @objc func pickdector(_ sender:UIButton){
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DectorsListVC") as? DectorsListVC  else{return}
         vc.modalPresentationStyle = .custom
-        vc.coatch_Closer = { [weak self] (name,image,tag)  -> Void in
+        vc.coatch_Closer = { [weak self] (name,image,tag,sk)  -> Void in
             guard let self = self else {return}
             Dispatch.main{
+                self.viewModel.DoctorId.value = sk
+                self.viewModel.DoctorName.value = name
                 self.listArray[tag].doctorName = name
-                self.listArray[tag].doctor_Img1 = image
                 self.listArray[tag].flag = false
+                self.listArray[tag].doctor_Img1 = image
                 self.teamTable.reloadData()
                 
             }
@@ -123,18 +135,19 @@ extension PatternPlus_TeamVC:UITableViewDataSource,UITableViewDelegate{
         vc.indexTag = sender.tag
         self.present(vc, animated: true, completion:nil)
     }
-    
+  
     @objc func pickCoatch(_ sender :UIButton){
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DectorsListVC") as? DectorsListVC  else{return}
         vc.modalPresentationStyle = .custom
-        vc.callback_Closer = { [weak self]  (name,image,tag) -> Void in
+        vc.callback_Closer = { [weak self]  (name,image,tag,sk) -> Void in
             guard let self = self else {return}
             Dispatch.main{
+                self.viewModel.CoachId.value = sk
                 self.listArray[tag].doctorName = name
+                self.viewModel.CoachName.value = name
                 self.listArray[tag].flag = false
                 self.listArray[tag].doctor_Img1 = image
                 self.teamTable.reloadData()
-                
             }
         }
         vc.indexTag = sender.tag
@@ -145,9 +158,11 @@ extension PatternPlus_TeamVC:UITableViewDataSource,UITableViewDelegate{
         if  self.listArray[indexPath.row].flag == true{
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DectorsListVC") as? DectorsListVC  else{return}
             vc.modalPresentationStyle = .custom
-            vc.callback_Closer = { [weak self]  (name,image,tag) -> Void in
+            vc.callback_Closer = { [weak self]  (name,image,tag,sk) -> Void in
                 guard let self = self else {return}
                 Dispatch.main{
+                    self.viewModel.DoctorId.value = sk
+                    self.viewModel.DoctorName.value = name
                     self.listArray[tag].doctorName = name
                     self.listArray[tag].flag = false
                     self.listArray[tag].doctor_Img1 = image
@@ -155,10 +170,12 @@ extension PatternPlus_TeamVC:UITableViewDataSource,UITableViewDelegate{
                     
                 }
             }
-            vc.coatch_Closer = { [weak self] (name,image,tag)  -> Void in
+            vc.coatch_Closer = { [weak self] (name,image,tag,sk)  -> Void in
                 guard let self = self else {return}
                 Dispatch.main{
+                    self.viewModel.CoachId.value = sk
                     self.listArray[tag].doctorName = name
+                    self.viewModel.CoachName.value = name
                     self.listArray[tag].flag = false
                     self.listArray[tag].doctor_Img1 = image
                     self.teamTable.reloadData()
@@ -171,7 +188,7 @@ extension PatternPlus_TeamVC:UITableViewDataSource,UITableViewDelegate{
         }
     }
     
-  
+    
 }
 
 

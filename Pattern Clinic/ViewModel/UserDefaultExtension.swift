@@ -12,6 +12,7 @@ fileprivate enum DefaultKey : String {
     case HasLogIn
     case UserID
     case UserToken
+    case User
 }
 extension UserDefaults {
     fileprivate class var appSuit : UserDefaults {
@@ -65,6 +66,32 @@ extension UserDefaults {
             let useDef = UserDefaults.appSuit
             useDef.set(newValue, forKey: DefaultKey.hasPremium.rawValue)
             useDef.synchronize()
+        }
+    }
+    static var User: LoginResponseModel? {
+        get{
+            if let decodedData = UserDefaults.standard.value(forKey: DefaultKey.User.rawValue) as? Data {
+                do {
+                    let info = try JSONDecoder().decode(LoginResponseModel.self, from: decodedData)
+                    return info
+                } catch {
+                    print("Failed unarchiving user data")
+                    return nil
+                }
+            } else {
+                return nil
+            }
+        }
+        set{
+            do {
+                let defaults = UserDefaults.standard
+                let key = DefaultKey.User.rawValue
+                let encodedData = try JSONEncoder().encode(newValue)
+                UserDefaults.standard.set(encodedData, forKey: key)
+                defaults.synchronize()
+            } catch {
+                print("Failed archiving user data")
+            }
         }
     }
 }

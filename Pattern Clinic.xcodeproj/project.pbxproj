@@ -99,6 +99,9 @@
 		89BD852B280932AB00BC999D /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD852A280932AB00BC999D /* APIEndPoint.swift */; };
 		89BD852D2809381B00BC999D /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD852C2809381B00BC999D /* UserDefaultExtension.swift */; };
 		89BD852F280938BE00BC999D /* SkyFloatingTextfieldWithIcon+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD852E280938BE00BC999D /* SkyFloatingTextfieldWithIcon+Binding.swift */; };
+		89C447522816A53D00EB4B94 /* VeepooBleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C447512816A53D00EB4B94 /* VeepooBleSDK.framework */; };
+		89C5C968281BC46400DBB9C0 /* BuyWatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5C967281BC46400DBB9C0 /* BuyWatchVC.swift */; };
+		89C5C96A281BC70900DBB9C0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5C969281BC70900DBB9C0 /* SignUpVC.swift */; };
 		89C7087B27FC57460091EFE2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7087A27FC57460091EFE2 /* HomeVC.swift */; };
 		89C7087E27FC5C390091EFE2 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7087C27FC5C390091EFE2 /* MenuViewModel.swift */; };
 		89C7087F27FC5C390091EFE2 /* MenuVC .swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7087D27FC5C390091EFE2 /* MenuVC .swift */; };
@@ -131,6 +134,19 @@
 			remoteInfo = "Pattern Clinic";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		89C447502816A21E00EB4B94 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		11FC84491478F27E66F87DD2 /* Pods-Pattern Clinic-Pattern ClinicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pattern Clinic-Pattern ClinicUITests.release.xcconfig"; path = "Target Support Files/Pods-Pattern Clinic-Pattern ClinicUITests/Pods-Pattern Clinic-Pattern ClinicUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +245,9 @@
 		89BD852A280932AB00BC999D /* APIEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
 		89BD852C2809381B00BC999D /* UserDefaultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
 		89BD852E280938BE00BC999D /* SkyFloatingTextfieldWithIcon+Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkyFloatingTextfieldWithIcon+Binding.swift"; sourceTree = "<group>"; };
+		89C447512816A53D00EB4B94 /* VeepooBleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VeepooBleSDK.framework; sourceTree = "<group>"; };
+		89C5C967281BC46400DBB9C0 /* BuyWatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyWatchVC.swift; sourceTree = "<group>"; };
+		89C5C969281BC70900DBB9C0 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		89C7087A27FC57460091EFE2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		89C7087C27FC5C390091EFE2 /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		89C7087D27FC5C390091EFE2 /* MenuVC .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuVC .swift"; sourceTree = "<group>"; };
@@ -253,6 +272,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C447522816A53D00EB4B94 /* VeepooBleSDK.framework in Frameworks */,
 				8901DE3427F48D73008FF052 /* IBAnimatable in Frameworks */,
 				89AE41B627F6FF2700C5C120 /* IQKeyboardManagerSwift in Frameworks */,
 				891FEF9E280A9D540035BA41 /* SDWebImage in Frameworks */,
@@ -315,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				89BD8501280930F200BC999D /* ViewModel */,
+				89C447512816A53D00EB4B94 /* VeepooBleSDK.framework */,
 				896269622804596C00DA7ACA /* Settings */,
 				89C7088027FC6D790091EFE2 /* SideDrawerVC's */,
 				89AE41B727F712C900C5C120 /* gif files */,
@@ -448,6 +469,8 @@
 				89E1F48527FDC3BD00DCFC91 /* DectorsListVC.swift */,
 				898D6C3927FEE936004F469E /* PendingStatusVC.swift */,
 				89AA5E6C280D7C1500D5B331 /* ContactSupportVC.swift */,
+				89C5C967281BC46400DBB9C0 /* BuyWatchVC.swift */,
+				89C5C969281BC70900DBB9C0 /* SignUpVC.swift */,
 			);
 			path = "Authentication Screens";
 			sourceTree = "<group>";
@@ -586,6 +609,7 @@
 				8901DDE727F484C4008FF052 /* Frameworks */,
 				8901DDE827F484C4008FF052 /* Resources */,
 				54043936F79B347DC6399D18 /* [CP] Embed Pods Frameworks */,
+				89C447502816A21E00EB4B94 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -857,6 +881,7 @@
 				89BD850D2809324E00BC999D /* RegistrationModels.swift in Sources */,
 				89C7087E27FC5C390091EFE2 /* MenuViewModel.swift in Sources */,
 				89BD85252809329900BC999D /* EndPointType.swift in Sources */,
+				89C5C968281BC46400DBB9C0 /* BuyWatchVC.swift in Sources */,
 				89BD85262809329900BC999D /* NetworkLogger.swift in Sources */,
 				89BD85192809328100BC999D /* URLParameterEncoder.swift in Sources */,
 				89B020692806CC6A00E05650 /* ProgressTrackerVC.swift in Sources */,
@@ -896,6 +921,7 @@
 				89BB25C827F5877800786A13 /* CreateProfileVC.swift in Sources */,
 				89AA5E6D280D7C1500D5B331 /* ContactSupportVC.swift in Sources */,
 				898D6C3C27FEFFA2004F469E /* NutritionTrackingVC.swift in Sources */,
+				89C5C96A281BC70900DBB9C0 /* SignUpVC.swift in Sources */,
 				89BD85032809310600BC999D /* RegistrationViewModel.swift in Sources */,
 				89C7087F27FC5C390091EFE2 /* MenuVC .swift in Sources */,
 				899680F827FB0628000745B3 /* WatchConnectscucessPopVC.swift in Sources */,
@@ -1007,6 +1033,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1068,6 +1095,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1094,12 +1122,25 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BP95W5GK76;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pattern Clinic/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "A Pattern Clinic does not request this permission or utilize this functionality but it is included in our info.plist since our app utilizes the react-native-permissions library, which references this permission in its code.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "A Pattern Clinic  would like to access Camera to take photo for uploading profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1114,7 +1155,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Apatternclinic.co;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ApatternClinic;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1127,12 +1168,25 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BP95W5GK76;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pattern Clinic/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "A Pattern Clinic does not request this permission or utilize this functionality but it is included in our info.plist since our app utilizes the react-native-permissions library, which references this permission in its code.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "A Pattern Clinic  would like to access Camera to take photo for uploading profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1147,7 +1201,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Apatternclinic.co;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ApatternClinic;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1162,6 +1216,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -1182,6 +1242,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+					"$(PROJECT_DIR)/Pattern\\ Clinic",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;

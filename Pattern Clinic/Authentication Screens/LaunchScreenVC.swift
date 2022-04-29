@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import VeepooBleSDK
 
-class LaunchScreenVC: UIViewController {
-    
+
+class LaunchScreenVC: CustomiseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         

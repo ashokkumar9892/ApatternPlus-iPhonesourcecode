@@ -18,4 +18,9 @@ target 'Pattern Clinic' do
 pod 'NMMultiUnitRuler'
 pod 'SwiftyGif'
 pod 'KYDrawerController'
+pod 'iOSDFULibrary', '~> 4.11.1’
+pod 'FMDB'
+pod 'AFNetworking', '~> 4.0'
+pod 'MJExtension'
+
 end

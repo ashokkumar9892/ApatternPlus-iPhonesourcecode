@@ -58,6 +58,11 @@ class LoginVC:CustomiseViewController {
         iconClick = !iconClick
     }
     
+    @IBAction func signup_Btn(_ sender :UIButton){
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {return}
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func login_Btn(_ sender :UIButton){
         if self.viewModel.isValid{
             self.viewModel.signIn()

@@ -1349,7 +1349,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5O-bC-Hec">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="496"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="side_user" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-UE-EVB" customClass="AnimatableImageView">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="side_user" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-UE-EVB" customClass="AnimatableImageView">
                                                 <rect key="frame" x="100" y="40" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WR9-UE-EVB" secondAttribute="height" multiplier="1:1" id="1T9-SO-1LW"/>
@@ -1387,7 +1387,7 @@
                                                         <color key="textColor" name="#787878_lbl_grey"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-EU-xJt">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-EU-xJt">
                                                         <rect key="frame" x="0.0" y="24.5" width="57.5" height="30.5"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="24"/>
                                                         <nil key="textColor"/>
@@ -1455,6 +1455,13 @@
                             <constraint firstItem="Ccm-fb-2DP" firstAttribute="centerX" secondItem="8iM-Vf-Q52" secondAttribute="centerX" id="hBR-yR-myO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countrylbl" destination="FDF-EU-xJt" id="Srd-C8-uDh"/>
+                        <outlet property="dobLbl" destination="n80-ZN-kzM" id="0yi-y3-PTK"/>
+                        <outlet property="emailLbl" destination="oAr-TK-73i" id="Mgv-8z-IIH"/>
+                        <outlet property="userImg" destination="WR9-UE-EVB" id="bOR-Jl-EnN"/>
+                        <outlet property="userNamelbl" destination="ZLD-oc-yjj" id="Vd5-7Z-pHf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0m1-SW-7XG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3074,7 +3081,7 @@
                                     <constraint firstItem="UaY-az-zAZ" firstAttribute="top" secondItem="PMv-kf-vHd" secondAttribute="top" constant="34" id="mis-YP-jgf"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="side_user" translatesAutoresizingMaskIntoConstraints="NO" id="Lun-au-Hk0" customClass="AnimatableImageView">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="side_user" translatesAutoresizingMaskIntoConstraints="NO" id="Lun-au-Hk0" customClass="AnimatableImageView">
                                 <rect key="frame" x="100" y="82" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lun-au-Hk0" secondAttribute="height" multiplier="1:1" id="Di3-qP-jnG"/>
@@ -3086,14 +3093,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Blake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-g1-jRI">
-                                <rect key="frame" x="100" y="214" width="120" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Blake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-g1-jRI">
+                                <rect key="frame" x="12" y="214" width="296" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="24"/>
                                 <color key="textColor" name="lbl_blackcolour"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNx-X4-YHD" customClass="AnimatableView" customModule="IBAnimatable">
-                                <rect key="frame" x="11.5" y="266" width="297" height="221"/>
+                                <rect key="frame" x="11.5" y="268.5" width="297" height="221"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2ls-vM-ZjG">
                                         <rect key="frame" x="8" y="12" width="281" height="197"/>
@@ -3212,7 +3219,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeb-om-81J" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="11.5" y="523" width="297" height="40"/>
+                                <rect key="frame" x="11.5" y="525.5" width="297" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -3233,10 +3240,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Lun-au-Hk0" firstAttribute="top" secondItem="PMv-kf-vHd" secondAttribute="bottom" constant="-60" id="21I-3I-Rj9"/>
-                            <constraint firstItem="uVl-g1-jRI" firstAttribute="centerX" secondItem="Lun-au-Hk0" secondAttribute="centerX" id="7aP-QH-5y7"/>
+                            <constraint firstItem="Uxl-lB-hBa" firstAttribute="trailing" secondItem="uVl-g1-jRI" secondAttribute="trailing" constant="12" id="B8z-LK-54Z"/>
                             <constraint firstItem="Xeb-om-81J" firstAttribute="height" secondItem="KSB-Wu-3MV" secondAttribute="height" multiplier="0.07" id="EUH-hb-vUK"/>
                             <constraint firstItem="bNx-X4-YHD" firstAttribute="top" secondItem="uVl-g1-jRI" secondAttribute="bottom" constant="24" id="MRF-SH-X6g"/>
                             <constraint firstItem="PMv-kf-vHd" firstAttribute="height" secondItem="KSB-Wu-3MV" secondAttribute="height" multiplier="0.25" id="RW3-ub-bv5"/>
+                            <constraint firstItem="uVl-g1-jRI" firstAttribute="leading" secondItem="Uxl-lB-hBa" secondAttribute="leading" constant="12" id="RXF-db-o1r"/>
                             <constraint firstItem="bNx-X4-YHD" firstAttribute="width" secondItem="KSB-Wu-3MV" secondAttribute="width" multiplier="0.928125" id="Wql-5u-kvR"/>
                             <constraint firstItem="PMv-kf-vHd" firstAttribute="leading" secondItem="Uxl-lB-hBa" secondAttribute="leading" id="cXR-4P-hM3"/>
                             <constraint firstItem="PMv-kf-vHd" firstAttribute="trailing" secondItem="Uxl-lB-hBa" secondAttribute="trailing" id="d6a-Wm-ia3"/>
@@ -3254,6 +3262,8 @@
                         <outlet property="height_Btn" destination="6aK-xK-fQJ" id="KGP-Tj-Peb"/>
                         <outlet property="personal_Btn" destination="vFc-ih-shq" id="BrP-jS-7h3"/>
                         <outlet property="team_Btn" destination="pgT-1g-pug" id="lnu-zq-W7S"/>
+                        <outlet property="userImg" destination="Lun-au-Hk0" id="muQ-yX-0Ri"/>
+                        <outlet property="userNamelbl" destination="uVl-g1-jRI" id="3sF-ZC-G6i"/>
                         <outlet property="weight_Btn" destination="lLd-jy-4OX" id="3jr-TA-7yl"/>
                     </connections>
                 </viewController>
@@ -3280,7 +3290,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-yw-O9L">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1029"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1037"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN2-M7-zq7">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="170.5"/>
@@ -3297,7 +3307,7 @@
                                                             <action selector="action_SideMenu:" destination="FQh-Av-RlH" eventType="touchUpInside" id="ez2-CB-GND"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_img" translatesAutoresizingMaskIntoConstraints="NO" id="mxq-8D-MHB">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_img" translatesAutoresizingMaskIntoConstraints="NO" id="mxq-8D-MHB">
                                                         <rect key="frame" x="16" y="43" width="74" height="74"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="mxq-8D-MHB" secondAttribute="height" multiplier="1:1" id="CMJ-cz-TvI"/>
@@ -3305,7 +3315,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi John!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFt-gO-Xj4">
-                                                        <rect key="frame" x="104" y="68.5" width="74" height="23.5"/>
+                                                        <rect key="frame" x="104" y="67.5" width="144" height="25.5"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -3319,10 +3329,11 @@
                                                     <constraint firstItem="dW1-89-F65" firstAttribute="top" secondItem="UN2-M7-zq7" secondAttribute="top" constant="50" id="QrB-Pg-t22"/>
                                                     <constraint firstItem="nFt-gO-Xj4" firstAttribute="leading" secondItem="mxq-8D-MHB" secondAttribute="trailing" constant="14" id="cKn-Y5-6gs"/>
                                                     <constraint firstItem="mxq-8D-MHB" firstAttribute="centerY" secondItem="dW1-89-F65" secondAttribute="centerY" id="kFC-Uv-U8l"/>
+                                                    <constraint firstItem="dW1-89-F65" firstAttribute="leading" secondItem="nFt-gO-Xj4" secondAttribute="trailing" id="oeA-es-Byz"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSy-tY-lhB" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="36" y="141" width="260" height="257"/>
+                                                <rect key="frame" x="36" y="141" width="260" height="261"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
@@ -3337,22 +3348,22 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTa-4k-S0H" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="141" width="272" height="241"/>
+                                                <rect key="frame" x="24" y="141" width="272" height="245"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AP+ Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyi-jW-hnz">
-                                                        <rect key="frame" x="93" y="16" width="86.5" height="21"/>
+                                                        <rect key="frame" x="94.5" y="16" width="83.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                                         <color key="textColor" name="lbl_blackcolour"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_Graph" translatesAutoresizingMaskIntoConstraints="NO" id="Tgr-9d-IhQ">
-                                                        <rect key="frame" x="12" y="39" width="248" height="152"/>
+                                                        <rect key="frame" x="12" y="41" width="248" height="152"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kOa-zU-Dme">
-                                                        <rect key="frame" x="47.5" y="203" width="177" height="26"/>
+                                                        <rect key="frame" x="47.5" y="205" width="177" height="28"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG6-6K-Jfx" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="28"/>
                                                                 <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="12"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -3366,7 +3377,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8K-Oi-0jz">
-                                                                <rect key="frame" x="61.5" y="0.0" width="54" height="26"/>
+                                                                <rect key="frame" x="61.5" y="0.0" width="54" height="28"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="12"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Week">
@@ -3374,7 +3385,7 @@
                                                                 </state>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJh-He-DFM">
-                                                                <rect key="frame" x="123.5" y="0.0" width="53.5" height="26"/>
+                                                                <rect key="frame" x="123.5" y="0.0" width="53.5" height="28"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="12"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Month">
@@ -3409,7 +3420,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxa-jk-jKW">
-                                                <rect key="frame" x="252" y="358" width="50" height="50"/>
+                                                <rect key="frame" x="252" y="362" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="3Qq-li-jvH"/>
                                                 </constraints>
@@ -3420,7 +3431,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="X7n-LV-x3a">
-                                                <rect key="frame" x="24" y="422" width="272" height="70"/>
+                                                <rect key="frame" x="24" y="426" width="272" height="70"/>
                                                 <subviews>
                                                     <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PK-XX-keL" customClass="AnimatableView" customModule="IBAnimatable">
                                                         <rect key="frame" x="0.0" y="0.0" width="124" height="70"/>
@@ -3433,19 +3444,19 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLd-uf-khM">
-                                                                <rect key="frame" x="10" y="12" width="75.5" height="12"/>
+                                                                <rect key="frame" x="10" y="12" width="75.5" height="13"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="10"/>
                                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="77" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6t-Il-GY1">
-                                                                <rect key="frame" x="10" y="28" width="27" height="28"/>
+                                                                <rect key="frame" x="10" y="29" width="25" height="30.5"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Com-rn-t8n">
-                                                                <rect key="frame" x="37" y="40" width="22.5" height="12"/>
+                                                                <rect key="frame" x="35" y="42.5" width="21" height="13"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -3478,25 +3489,25 @@
                                                         <rect key="frame" x="148" y="0.0" width="124" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8k-7Q-Ebw">
-                                                                <rect key="frame" x="6" y="12" width="13" height="12"/>
+                                                                <rect key="frame" x="6" y="12" width="13" height="13"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="10"/>
                                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLd-OY-h5u">
-                                                                <rect key="frame" x="19" y="6" width="6" height="12"/>
+                                                                <rect key="frame" x="19" y="6" width="5.5" height="13"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fx-eX-FM2">
-                                                                <rect key="frame" x="25" y="12" width="26.5" height="12"/>
+                                                                <rect key="frame" x="24.5" y="12" width="25.5" height="13"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="10"/>
                                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DC-rG-w35">
-                                                                <rect key="frame" x="6" y="28" width="51" height="28"/>
+                                                                <rect key="frame" x="6" y="29" width="43.5" height="30.5"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="24"/>
                                                                 <color key="textColor" name="lbl_blackcolour"/>
                                                                 <nil key="highlightedColor"/>
@@ -3536,16 +3547,16 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6H-DB-PWv" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="524" width="272" height="280"/>
+                                                <rect key="frame" x="24" y="528" width="272" height="284"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86i-xb-K2r">
-                                                        <rect key="frame" x="66.5" y="16" width="139.5" height="21"/>
+                                                        <rect key="frame" x="66" y="16" width="140.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                                         <color key="textColor" name="lbl_blackcolour"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-aj-eSg">
-                                                        <rect key="frame" x="0.0" y="53" width="272" height="160"/>
+                                                        <rect key="frame" x="0.0" y="55" width="272" height="160"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="160" id="lUQ-VW-lUk"/>
@@ -3566,16 +3577,16 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="4xQ-41-pMs">
-                                                                            <rect key="frame" x="80.5" y="21.5" width="95.5" height="41.5"/>
+                                                                            <rect key="frame" x="80.5" y="20" width="94" height="44.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skipping Ropes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K37-6B-m3r">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="95.5" height="16.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="18"/>
                                                                                     <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="14"/>
                                                                                     <color key="textColor" name="lbl_blackcolour"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-FH-Cdn">
-                                                                                    <rect key="frame" x="0.0" y="22.5" width="95.5" height="19"/>
+                                                                                    <rect key="frame" x="0.0" y="24" width="94" height="20.5"/>
                                                                                     <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                                                     <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -3636,7 +3647,7 @@
                                                         </connections>
                                                     </tableView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFZ-Bq-otD">
-                                                        <rect key="frame" x="104.5" y="229" width="63" height="33"/>
+                                                        <rect key="frame" x="104" y="231" width="64" height="35"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="18"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="View All">
@@ -3671,7 +3682,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-Av-Z2h">
-                                                <rect key="frame" x="246" y="711" width="50" height="50"/>
+                                                <rect key="frame" x="246" y="717" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="YAx-5q-nhZ"/>
                                                 </constraints>
@@ -3679,7 +3690,7 @@
                                                 <state key="normal" image="down_arrows"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugQ-dz-tQI" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="828" width="272" height="169"/>
+                                                <rect key="frame" x="24" y="836" width="272" height="169"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Gaz-2O-m5Z">
                                                         <rect key="frame" x="8" y="12" width="256" height="145"/>
@@ -3840,6 +3851,8 @@
                         <outlet property="progressTracker" destination="8PK-XX-keL" id="gYG-H4-x1v"/>
                         <outlet property="score_View" destination="RNe-C3-yWh" id="ZEe-nW-zXa"/>
                         <outlet property="tableheight" destination="lUQ-VW-lUk" id="Vmm-C7-39t"/>
+                        <outlet property="userImg" destination="mxq-8D-MHB" id="7kE-un-WiV"/>
+                        <outlet property="userNamelbl" destination="nFt-gO-Xj4" id="bJQ-mD-dmI"/>
                         <outlet property="viewall_btn" destination="sFZ-Bq-otD" id="gYu-Lo-ZNb"/>
                     </connections>
                 </viewController>
@@ -3870,16 +3883,16 @@
             <size key="intrinsicContentSize" width="6.5" height="15.5"/>
         </designable>
         <designable name="6aK-xK-fQJ">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="80K-Sw-i0Z">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="Bkz-Dk-vaM">
             <size key="intrinsicContentSize" width="30" height="28"/>
         </designable>
         <designable name="DG6-6K-Jfx">
-            <size key="intrinsicContentSize" width="30" height="26"/>
+            <size key="intrinsicContentSize" width="30" height="28"/>
         </designable>
         <designable name="I4L-uf-fVP">
             <size key="intrinsicContentSize" width="325" height="157"/>
@@ -3900,34 +3913,34 @@
             <size key="intrinsicContentSize" width="165" height="165"/>
         </designable>
         <designable name="Xeb-om-81J">
-            <size key="intrinsicContentSize" width="80" height="20"/>
+            <size key="intrinsicContentSize" width="77" height="21"/>
         </designable>
         <designable name="Xq9-H6-76a">
             <size key="intrinsicContentSize" width="86" height="22"/>
         </designable>
         <designable name="fcj-lo-mkn">
-            <size key="intrinsicContentSize" width="44" height="24"/>
+            <size key="intrinsicContentSize" width="44" height="25"/>
         </designable>
         <designable name="lLd-jy-4OX">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="lNi-dk-YrQ">
             <size key="intrinsicContentSize" width="44" height="25"/>
         </designable>
         <designable name="nRS-Ub-Zpj">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="pgT-1g-pug">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="sSc-4Q-CAK">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="tql-O4-eiF">
             <size key="intrinsicContentSize" width="80" height="35"/>
         </designable>
         <designable name="vFc-ih-shq">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
     </designables>
     <resources>

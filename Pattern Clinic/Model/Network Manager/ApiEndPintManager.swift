@@ -47,7 +47,8 @@ extension NetworkManager {
             "ProfilePic" :  ProfilePic,
             "DOB"        :  DOB,
             "Gender"     :  Gender,
-            "ReferAs"    :  ReferAs
+            "ReferAs"    :  ReferAs,
+            "WeightUnit" :  "Kg"
          ]
         handleAPICalling(request: .createProfile(param: param), completion: completion)
     }
@@ -64,6 +65,19 @@ extension NetworkManager {
         let param = [
             "AuthToken"  :  UserDefaults.userToken
         ]
+        handleAPICalling(request: .getcoachList(param:param), completion: completion)
+    }
+    
+    func saveAPatternPlusTeam(SK:String = "",DoctorId:String = "",DoctorName:String = "",CoachId:String = "",CoachName:String = "",Country:String = "",completion: @escaping ((Result<GetDoctorsList,APIError>) -> Void)){
+        let param = [
+            "SK"             :  SK,
+            "DoctorId"       :  DoctorId,
+            "DoctorName"     :  DoctorName,
+            "CoachName"      :  CoachName,
+            "CoachId"        :  CoachId,
+            "Country"        :  Country,
+            "AuthToken"      :  UserDefaults.userToken
+         ]
         handleAPICalling(request: .getcoachList(param:param), completion: completion)
     }
 }

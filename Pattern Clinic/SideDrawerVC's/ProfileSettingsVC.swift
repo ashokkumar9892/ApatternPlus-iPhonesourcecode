@@ -13,11 +13,19 @@ class ProfileSettingsVC: CustomiseViewController {
     @IBOutlet weak var height_Btn:CustomRightAndLeftImageButton!
     @IBOutlet weak var weight_Btn:CustomRightAndLeftImageButton!
     @IBOutlet weak var team_Btn:CustomRightAndLeftImageButton!
+    @IBOutlet weak var userImg:UIImageView!
+    @IBOutlet weak var userNamelbl:UILabel!
     let storyBoard = StoryBoardSelection.sharedInstance.mainStoryBoard
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        Dispatch.background {
+            let userImg = self.base64ToImage(UserDefaults.User?.patientInfo?.profilePic ?? "")
+            Dispatch.main {
+                self.userImg.image = userImg
+                self.userNamelbl.text = "\(UserDefaults.User?.patientInfo?.firstName ?? "" ) \(UserDefaults.User?.patientInfo?.lastName ?? "" )"
+            }
+        }
     }
     
     @IBAction func personal_Info(_ sender:UIButton){
