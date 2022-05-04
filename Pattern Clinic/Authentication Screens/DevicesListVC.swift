@@ -345,7 +345,7 @@ class WatchesList_Info:UITableViewCell{
     @IBOutlet weak var back_View:AnimatableView!
 }
 
-////MARK: 销毁控制器前执行
+//MARK: 销毁控制器前执行
 //deinit {
 //    VPBleCentralManage.sharedBleManager().veepooSDKStopScanDevice()
 //}

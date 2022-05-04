@@ -8,13 +8,26 @@
 import UIKit
 
 class MessageListVC: CustomiseViewController {
-
+    var viewModel:SocketBaseClassVC!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.viewModel = SocketBaseClassVC()
+        self.setUpVM(model: self.viewModel)
+      
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.makeSocketConnection()
+        self.viewModel.socketConnectCloser = { [weak self] in
+            guard let self = self else {return}
+            Dispatch.main{
+                self.viewModel.getUserChatDetails()
+            }
+            
+        }
+        
+    }
 
 }
 

@@ -69,9 +69,10 @@ class CreateProfileVC: CustomiseViewController {
         self.viewModel.full_name.value       = self.userdetails?.patientInfo?.firstName ?? ""
         self.viewModel.last_name.value       = self.userdetails?.patientInfo?.lastName  ?? ""
         self.viewModel.dob.value             = self.userdetails?.patientInfo?.dob  ?? ""
-        self.viewModel.gender.value          = self.userdetails?.patientInfo?.gender  ?? ""
+        self.viewModel.gender.value          = self.userdetails?.patientInfo?.gender  ?? "Male"
         self.viewModel.country_Name.value    = self.userdetails?.patientInfo?.country ?? ""
         self.viewModel.userProfile_Pic.value = self.userdetails?.patientInfo?.profilePic ?? ""
+        self.setRefer(refer: self.userdetails?.patientInfo?.referAs ?? "")
         Dispatch.background {
             let userImg = self.base64ToImage(self.userdetails?.patientInfo?.profilePic ?? "")
             Dispatch.main {
@@ -79,8 +80,6 @@ class CreateProfileVC: CustomiseViewController {
             }
         }
         txt_Gender.inputView = gradePicker
-        txt_Gender.text = gradePickerValues[0]
-        self.viewModel.gender.value = gradePickerValues[0]
         self.txt_DOB.datePicker(target: self,doneAction: #selector(doneAction),cancelAction: #selector(cancelAction),datePickerMode: .date)
         
     }
@@ -89,7 +88,7 @@ class CreateProfileVC: CustomiseViewController {
     @objc func doneAction(textfield:UITextField){
         if let datePickerView = self.txt_DOB.inputView as? UIDatePicker {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM dd,yyyy"
+            dateFormatter.dateFormat = "YYYY-MM-dd"
             self.viewModel.dob.value = dateFormatter.string(from:datePickerView.date)
             self.txt_DOB.text =  self.viewModel.dob.value
             txt_DOB.resignFirstResponder()
@@ -114,23 +113,43 @@ class CreateProfileVC: CustomiseViewController {
         let btnTag = sender.tag
         switch btnTag{
         case 1:
-            self.she_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
-            self.he_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
-            self.they_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.viewModel.refer.value = "She"
         case 2:
-            self.he_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
-            self.she_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
-            self.they_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.viewModel.refer.value = "He"
         default:
-            self.they_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
-            self.he_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
-            self.she_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.viewModel.refer.value = "They"
         }
+        self.setRefer(refer: self.viewModel.refer.value)
     }
     
     //MARK: - DatePicker Close  button Action
     @objc func cancelAction(textfield:UITextField){
         self.txt_DOB.resignFirstResponder()
+    }
+    
+    fileprivate func setRefer(refer:String){
+        switch refer{
+        case "She":
+            self.she_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
+            self.he_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.they_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.viewModel.refer.value = "She"
+        case "He":
+            self.he_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
+            self.she_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.they_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.viewModel.refer.value = "He"
+        case "They":
+            self.they_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
+            self.he_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.she_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.viewModel.refer.value = "They"
+        default:
+            self.she_Btn.setImage(UIImage(named: "radio_on"), for: .normal)
+            self.he_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.they_Btn.setImage(UIImage(named: "radio_off"), for: .normal)
+            self.viewModel.refer.value = "She"
+        }
     }
     
     fileprivate func addTapgesture(imageView:UIImageView){
@@ -153,7 +172,7 @@ class CreateProfileVC: CustomiseViewController {
             self.showErrorMessages(message: "Upload user profile photo")
         }else{
             if self.viewModel.isValid{
-                let filledData = DetailsPass(FirstName: self.viewModel.full_name.value, ProfilePic: self.pickedImage, LastName: self.viewModel.last_name.value, Email: self.viewModel.username.value, Country: self.viewModel.country_Name.value, dob:self.viewModel.dob.value, gender:self.viewModel.gender.value, SK: self.userdetails?.patientInfo?.sk ?? "", Weight: "", Height: "",username: self.userdetails?.patientInfo?.userName ?? "",base64String: self.viewModel.userProfile_Pic.value)
+                let filledData = DetailsPass(FirstName: self.viewModel.full_name.value, ProfilePic: self.pickedImage, LastName: self.viewModel.last_name.value, Email: self.viewModel.username.value, Country: self.viewModel.country_Name.value, dob:self.viewModel.dob.value, gender:self.viewModel.gender.value, SK: self.userdetails?.patientInfo?.sk ?? "", Weight: "", Height: "",username: self.userdetails?.patientInfo?.userName ?? "",base64String: self.viewModel.userProfile_Pic.value,referUs:self.viewModel.refer.value)
                 guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddWeightVC") as? AddWeightVC else {return}
                 vc.data_Info = filledData
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -200,5 +219,6 @@ struct DetailsPass{
     var Height:String?
     var username:String?
     var base64String:String?
+    var referUs:String?
     
 }

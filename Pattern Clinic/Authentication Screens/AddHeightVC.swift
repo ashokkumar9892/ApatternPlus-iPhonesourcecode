@@ -44,6 +44,7 @@ class AddHeightVC: CustomiseViewController {
             self.viewModel.dob.value  = self.data_Info?.dob ?? ""
             self.viewModel.gender.value  = self.data_Info?.gender ?? ""
             self.viewModel.weight.value = self.data_Info?.Weight ?? ""
+            self.viewModel.refer.value = self.data_Info?.referUs ?? ""
             
         }
     }

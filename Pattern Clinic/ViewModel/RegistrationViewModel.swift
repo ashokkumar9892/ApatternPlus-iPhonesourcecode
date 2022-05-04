@@ -11,6 +11,7 @@ import Foundation
 class RegistrationViewModel :NSObject, ViewModel {
     enum ModelType {
         case SignIn
+        case signup
         case ForgetPassword
         case CreateProfile
         case addHeight
@@ -81,6 +82,23 @@ class RegistrationViewModel :NSObject, ViewModel {
 extension RegistrationViewModel {
     private func Validate() {
         switch modelType {
+        case .signup:
+            if username.value == "" || username.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "⚠️ Enter Email"))
+            }
+            if !username.value.isValidEmail(){
+                self.brokenRules.append(BrokenRule(propertyName: "InvalidEmail", message: "⚠️ Enter valid Email Address"))
+            }
+            if password.value == "" || password.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "NoPassword", message: "Enter Your Password"))
+            }
+            if confirmPasswrd.value == "" || confirmPasswrd.value == " "{
+                self.brokenRules.append(BrokenRule(propertyName: "NoPassword", message: "Enter Your confirmPassword"))
+            }
+            if password.value != confirmPasswrd.value{
+                self.brokenRules.append(BrokenRule(propertyName: "NoPassword", message: "password are not matched"))
+            }
+            
         case .SignIn:
             if username.value == "" || username.value == " "{
                 self.brokenRules.append(BrokenRule(propertyName: "No Email", message: "⚠️ Enter Email"))
@@ -130,6 +148,30 @@ extension RegistrationViewModel {
 
 // MARK: - Network call
 extension RegistrationViewModel {
+    func signupapi_call(){
+        Indicator.shared.show(showText)
+        let model = NetworkManager.sharedInstance
+        model.signUpapi_Call(Username: username.value, Password: password.value) { [weak self] (result) in
+            guard let self = self else {return}
+            switch result{
+            case .success(let res):
+                self.login_Info = res
+                UserDefaults.User = self.login_Info
+                UserDefaults.hasLogin = true
+                UserDefaults.userToken = res.authToken ?? ""
+                Indicator.shared.hide()
+                self.didFinishFetch?()
+            case .failure(let err):
+                switch err {
+                case .errorReport(let desc):
+                    Indicator.shared.hide()
+                    self.error = desc
+                }
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     func signIn() {
         Indicator.shared.show(showText)
         let model = NetworkManager.sharedInstance
@@ -180,7 +222,8 @@ extension RegistrationViewModel {
         model.createProfile(SK: SK.value, Height:height.value, AuthToken:UserDefaults.userToken, Weight: weight.value, FirstName: full_name.value, LastName: last_name.value, Email:username.value, Country: country_Name.value, ProfilePic:userProfile_Pic.value,DOB: dob.value,Gender: gender.value,ReferAs:refer.value,username: username.value) { [weak self] (result) in
             guard let self = self else {return}
             switch result{
-            case .success( _ ):
+            case .success( let res):
+                UserDefaults.User = res
                 self.didFinishFetch?()
                 Indicator.shared.hide()
             case .failure(let err):

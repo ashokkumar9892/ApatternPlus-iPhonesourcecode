@@ -11,7 +11,7 @@ import Foundation
 // MARK: - LoginResponseModel
 struct LoginResponseModel: APIModel {
     let authToken: String?
-    let patientInfo: PatientInfo?
+    var patientInfo: PatientInfo?
     let response: Int?
     let errorMessage: String?
 }

@@ -18,6 +18,7 @@ class TutorialScreenVC: CustomiseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SocketBaseClassVC.sharedInstance.makeSocketConnection()
         self.perform(#selector(updateUI), with: nil, afterDelay: 0)
         
     }

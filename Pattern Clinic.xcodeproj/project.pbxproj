@@ -36,7 +36,9 @@
 		891E6E142809584B004075D3 /* CountryListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891E6E132809584B004075D3 /* CountryListTable.swift */; };
 		891FEF9E280A9D540035BA41 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 891FEF9D280A9D540035BA41 /* SDWebImage */; };
 		892ADB4AF0ECC6F0A6B94D93 /* Pods_Pattern_ClinicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1A50DA47E50A8028423058 /* Pods_Pattern_ClinicTests.framework */; };
+		8948DC86281FDE8400804672 /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8948DC85281FDE8400804672 /* SignalRClient */; };
 		895CC7642808331A00A37449 /* HealthTripdetails1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CC7632808331A00A37449 /* HealthTripdetails1VC.swift */; };
+		895F3B05281FE02400392C20 /* SocketBaseClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F3B04281FE02400392C20 /* SocketBaseClassVC.swift */; };
 		8962695B280432F600DA7ACA /* PersonalInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962695A280432F600DA7ACA /* PersonalInformationVC.swift */; };
 		8962695D2804450200DA7ACA /* MessageListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962695C2804450200DA7ACA /* MessageListVC.swift */; };
 		8962695F28044B8400DA7ACA /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962695E28044B8400DA7ACA /* MessageVC.swift */; };
@@ -57,6 +59,10 @@
 		8998951128058A4300602E97 /* HealthTipsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8998951028058A4300602E97 /* HealthTipsListVC.swift */; };
 		89989513280597BE00602E97 /* HealthTipDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89989512280597BE00602E97 /* HealthTipDetailsVC.swift */; };
 		899895152805996F00602E97 /* CoachAppointments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899895142805996F00602E97 /* CoachAppointments.storyboard */; };
+		89A1EA5328224444009D9444 /* OTPVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1EA5228224444009D9444 /* OTPVerificationVC.swift */; };
+		89A1EA6728225CEF009D9444 /* VPMOTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1EA6528225CEF009D9444 /* VPMOTPTextField.swift */; };
+		89A1EA6828225CEF009D9444 /* VPMOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1EA6628225CEF009D9444 /* VPMOTPView.swift */; };
+		89A1EA6A28226227009D9444 /* SignUpVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1EA6928226227009D9444 /* SignUpVerificationVC.swift */; };
 		89AA5E6D280D7C1500D5B331 /* ContactSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA5E6C280D7C1500D5B331 /* ContactSupportVC.swift */; };
 		89AE41B627F6FF2700C5C120 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 89AE41B527F6FF2700C5C120 /* IQKeyboardManagerSwift */; };
 		89AE41B927F7134A00C5C120 /* AP App screens 9.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89AE41B827F7134A00C5C120 /* AP App screens 9.gif */; };
@@ -184,6 +190,7 @@
 		891E6E112809583B004075D3 /* CountryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryCodes.json; sourceTree = "<group>"; };
 		891E6E132809584B004075D3 /* CountryListTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListTable.swift; sourceTree = "<group>"; };
 		895CC7632808331A00A37449 /* HealthTripdetails1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTripdetails1VC.swift; sourceTree = "<group>"; };
+		895F3B04281FE02400392C20 /* SocketBaseClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketBaseClassVC.swift; sourceTree = "<group>"; };
 		8962695A280432F600DA7ACA /* PersonalInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationVC.swift; sourceTree = "<group>"; };
 		8962695C2804450200DA7ACA /* MessageListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListVC.swift; sourceTree = "<group>"; };
 		8962695E28044B8400DA7ACA /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
@@ -204,6 +211,10 @@
 		8998951028058A4300602E97 /* HealthTipsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTipsListVC.swift; sourceTree = "<group>"; };
 		89989512280597BE00602E97 /* HealthTipDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTipDetailsVC.swift; sourceTree = "<group>"; };
 		899895142805996F00602E97 /* CoachAppointments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoachAppointments.storyboard; sourceTree = "<group>"; };
+		89A1EA5228224444009D9444 /* OTPVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationVC.swift; sourceTree = "<group>"; };
+		89A1EA6528225CEF009D9444 /* VPMOTPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPMOTPTextField.swift; sourceTree = "<group>"; };
+		89A1EA6628225CEF009D9444 /* VPMOTPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPMOTPView.swift; sourceTree = "<group>"; };
+		89A1EA6928226227009D9444 /* SignUpVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVerificationVC.swift; sourceTree = "<group>"; };
 		89AA5E6C280D7C1500D5B331 /* ContactSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupportVC.swift; sourceTree = "<group>"; };
 		89AE41B827F7134A00C5C120 /* AP App screens 9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "AP App screens 9.gif"; sourceTree = "<group>"; };
 		89AE41BA27F7148B00C5C120 /* TutorialScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenVC.swift; sourceTree = "<group>"; };
@@ -274,6 +285,7 @@
 			files = (
 				89C447522816A53D00EB4B94 /* VeepooBleSDK.framework in Frameworks */,
 				8901DE3427F48D73008FF052 /* IBAnimatable in Frameworks */,
+				8948DC86281FDE8400804672 /* SignalRClient in Frameworks */,
 				89AE41B627F6FF2700C5C120 /* IQKeyboardManagerSwift in Frameworks */,
 				891FEF9E280A9D540035BA41 /* SDWebImage in Frameworks */,
 				86FFCAAB11A4D567B73646B3 /* Pods_Pattern_Clinic.framework in Frameworks */,
@@ -334,6 +346,7 @@
 		8901DDEC27F484C4008FF052 /* Pattern Clinic */ = {
 			isa = PBXGroup;
 			children = (
+				8948DC7F281FDE2500804672 /* Socket Base */,
 				89BD8501280930F200BC999D /* ViewModel */,
 				89C447512816A53D00EB4B94 /* VeepooBleSDK.framework */,
 				896269622804596C00DA7ACA /* Settings */,
@@ -410,6 +423,14 @@
 			path = "Json Fles";
 			sourceTree = "<group>";
 		};
+		8948DC7F281FDE2500804672 /* Socket Base */ = {
+			isa = PBXGroup;
+			children = (
+				895F3B04281FE02400392C20 /* SocketBaseClassVC.swift */,
+			);
+			path = "Socket Base";
+			sourceTree = "<group>";
+		};
 		896269622804596C00DA7ACA /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +440,15 @@
 				8962696928045B8700DA7ACA /* ContactUSVC.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		89A1EA5428224472009D9444 /* OTP View */ = {
+			isa = PBXGroup;
+			children = (
+				89A1EA6528225CEF009D9444 /* VPMOTPTextField.swift */,
+				89A1EA6628225CEF009D9444 /* VPMOTPView.swift */,
+			);
+			path = "OTP View";
 			sourceTree = "<group>";
 		};
 		89AE41B727F712C900C5C120 /* gif files */ = {
@@ -440,6 +470,7 @@
 		89BB25BF27F564EA00786A13 /* HelperClass */ = {
 			isa = PBXGroup;
 			children = (
+				89A1EA5428224472009D9444 /* OTP View */,
 				891E6E102809582D004075D3 /* Json Fles */,
 				891E6E0C28094889004075D3 /* ImagePickerController.swift */,
 				891E6E082809444E004075D3 /* IndicatorProgress.swift */,
@@ -471,6 +502,8 @@
 				89AA5E6C280D7C1500D5B331 /* ContactSupportVC.swift */,
 				89C5C967281BC46400DBB9C0 /* BuyWatchVC.swift */,
 				89C5C969281BC70900DBB9C0 /* SignUpVC.swift */,
+				89A1EA5228224444009D9444 /* OTPVerificationVC.swift */,
+				89A1EA6928226227009D9444 /* SignUpVerificationVC.swift */,
 			);
 			path = "Authentication Screens";
 			sourceTree = "<group>";
@@ -620,6 +653,7 @@
 				8901DE3327F48D73008FF052 /* IBAnimatable */,
 				89AE41B527F6FF2700C5C120 /* IQKeyboardManagerSwift */,
 				891FEF9D280A9D540035BA41 /* SDWebImage */,
+				8948DC85281FDE8400804672 /* SignalRClient */,
 			);
 			productName = "Pattern Clinic";
 			productReference = 8901DDEA27F484C4008FF052 /* Pattern Clinic.app */;
@@ -700,6 +734,7 @@
 				8901DE3227F48D73008FF052 /* XCRemoteSwiftPackageReference "IBAnimatable" */,
 				89AE41B427F6FF2700C5C120 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				891FEF9C280A9D540035BA41 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				8948DC84281FDE8400804672 /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */,
 			);
 			productRefGroup = 8901DDEB27F484C4008FF052 /* Products */;
 			projectDirPath = "";
@@ -881,11 +916,13 @@
 				89BD850D2809324E00BC999D /* RegistrationModels.swift in Sources */,
 				89C7087E27FC5C390091EFE2 /* MenuViewModel.swift in Sources */,
 				89BD85252809329900BC999D /* EndPointType.swift in Sources */,
+				89A1EA6728225CEF009D9444 /* VPMOTPTextField.swift in Sources */,
 				89C5C968281BC46400DBB9C0 /* BuyWatchVC.swift in Sources */,
 				89BD85262809329900BC999D /* NetworkLogger.swift in Sources */,
 				89BD85192809328100BC999D /* URLParameterEncoder.swift in Sources */,
 				89B020692806CC6A00E05650 /* ProgressTrackerVC.swift in Sources */,
 				89C7087B27FC57460091EFE2 /* HomeVC.swift in Sources */,
+				89A1EA6828225CEF009D9444 /* VPMOTPView.swift in Sources */,
 				89B0206B2806CCC000E05650 /* AP+ ScoreVC.swift in Sources */,
 				899680F627FAFC00000745B3 /* Static_InfoVC.swift in Sources */,
 				891E6E142809584B004075D3 /* CountryListTable.swift in Sources */,
@@ -901,7 +938,9 @@
 				89BB25C627F586F900786A13 /* StoryBoardSelection.swift in Sources */,
 				89BD85242809329900BC999D /* HTTPMethod.swift in Sources */,
 				891E6E0D28094889004075D3 /* ImagePickerController.swift in Sources */,
+				89A1EA5328224444009D9444 /* OTPVerificationVC.swift in Sources */,
 				89BD85272809329900BC999D /* HTTPTask.swift in Sources */,
+				89A1EA6A28226227009D9444 /* SignUpVerificationVC.swift in Sources */,
 				89B5DCB428059BF700B1A4A9 /* CoachAppointmentsVC.swift in Sources */,
 				89B4B98D27FEE2C500F9617E /* LaunchScreenVC.swift in Sources */,
 				89AE41BB27F7148B00C5C120 /* TutorialScreenVC.swift in Sources */,
@@ -919,6 +958,7 @@
 				89BD85052809312600BC999D /* ViewModelProtocols.swift in Sources */,
 				89BB25CC27F5879900786A13 /* ResetPasswordVC.swift in Sources */,
 				89BB25C827F5877800786A13 /* CreateProfileVC.swift in Sources */,
+				895F3B05281FE02400392C20 /* SocketBaseClassVC.swift in Sources */,
 				89AA5E6D280D7C1500D5B331 /* ContactSupportVC.swift in Sources */,
 				898D6C3C27FEFFA2004F469E /* NutritionTrackingVC.swift in Sources */,
 				89C5C96A281BC70900DBB9C0 /* SignUpVC.swift in Sources */,
@@ -1354,6 +1394,14 @@
 				kind = branch;
 			};
 		};
+		8948DC84281FDE8400804672 /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moozzyk/SignalR-Client-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 		89AE41B427F6FF2700C5C120 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1374,6 +1422,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 891FEF9C280A9D540035BA41 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		8948DC85281FDE8400804672 /* SignalRClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8948DC84281FDE8400804672 /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */;
+			productName = SignalRClient;
 		};
 		89AE41B527F6FF2700C5C120 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;

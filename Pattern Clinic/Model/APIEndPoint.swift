@@ -17,7 +17,9 @@ enum NetworkEnvironment : String {
 //}
 enum APIEndPoint {
     // Registraton
+    case Signup(param:[String:Any])
     case logIn(param:[String:Any])
+    case verifyOTP(param:[String:Any])
     case forgetPassword(param:[String:Any])
     case createProfile(param:[String:Any])
     case getDectorList(param:[String:Any])
@@ -37,8 +39,12 @@ extension APIEndPoint:EndPointType {
     var path: String {
         switch  self {
             // Registration
+        case .Signup:
+            return "Cognito/CognitoUser"
         case .logIn:
             return "Basic/Login"
+        case .verifyOTP:
+            return "Cognito/ConfirmOTP"
         case .forgetPassword:
             return "Basic/ForgotPassword"
         case .createProfile:
@@ -61,7 +67,11 @@ extension APIEndPoint:EndPointType {
     var task: HTTPTask {
         switch self {
             // Registration
+        case .Signup(param: let param):
+            return .requestParametersAndHeaders(bodyParameters:param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         case .logIn(param: let param):
+            return .requestParametersAndHeaders(bodyParameters:param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
+        case .verifyOTP(param: let param):
             return .requestParametersAndHeaders(bodyParameters:param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         case .forgetPassword(param: let param):
             return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)

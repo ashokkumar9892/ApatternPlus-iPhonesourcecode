@@ -3290,7 +3290,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-yw-O9L">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1037"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN2-M7-zq7">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="170.5"/>
@@ -3307,15 +3307,20 @@
                                                             <action selector="action_SideMenu:" destination="FQh-Av-RlH" eventType="touchUpInside" id="ez2-CB-GND"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_img" translatesAutoresizingMaskIntoConstraints="NO" id="mxq-8D-MHB">
-                                                        <rect key="frame" x="16" y="43" width="74" height="74"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_img" translatesAutoresizingMaskIntoConstraints="NO" id="mxq-8D-MHB" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="16" y="56" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="mxq-8D-MHB" secondAttribute="height" multiplier="1:1" id="CMJ-cz-TvI"/>
-                                                            <constraint firstAttribute="width" constant="74" id="G1P-aM-eaz"/>
+                                                            <constraint firstAttribute="width" constant="48" id="G1P-aM-eaz"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="24"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi John!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFt-gO-Xj4">
-                                                        <rect key="frame" x="104" y="67.5" width="144" height="25.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi John!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFt-gO-Xj4">
+                                                        <rect key="frame" x="78" y="67.5" width="170" height="25.5"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -3333,7 +3338,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSy-tY-lhB" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="36" y="141" width="260" height="261"/>
+                                                <rect key="frame" x="36" y="128" width="260" height="261"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
@@ -3348,7 +3353,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTa-4k-S0H" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="141" width="272" height="245"/>
+                                                <rect key="frame" x="24" y="128" width="272" height="245"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AP+ Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyi-jW-hnz">
                                                         <rect key="frame" x="94.5" y="16" width="83.5" height="23"/>
@@ -3420,7 +3425,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxa-jk-jKW">
-                                                <rect key="frame" x="252" y="362" width="50" height="50"/>
+                                                <rect key="frame" x="252" y="349" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="3Qq-li-jvH"/>
                                                 </constraints>
@@ -3431,7 +3436,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="X7n-LV-x3a">
-                                                <rect key="frame" x="24" y="426" width="272" height="70"/>
+                                                <rect key="frame" x="24" y="413" width="272" height="70"/>
                                                 <subviews>
                                                     <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PK-XX-keL" customClass="AnimatableView" customModule="IBAnimatable">
                                                         <rect key="frame" x="0.0" y="0.0" width="124" height="70"/>
@@ -3547,7 +3552,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6H-DB-PWv" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="528" width="272" height="284"/>
+                                                <rect key="frame" x="24" y="515" width="272" height="284"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86i-xb-K2r">
                                                         <rect key="frame" x="66" y="16" width="140.5" height="23"/>
@@ -3682,7 +3687,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-Av-Z2h">
-                                                <rect key="frame" x="246" y="717" width="50" height="50"/>
+                                                <rect key="frame" x="246" y="704" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="YAx-5q-nhZ"/>
                                                 </constraints>
@@ -3690,7 +3695,7 @@
                                                 <state key="normal" image="down_arrows"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugQ-dz-tQI" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="836" width="272" height="169"/>
+                                                <rect key="frame" x="24" y="823" width="272" height="169"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Gaz-2O-m5Z">
                                                         <rect key="frame" x="8" y="12" width="256" height="145"/>
