@@ -127,12 +127,10 @@ class CustomiseViewController : UIViewController {
     }
     
     @objc func dismissKeyboard() {
-        view.endEditing(true)
+        if let _ = self as? MessageVC{}else{
+            view.endEditing(true)
+        }
     }
-    
-    
-    
-    
 }
 
 

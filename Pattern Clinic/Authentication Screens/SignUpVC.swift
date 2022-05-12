@@ -37,7 +37,9 @@ class SignUpVC: CustomiseViewController {
         self.viewModel.didFinishFetch = { [weak self] in
             guard let self = self else {return}
             Dispatch.main{
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateProfileVC") as? CreateProfileVC else {return}
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVerificationVC") as? SignUpVerificationVC else {return}
+                vc.userdetails = self.viewModel.login_Info ?? nil
+                vc.email = self.txt_Email.text ?? ""
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

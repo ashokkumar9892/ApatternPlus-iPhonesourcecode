@@ -7,6 +7,7 @@
 
 import UIKit
 import VeepooBleSDK
+import KYDrawerController
 
 
 class LaunchScreenVC: CustomiseViewController {
@@ -24,9 +25,15 @@ class LaunchScreenVC: CustomiseViewController {
             //                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
             //                self.navigationController?.pushViewController(vc, animated: true)
             //            }
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenVC") as? TutorialScreenVC else {return}
-            self.navigationController?.pushViewController(vc, animated: true)
-            
+            if UserDefaults.UserStatus == "4"{
+                let storyboard = StoryBoardSelection.sharedInstance.sideMenuStoryBoard
+                guard let vc = storyboard.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController  else{return}
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenVC") as? TutorialScreenVC else {return}
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+          
         }
     }
 }

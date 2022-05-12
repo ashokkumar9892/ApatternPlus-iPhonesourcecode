@@ -55,7 +55,9 @@ class AddHeightVC: CustomiseViewController {
         if data_Info?.ProfilePic == nil{
             self.viewModel.userProfile_Pic.value = self.data_Info?.base64String ?? ""
         }else{
-            if  let stringImg = imageToBase64(self.data_Info?.ProfilePic ?? UIImage()){
+            guard let compressed_Data = self.data_Info?.ProfilePic?.jpegData(compressionQuality: 0.0) else { return  }
+            guard let imgCompress = UIImage(data:compressed_Data,scale:1.0) else { return  }
+            if  let stringImg = imageToBase64(imgCompress){
                 self.viewModel.userProfile_Pic.value = stringImg
             }
         }

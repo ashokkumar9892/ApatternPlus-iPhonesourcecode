@@ -35,13 +35,13 @@ extension UINavigationController {
 typealias Dispatch = DispatchQueue
 
 extension Dispatch {
-
+    
     static func background(_ task: @escaping () -> ()) {
         Dispatch.global(qos: .background).async {
             task()
         }
     }
-
+    
     static func main(_ task: @escaping () -> ()) {
         Dispatch.main.async {
             task()
@@ -158,16 +158,16 @@ extension UITableView {
 
 
 extension UIViewController {
-
+    
     func base64ToImage(_ base64String: String) -> UIImage? {
         guard let imageData = Data(base64Encoded: base64String) else { return nil }
         return UIImage(data: imageData)
     }
-
+    
     func imageToBase64(_ image: UIImage) -> String? {
         return image.jpegData(compressionQuality: 1)?.base64EncodedString()
     }
-
+    
 }
 
 import UIKit
@@ -405,12 +405,6 @@ extension UITextField {
         let minDate = calendar.date(byAdding: comps, to: Date())
         datePicker.maximumDate = maxDate
         datePicker.minimumDate = minDate
-        //        if comming == "Event"{
-        //            datePicker.minimumDate = Calendar.current.date(byAdding: .year, value:0, to: Date())
-        //            datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 30, to: Date())
-        //        }else{
-        //            debugPrint("Something")
-        //        }
         self.inputView = datePicker
         let toolBar = UIToolbar(frame: CGRect(x: 0,
                                               y: 0,
@@ -428,3 +422,15 @@ extension UITextField {
 }
 
 
+
+
+extension UIViewController{
+    func convertDateFormate(dateString:String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm:ss"
+        dateFormatter.locale = Locale.init(identifier: "en_GB")
+        guard let dateObj = dateFormatter.date(from: dateString) else {return String()}
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        return "\(dateFormatter.string(from: dateObj))"
+    }
+}

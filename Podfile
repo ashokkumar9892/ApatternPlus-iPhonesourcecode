@@ -22,5 +22,6 @@ pod 'iOSDFULibrary', '~> 4.11.1’
 pod 'FMDB'
 pod 'AFNetworking', '~> 4.0'
 pod 'MJExtension'
+pod 'IQKeyboardManagerSwift'
 
 end

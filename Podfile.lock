@@ -19,6 +19,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - iOSDFULibrary (4.11.1):
     - ZIPFoundation (= 0.9.11)
+  - IQKeyboardManagerSwift (6.5.9)
   - KYDrawerController (2.1.0)
   - MJExtension (3.4.1)
   - NMMultiUnitRuler (0.1.1)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - AFNetworking (~> 4.0)
   - FMDB
   - iOSDFULibrary (~> 4.11.1)
+  - IQKeyboardManagerSwift
   - KYDrawerController
   - MJExtension
   - NMMultiUnitRuler
@@ -39,6 +41,7 @@ SPEC REPOS:
     - AFNetworking
     - FMDB
     - iOSDFULibrary
+    - IQKeyboardManagerSwift
     - KYDrawerController
     - MJExtension
     - NMMultiUnitRuler
@@ -49,12 +52,13 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   iOSDFULibrary: 3500ac00451aa7d8ec48a752e91099669a2c1d27
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   KYDrawerController: baad0e63b09c0cb564bd48f0f7f70f45d9176ebc
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
   NMMultiUnitRuler: 2620fb0c9b8a33931982f793731422395da1c31f
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 68558a22c47deb6a77d2fa7ced7543a399a9e063
+PODFILE CHECKSUM: 0c369106bd72f2e87a9832fef94f87262b3d7cb3
 
 COCOAPODS: 1.11.2

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>14188647152-ni7t8vu7r6q7tak567rnjaekel31hicg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.14188647152-ni7t8vu7r6q7tak567rnjaekel31hicg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB06EU51t08wh2_BJ23gGLPH62xp-6t7Mo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>14188647152</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Apatternclinic.co</string>
+	<key>PROJECT_ID</key>
+	<string>pattern-clinic</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pattern-clinic.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:14188647152:ios:3e6227510a8f1e69646835</string>
+</dict>
+</plist>

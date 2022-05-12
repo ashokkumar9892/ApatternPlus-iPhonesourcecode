@@ -7,64 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "512E6945-B653-4328-B0C9-209CE63FBEA7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pattern Clinic/SideDrawerVC&apos;s/MessageListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5D3AD1C1-F375-4BBA-A68D-0640D21A7609"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pattern Clinic/SideDrawerVC&apos;s/MessageListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D12BFC36-0F97-430E-9094-9810C51FC5C2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pattern Clinic/SideDrawerVC&apos;s/MessageListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4BC84DC7-2D1E-4A91-B3EF-AA34B3D68348"
+            uuid = "6C6DD6CA-2FAB-412C-BD46-6A13559F0DB6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pattern Clinic/Socket Base/SocketBaseClassVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "getUserChatDetails()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "makeSocketConnection()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C6DD6CA-2FAB-412C-BD46-6A13559F0DB6 - da8eedb85fb51aa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SignalRClient.ArgumentExtractor) -&gt; () in Pattern_Clinic.SocketBaseClassVC.makeSocketConnection() -&gt; ()"
+                  moduleName = "Pattern Clinic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac1/Documents/Github/ApatternPlus-iPhonesourcecode/Pattern%20Clinic/Socket%20Base/SocketBaseClassVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "6C6DD6CA-2FAB-412C-BD46-6A13559F0DB6 - da8eedb85fb51aa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SignalRClient.ArgumentExtractor) -&gt; () in Pattern_Clinic.SocketBaseClassVC.makeSocketConnection() -&gt; ()"
+                  moduleName = "Pattern Clinic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac1/Documents/Github/ApatternPlus-iPhonesourcecode/Pattern%20Clinic/Socket%20Base/SocketBaseClassVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "440">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DC290F0-6A2F-4A11-82D4-8C0EA13A4EC0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pattern Clinic/Model/Network Manager/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "handleAPICalling(request:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

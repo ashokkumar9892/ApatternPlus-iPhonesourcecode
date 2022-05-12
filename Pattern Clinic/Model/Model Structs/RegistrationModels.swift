@@ -56,3 +56,65 @@ struct DoctorInfo: Codable {
     let profileImage: String?
     let sk: String?
 }
+
+// MARK: - PreviousUserChat
+struct PreviousUserChat: APIModel {
+    var response: Int?
+    var errorMessage: String?
+    var chatlist: [Chatlist]
+}
+
+// MARK: - User Chatlist _Info
+struct Chatlist: Codable {
+    //  let connectionID, authToken, chatID, receiverID: JSONNull?
+    let senderID,receiverId: String?
+    let sentOn: String?
+    //   let messageOn, receiverImage, senderImage: JSONNull?
+    let message: String?
+    let chatType: String?
+    let isAdmin, isNotification: Bool?
+    //   let toIsRead, fromIsRead: JSONNull?
+    
+    enum CodingKeys: String, CodingKey {
+        //   case connectionID = "connectionId"
+        //  case authToken
+        //case chatID = "chatId"
+        case receiverId,chatType
+        case senderID = "senderId"
+        //toIsRead, fromIsRead,chatType,totalBill,receiverImage, senderImage,messageOn
+        case sentOn, message, isAdmin, isNotification
+    }
+}
+
+
+// MARK: - PreviousUserChat
+struct GetChatList: APIModel {
+    let chatlist: [RecentChatlist]?
+    let response: Int?
+    let errorMessage: String?
+}
+
+// MARK: - Chatlist
+struct RecentChatlist: Codable {
+    let profilePic, name, sk,message: String?
+    let isAdmin, isNotification: Bool?
+
+    enum CodingKeys: String, CodingKey {
+        case profilePic, name, sk,message
+        case isAdmin, isNotification
+    }
+}
+
+
+
+struct UPloadFilesModel:APIModel{
+    var response: Int?
+    var errorMessage: String?
+    var imageurls:[UplaodfilesURL]?
+    
+}
+
+struct UplaodfilesURL:Codable{
+    var files:String?
+    var filetype:String?
+}

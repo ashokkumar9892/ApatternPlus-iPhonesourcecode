@@ -12,7 +12,9 @@ fileprivate enum DefaultKey : String {
     case HasLogIn
     case UserID
     case UserToken
+    case FCMToken
     case User
+    case userStatus
 }
 extension UserDefaults {
     fileprivate class var appSuit : UserDefaults {
@@ -46,6 +48,17 @@ extension UserDefaults {
             useDef.synchronize()
         }
     }
+    static var UserStatus: String {
+        get {
+            let useDef = UserDefaults.appSuit
+            return useDef.string(forKey: DefaultKey.userStatus.rawValue) ?? "0"
+        }
+        set {
+            let useDef = UserDefaults.appSuit
+            useDef.set(newValue, forKey: DefaultKey.userStatus.rawValue)
+            useDef.synchronize()
+        }
+    }
     static var userToken: String {
         get {
             let useDef = UserDefaults.appSuit
@@ -54,6 +67,17 @@ extension UserDefaults {
         set {
             let useDef = UserDefaults.appSuit
             useDef.set(newValue, forKey: DefaultKey.UserToken.rawValue)
+            useDef.synchronize()
+        }
+    }
+    static var fcmToken: String {
+        get {
+            let useDef = UserDefaults.appSuit
+            return useDef.string(forKey: DefaultKey.FCMToken.rawValue) ?? ""
+        }
+        set {
+            let useDef = UserDefaults.appSuit
+            useDef.set(newValue, forKey: DefaultKey.FCMToken.rawValue)
             useDef.synchronize()
         }
     }

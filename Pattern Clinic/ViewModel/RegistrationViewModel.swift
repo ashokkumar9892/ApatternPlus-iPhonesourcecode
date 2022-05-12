@@ -12,6 +12,7 @@ class RegistrationViewModel :NSObject, ViewModel {
     enum ModelType {
         case SignIn
         case signup
+        case OTPVerification
         case ForgetPassword
         case CreateProfile
         case addHeight
@@ -142,6 +143,8 @@ extension RegistrationViewModel {
             }
         case .savePatteren:
             break
+        case .OTPVerification:
+            break
         }
     }
 }
@@ -196,6 +199,30 @@ extension RegistrationViewModel {
         }
     }
     
+    
+    func verifyOTP(){
+        Indicator.shared.show(showText)
+        let model = NetworkManager.sharedInstance
+        model.verifyOTP(confirmationcode: confirmationcode.value, Username: username.value) { [weak self] (result) in
+            guard let self = self else {return}
+            switch result{
+            case .success(let res):
+                self.login_Info = res
+                UserDefaults.User = self.login_Info
+                UserDefaults.hasLogin = true
+                Indicator.shared.hide()
+                self.didFinishFetch?()
+            case .failure(let err):
+                switch err {
+                case .errorReport(let desc):
+                    Indicator.shared.hide()
+                    self.error = desc
+                }
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     func forgetPassword(){
         let model = NetworkManager.sharedInstance
         Indicator.shared.show(showText)
@@ -224,6 +251,7 @@ extension RegistrationViewModel {
             switch result{
             case .success( let res):
                 UserDefaults.User = res
+                UserDefaults.UserStatus = "2"
                 self.didFinishFetch?()
                 Indicator.shared.hide()
             case .failure(let err):
@@ -307,6 +335,7 @@ extension RegistrationViewModel {
             guard let self = self else {return}
             switch result{
             case .success( _ ):
+                UserDefaults.UserStatus = "4"
                 self.didFinishFetch?()
                 Indicator.shared.hide()
             case .failure(let err):

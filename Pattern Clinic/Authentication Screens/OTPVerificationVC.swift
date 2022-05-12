@@ -17,14 +17,11 @@ override func viewDidLoad() {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-       // otpTextFieldView.otpFieldsCount = 6
-//        otpTextFieldView.otpFieldDefaultBorderColor = UIColor.blue
-//        otpTextFieldView.otpFieldEnteredBorderColor = UIColor.green
-//        otpTextFieldView.otpFieldErrorBorderColor = UIColor.red
-       // otpTextFieldView.otpFieldBorderWidth = 2
+        otpView.otpFieldsCount = 4
+        otpView.otpFieldDefaultBackgroundColor = UIColor.lightGray
         otpView.delegate = self
         otpView.shouldAllowIntermediateEditing = false
-        
+        otpView.initializeUI()
         // Create the UI
         otpView.initializeUI()
     }

@@ -160,10 +160,18 @@ class CreateProfileVC: CustomiseViewController {
     
     
     @objc func didTapImageView(_ sender: UITapGestureRecognizer) {
-        ImagePickerController.init().pickImage(self, isCamraFront:fontCamera) { (img) in
-            self.pickedImage = img
-            self.images["identity_img"] = img
-            self.userImg.image = img
+        ImagePickerController.init().pickImage(self, isCamraFront: fontCamera, isvideoFlag: false) { [weak self] (videoURL) in
+            guard let self = self else {return}
+            Dispatch.main{
+                print(self,videoURL)
+            }
+        } _: { [weak self] (img) in
+            guard let self = self else {return}
+            Dispatch.main{
+                self.pickedImage = img
+                self.images["identity_img"] = img
+                self.userImg.image = img
+            }
         }
     }
     

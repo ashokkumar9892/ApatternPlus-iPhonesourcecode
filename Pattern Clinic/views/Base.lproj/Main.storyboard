@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HC1-Gy-x9n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIc-tQ-GhS">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -720,13 +720,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MNQ-Rt-r9m">
                                                             <rect key="frame" x="74" y="14.5" width="234" height="45"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Shaun Murphy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy8-Qh-vtC">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dr. Shaun Murphy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy8-Qh-vtC">
                                                                     <rect key="frame" x="0.0" y="0.0" width="234" height="23"/>
                                                                     <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="18"/>
                                                                     <color key="textColor" name="lbl_blackcolour"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pediatricians" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mm-yw-Kt2">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pediatricians" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mm-yw-Kt2">
                                                                     <rect key="frame" x="0.0" y="27" width="234" height="18"/>
                                                                     <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="14"/>
                                                                     <color key="textColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3133,7 +3133,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="back_icon"/>
                                 <connections>
-                                    <action selector="navigationBarBackAction:" destination="HC1-Gy-x9n" eventType="touchUpInside" id="jSE-B1-fkj"/>
+                                    <action selector="navigationBarBackAction:" destination="HC1-Gy-x9n" eventType="touchUpInside" id="2l3-Xi-aVH"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_img" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-oT-7cA">
@@ -3157,21 +3157,65 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oj-uf-irk" customClass="VPMOTPView" customModule="Pattern_Clinic" customModuleProvider="target">
-                                <rect key="frame" x="1.5" y="420" width="317" height="60"/>
+                                <rect key="frame" x="1.5" y="410" width="317" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6Kp-XU-esC"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Dk5-9m-6Fy">
+                                <rect key="frame" x="40.5" y="478" width="239.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn't receive the OTP?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPf-xt-y9y">
+                                        <rect key="frame" x="0.0" y="0.0" width="145.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="14"/>
+                                        <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wX-gY-bOM">
+                                        <rect key="frame" x="151.5" y="0.0" width="88" height="31"/>
+                                        <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Resend Code">
+                                            <color key="titleColor" name="button_Colour"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKv-RF-TxY" customClass="AnimatableButton">
+                                <rect key="frame" x="24" y="525" width="272" height="37"/>
+                                <color key="backgroundColor" name="button_Colour"/>
+                                <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submit_Btn:" destination="CgK-CZ-cBm" eventType="touchUpInside" id="l4n-70-avh"/>
+                                    <action selector="verify_OTP:" destination="HC1-Gy-x9n" eventType="touchUpInside" id="djW-UM-St9"/>
+                                    <action selector="yes_Proceed:" destination="W6p-Zc-ZHz" eventType="touchUpInside" id="JOq-Lj-3Q3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s4d-8E-ij9"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8oj-uf-irk" firstAttribute="width" secondItem="fm1-9n-yre" secondAttribute="width" multiplier="1.1" id="4Bd-NX-ud2"/>
+                            <constraint firstItem="Dk5-9m-6Fy" firstAttribute="top" secondItem="8oj-uf-irk" secondAttribute="bottom" constant="8" id="79a-nS-kAK"/>
                             <constraint firstItem="YgJ-oT-7cA" firstAttribute="top" secondItem="1Xh-Yr-Ikk" secondAttribute="bottom" constant="16" id="Bs5-Oc-iEM"/>
+                            <constraint firstItem="TKv-RF-TxY" firstAttribute="width" secondItem="2hq-Oj-ND9" secondAttribute="width" multiplier="0.85" id="GhN-9H-bb0"/>
+                            <constraint firstItem="TKv-RF-TxY" firstAttribute="centerX" secondItem="8oj-uf-irk" secondAttribute="centerX" id="HOO-ea-SkY"/>
                             <constraint firstItem="YgJ-oT-7cA" firstAttribute="height" secondItem="2hq-Oj-ND9" secondAttribute="height" multiplier="0.36" id="Qls-aM-4IM"/>
-                            <constraint firstItem="8oj-uf-irk" firstAttribute="top" secondItem="fm1-9n-yre" secondAttribute="bottom" constant="26" id="izB-gS-XUb"/>
+                            <constraint firstItem="TKv-RF-TxY" firstAttribute="height" secondItem="2hq-Oj-ND9" secondAttribute="height" multiplier="0.065" id="aGW-pv-vdh"/>
+                            <constraint firstItem="Dk5-9m-6Fy" firstAttribute="centerX" secondItem="8oj-uf-irk" secondAttribute="centerX" id="cSF-yu-sJf"/>
+                            <constraint firstItem="8oj-uf-irk" firstAttribute="top" secondItem="fm1-9n-yre" secondAttribute="bottom" constant="16" id="izB-gS-XUb"/>
                             <constraint firstItem="1Xh-Yr-Ikk" firstAttribute="top" secondItem="s4d-8E-ij9" secondAttribute="top" constant="18" id="kNi-Fy-ZmG"/>
+                            <constraint firstItem="TKv-RF-TxY" firstAttribute="top" secondItem="Dk5-9m-6Fy" secondAttribute="bottom" constant="16" id="lQt-7v-zmh"/>
                             <constraint firstItem="fm1-9n-yre" firstAttribute="top" secondItem="YgJ-oT-7cA" secondAttribute="bottom" constant="34" id="ouW-aT-WO2"/>
                             <constraint firstItem="1Xh-Yr-Ikk" firstAttribute="leading" secondItem="s4d-8E-ij9" secondAttribute="leading" constant="18" id="qsn-L7-1J9"/>
                             <constraint firstItem="YgJ-oT-7cA" firstAttribute="width" secondItem="2hq-Oj-ND9" secondAttribute="width" multiplier="0.9" id="vlV-dt-Byf"/>
@@ -3229,6 +3273,9 @@
             <size key="intrinsicContentSize" width="12" height="23"/>
         </designable>
         <designable name="Rhl-ME-Ws3">
+            <size key="intrinsicContentSize" width="58" height="35"/>
+        </designable>
+        <designable name="TKv-RF-TxY">
             <size key="intrinsicContentSize" width="58" height="35"/>
         </designable>
         <designable name="VJH-o9-vop">

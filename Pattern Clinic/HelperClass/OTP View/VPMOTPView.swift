@@ -106,7 +106,7 @@ class VPMOTPView: UIView {
     var otpFieldDefaultBackgroundColor: UIColor = UIColor(named: "Light_Black")!
     
     /// Set this value if a background color is needed when a text is enetered in the OTP field. Defaults to `clear` color.
-    var otpFieldEnteredBackgroundColor: UIColor = UIColor(named: "button_Colour")!
+    var otpFieldEnteredBackgroundColor: UIColor = UIColor(named: "Text_Filled")!
     
     /// Set this value if a border color is needed when a text is not enetered in the OTP field. Defaults to `black` color.
     var otpFieldDefaultBorderColor: UIColor = UIColor.clear
@@ -330,7 +330,8 @@ extension VPMOTPView: UITextFieldDelegate {
                 (textField as! VPMOTPTextField).shapeLayer.strokeColor = otpFieldEnteredBorderColor.cgColor
             }
             else {
-                textField.backgroundColor = otpFieldEnteredBackgroundColor
+                textField.textColor         = UIColor(named: "button_Colour")
+                textField.backgroundColor   = otpFieldEnteredBackgroundColor
                 textField.layer.borderColor = otpFieldEnteredBorderColor.cgColor
             }
             

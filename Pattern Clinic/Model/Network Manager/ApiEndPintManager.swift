@@ -23,13 +23,21 @@ extension NetworkManager {
     func login(Username:String = "", Password:String = "", completion: @escaping ((Result<LoginResponseModel,APIError>) -> Void)) {
         let param = [
             "Username"             : Username,
-            "Password"             : Password
+            "Password"             : Password,
+            "DeviceToken"          : UserDefaults.fcmToken,
+            "DeviceType"           : "iOS"
         ]
         handleAPICalling(request: .logIn(param: param), completion: completion)
     }
     //MARK: - Verify Otp api Call
-    func verifyOTP(){
-        
+    func verifyOTP(confirmationcode:String = "",Username:String = "",completion: @escaping ((Result<LoginResponseModel,APIError>) -> Void)){
+        let param = [
+            "Username"             : Username,
+            "confirmationcode"     : confirmationcode,
+            "DeviceToken"          : UserDefaults.fcmToken,
+            "DeviceType"           : "iOS"
+        ]
+        handleAPICalling(request: .verifyOTP(param: param), completion: completion)
     }
     
     //MARK: - Forget password  api Call
@@ -97,5 +105,36 @@ extension NetworkManager {
         ]
         handleAPICalling(request: .getcoachList(param:param), completion: completion)
     }
+    
+    //MARK: - Get user Previous Chat List
+    
+    func getuserPreviousChat(SenderSK:String = "",ReceiverSK:String = "",completion: @escaping ((Result<PreviousUserChat,APIError>) -> Void)){
+        let param = [
+            "AuthToken"             :  UserDefaults.userToken,
+            "SenderSK"              :  SenderSK,
+            "ReceiverSK"            :  ReceiverSK
+        ]
+        handleAPICalling(request: .getPreviousChat(param: param), completion: completion)
+    }
+    
+    //MARK: - Get User Chat List
+    
+    func getuserChatList(completion: @escaping ((Result<GetChatList,APIError>) -> Void)){
+        let param = [
+            "AuthToken"             :  UserDefaults.userToken,
+            "SK"                    :  UserDefaults.User?.patientInfo?.sk
+        ]
+        handleAPICalling(request:.getChatList(param: param as [String : Any]), completion: completion)
+    }
+    
+    //MARK: - Upload Files to Server For Chat Purpose
+    
+    func uploadFilestoserver(files:UIImage?,videoUrl:URL?,FileURL:URL?,completion: @escaping ((Result<UPloadFilesModel,APIError>) -> Void)){
+        let param = [
+            "AuthToken"             : UserDefaults.userToken
+        ]
+        handleAPICalling(request:.uploadChatFile(param: param, userImg: files, videoUrl: videoUrl, FileURL: FileURL), completion: completion)
+    }
+    
 }
 

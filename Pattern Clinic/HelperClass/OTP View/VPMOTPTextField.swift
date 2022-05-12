@@ -56,6 +56,7 @@ class VPMOTPTextField: UITextField {
         switch type {
         case .circular:
             layer.cornerRadius = bounds.size.width / 2
+            
         case .square:
             layer.cornerRadius = 8
         case .diamond:
