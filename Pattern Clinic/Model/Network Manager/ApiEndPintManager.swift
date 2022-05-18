@@ -129,11 +129,11 @@ extension NetworkManager {
     
     //MARK: - Upload Files to Server For Chat Purpose
     
-    func uploadFilestoserver(files:UIImage?,videoUrl:URL?,FileURL:URL?,completion: @escaping ((Result<UPloadFilesModel,APIError>) -> Void)){
+    func uploadFilestoserver(files:UIImage?,videoUrl:URL?,FileURL:URL?,audioURL:URL?,completion: @escaping ((Result<UPloadFilesModel,APIError>) -> Void)){
         let param = [
             "AuthToken"             : UserDefaults.userToken
         ]
-        handleAPICalling(request:.uploadChatFile(param: param, userImg: files, videoUrl: videoUrl, FileURL: FileURL), completion: completion)
+        handleAPICalling(request:.uploadChatFile(param: param, userImg: files, videoUrl: videoUrl, FileURL: FileURL, audioURL: audioURL), completion: completion)
     }
     
 }

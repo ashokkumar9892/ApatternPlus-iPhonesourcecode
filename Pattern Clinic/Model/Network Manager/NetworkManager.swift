@@ -37,14 +37,14 @@ struct NetworkManager {
     let router = Router<APIEndPoint>()
     
     fileprivate func handleNetworkResponse(_ response : HTTPURLResponse, forData data : Data = Data())->
-        APIResult<String>{
-            switch response.statusCode{
-            case 200...299 : return.success
-            case 401...500 : return.failure(NetworkResponse.authenticationError.rawValue)
-            case 501...599 : return.failure(NetworkResponse.badRequest.rawValue)
-            case 600       : return.failure(NetworkResponse.outdated.rawValue)
-            default        : return.failure(NetworkResponse.failed.rawValue)
-            }
+    APIResult<String>{
+        switch response.statusCode{
+        case 200...299 : return.success
+        case 401...500 : return.failure(NetworkResponse.authenticationError.rawValue)
+        case 501...599 : return.failure(NetworkResponse.badRequest.rawValue)
+        case 600       : return.failure(NetworkResponse.outdated.rawValue)
+        default        : return.failure(NetworkResponse.failed.rawValue)
+        }
     }
     func handleAPICalling<T:APIModel>(request:APIEndPoint,completion: @escaping ((Result<T,APIError>) -> Void)){
         router.request(request) { (data, response, error) in

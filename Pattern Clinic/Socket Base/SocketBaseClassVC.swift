@@ -73,6 +73,7 @@ class SocketBaseClassVC: NSObject,ViewModel{
         self.chatHubConnection!.start()
         
         self.chatHubConnection?.on(method: "ReceiveMessage", callback: { (result) in
+            Indicator.shared.hide()
             if let messagereponse = try? result.getArgument(type: normalMessage.self) {
                 let mesasge_1 = Chatlist(senderID: messagereponse.senderSK ?? "", receiverId:"", sentOn: messagereponse.senton ?? "", message: messagereponse.message ?? "", chatType:messagereponse.messageType ?? "", isAdmin: true, isNotification: true)
                 self.userPreviousChat?.chatlist.insert(mesasge_1, at:0)
@@ -116,10 +117,10 @@ class SocketBaseClassVC: NSObject,ViewModel{
         //        })
     }
     
-    func uploadFilesToServer(files:UIImage?,videoUrl:URL?,FileURL:URL?){
+    func uploadFilesToServer(files:UIImage?,videoUrl:URL?,FileURL:URL?,audioURL:URL?){
         Indicator.shared.show("Uploading...")
         let model = NetworkManager.sharedInstance
-        model.uploadFilestoserver(files: files, videoUrl: videoUrl, FileURL: FileURL) {[weak self] (result) in
+        model.uploadFilestoserver(files: files, videoUrl: videoUrl, FileURL: FileURL, audioURL: audioURL) {[weak self] (result) in
             guard let self = self else {return}
             switch result{
             case .success(let res):
@@ -143,8 +144,9 @@ class SocketBaseClassVC: NSObject,ViewModel{
     
     func sendMessageToUser(){
         let codData = SocketRequestModel(SenderSK:UserDefaults.User?.patientInfo?.sk ?? "", ReceiverSK:ReceiverSK.value, Message: userMessage.value, MessageType:messageType.value, AuthToken:UserDefaults.userToken)
+        Indicator.shared.show("loading...")
         self.chatHubConnection?.invoke(method: "SendMessages", arguments: [codData], invocationDidComplete: { error in
-            print(error,"Home")
+            self.messageType.value = "Text"
         })
     }
     

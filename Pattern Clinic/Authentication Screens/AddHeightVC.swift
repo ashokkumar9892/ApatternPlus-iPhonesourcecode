@@ -61,9 +61,9 @@ class AddHeightVC: CustomiseViewController {
                 self.viewModel.userProfile_Pic.value = stringImg
             }
         }
-       
         
-       
+        
+        
         ruler?.direction = .horizontal
         ruler?.tintColor = UIColor(red: 0.15, green: 0.18, blue: 0.48, alpha: 1.0)
         //  controlHConstraint?.constant = 240.0
@@ -105,11 +105,11 @@ class AddHeightVC: CustomiseViewController {
         case .Signup:
             if self.viewModel.isValid{
                 self.viewModel.createProfile()
-               
+                
             }else{
                 self.showErrorMessages(message: self.viewModel.brokenRules.first?.message ?? "")
             }
-           
+            
         case .Edit:
             self.navigationController?.popViewController(animated: true)
         }

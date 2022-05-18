@@ -23,5 +23,7 @@ pod 'FMDB'
 pod 'AFNetworking', '~> 4.0'
 pod 'MJExtension'
 pod 'IQKeyboardManagerSwift'
+pod 'Kingfisher'
+pod 'iRecordView'
 
 end

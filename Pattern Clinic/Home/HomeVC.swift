@@ -24,7 +24,12 @@ class HomeVC: CustomiseViewController {
         Dispatch.background {
             let userImg = self.base64ToImage(UserDefaults.User?.patientInfo?.profilePic ?? "")
             Dispatch.main {
-                self.userImg.image = userImg
+                if userImg == nil{
+                    self.userImg.image = UIImage(named: "dummy_user")
+                }else{
+                    self.userImg.image = userImg
+                }
+                
                 self.userNamelbl.text = "\(UserDefaults.User?.patientInfo?.firstName ?? "" ) \(UserDefaults.User?.patientInfo?.lastName ?? "" )"
             }
         }

@@ -19,7 +19,11 @@ class PersonalInformationVC: CustomiseViewController {
             Dispatch.background {
                 let userImg = self.base64ToImage(patient_Info.profilePic ?? "")
                 Dispatch.main {
-                    self.userImg.image    = userImg
+                    if userImg == nil{
+                        print("Error")
+                    }else{
+                        self.userImg.image    = userImg
+                    }
                     self.userNamelbl.text = "\(patient_Info.firstName ?? "") \(patient_Info.lastName ?? "")"
                     let country_ID =  self.locale(for:patient_Info.country ?? "")
                     self.countrylbl.text  =  country_ID

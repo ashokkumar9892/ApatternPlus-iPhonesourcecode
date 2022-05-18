@@ -29,7 +29,7 @@ enum APIEndPoint {
     case SaveAPTeam(param:[String:Any])
     case getPreviousChat(param:[String:Any])
     case getChatList(param:[String:Any])
-    case uploadChatFile(param:[String:Any],userImg:UIImage?,videoUrl:URL?,FileURL:URL?)
+    case uploadChatFile(param:[String:Any],userImg:UIImage?,videoUrl:URL?,FileURL:URL?,audioURL:URL?)
 }
 extension APIEndPoint:EndPointType {
     var environmentBaseURL : String {
@@ -100,9 +100,9 @@ extension APIEndPoint:EndPointType {
             return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         case .getChatList(param: let param):
             return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
-        case .uploadChatFile(param: let param, userImg: let userfile, videoUrl: let videoURL,FileURL:let fileURL):
+        case .uploadChatFile(param:  let param, userImg: let userfile, videoUrl:  let videoURL, FileURL: let fileURL, audioURL: let audioURL):
             let boundary = NSString(format: "---------------------------14737809831466499882746641449")
-            let boundry = self.createBodyWithParameters(parameters: param, filePathKey: "files", imageDataKey: userfile, boundary: boundary as String, videoUrl: videoURL, fileUrl: fileURL)
+            let boundry = self.createBodyWithParameters(parameters: param, filePathKey: "files", imageDataKey: userfile, boundary: boundary as String, videoUrl: videoURL, fileUrl: fileURL,audioURL:audioURL)
             return .requestMultipart(data: boundry, additionHeaders: headers)
         }
     }
@@ -122,7 +122,7 @@ extension APIEndPoint:EndPointType {
 
 
 extension APIEndPoint{
-    func createBodyWithParameters(parameters: [String: Any]?, filePathKey: String?, imageDataKey: UIImage?, boundary: String,videoUrl:URL?,fileUrl:URL?) -> Data {
+    func createBodyWithParameters(parameters: [String: Any]?, filePathKey: String?, imageDataKey: UIImage?, boundary: String,videoUrl:URL?,fileUrl:URL?,audioURL:URL?) -> Data {
         var body = Data();
         
         if parameters != nil {
@@ -146,6 +146,7 @@ extension APIEndPoint{
             body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
         }
         if let video = videoUrl{
+            
             let filename = "\(Date().timeIntervalSince1970).\(video.absoluteURL.pathExtension)"
             body.append(string: boundaryPrefix)
             body.append(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
@@ -161,19 +162,28 @@ extension APIEndPoint{
         }
         
         if let file_upload = fileUrl{
-            let filename = ".pdf"
+            let filename = "Thiru.pdf"
             let mimetype = "application/pdf"
             var dataFile: Data = Data()
-            do{
-                dataFile = try NSData.init(contentsOf: URL.init(fileURLWithPath: file_upload.absoluteString, isDirectory: true)) as Data
-            }catch{
-                print(error)
-            }
+            dataFile = NSData(contentsOf: file_upload)! as Data
             body.append(string: "--\(boundary)\r\n")
             body.append(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
             body.append(string: "Content-Type: \(mimetype)\r\n\r\n")
-            
             body.append(dataFile as Data)
+            body.append(string: "\r\n")
+        }
+        if let audio_URLFile = audioURL{
+            let filename = "\(Date().timeIntervalSince1970).\(audio_URLFile.absoluteURL.pathExtension)"
+            body.append(string: boundaryPrefix)
+            body.append(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
+            if filename.lowercased() == "mov"{
+                body.append(string: "Content-Type: video/quicktime\r\n\r\n")
+            }
+            else{
+                body.append(string: "Content-Type: video/mp3\r\n\r\n")
+            }
+            let data = try? Data.init(contentsOf:audio_URLFile)
+            body.append(data ?? Data())
             body.append(string: "\r\n")
         }
         

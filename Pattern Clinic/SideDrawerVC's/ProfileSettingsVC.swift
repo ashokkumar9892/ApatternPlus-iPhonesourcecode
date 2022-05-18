@@ -22,7 +22,11 @@ class ProfileSettingsVC: CustomiseViewController {
         Dispatch.background {
             let userImg = self.base64ToImage(UserDefaults.User?.patientInfo?.profilePic ?? "")
             Dispatch.main {
-                self.userImg.image = userImg
+                if userImg == nil{
+                    print("Error")
+                }else{
+                    self.userImg.image    = userImg
+                }
                 self.userNamelbl.text = "\(UserDefaults.User?.patientInfo?.firstName ?? "" ) \(UserDefaults.User?.patientInfo?.lastName ?? "" )"
             }
         }

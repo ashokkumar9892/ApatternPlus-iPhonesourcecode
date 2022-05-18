@@ -32,7 +32,5 @@
 		<string>bluetooth-peripheral</string>
 		<string>remote-notification</string>
 	</array>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Need microphone access for uploading videos</string>
 </dict>
 </plist>
