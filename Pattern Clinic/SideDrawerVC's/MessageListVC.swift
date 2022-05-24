@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import WidgetKit
 class MessageListVC: CustomiseViewController {
     var viewModel:SocketBaseClassVC!
     @IBOutlet weak var chatTable:UITableView!
@@ -37,12 +37,17 @@ extension MessageListVC:UITableViewDataSource,UITableViewDelegate{
         let chatList = self.viewModel.chatUserInfo?.chatlist?[indexPath.row]
         cell.nameLbl.text = chatList?.name ?? ""
         cell.last_Message.text = chatList?.message ?? ""
-//        if chatList.unseencount != 0 && chatList.unseencount != nil{
-//            cell.unseenCount.isHidden = false
-//        }else{
-//            cell.unseenCount.isHidden = true
-//        }
-//        cell.unseenCount.text = "\(chatList.unseencount ?? 0)"
+        if chatList?.chatStatus == "InActive"{
+            cell.contentView.alpha = 0.4
+        }else{
+            cell.contentView.alpha = 1
+        }
+        //        if chatList.unseencount != 0 && chatList.unseencount != nil{
+        //            cell.unseenCount.isHidden = false
+        //        }else{
+        //            cell.unseenCount.isHidden = true
+        //        }
+        //        cell.unseenCount.text = "\(chatList.unseencount ?? 0)"
         
         
         return cell

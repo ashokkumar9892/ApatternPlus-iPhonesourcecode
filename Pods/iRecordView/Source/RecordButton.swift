@@ -43,8 +43,7 @@ open class RecordButton: UIButton, UIGestureRecognizerDelegate {
         if image(for: .normal) == nil {
             let image = UIImage.fromPod("mic").withRenderingMode(.alwaysTemplate)
             setImage(image, for: .normal)
-            
-            tintColor = .blue
+            tintColor = .red
         }
         
 

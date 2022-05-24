@@ -25,5 +25,6 @@ pod 'MJExtension'
 pod 'IQKeyboardManagerSwift'
 pod 'Kingfisher'
 pod 'iRecordView'
+pod 'DropDown'
 
 end

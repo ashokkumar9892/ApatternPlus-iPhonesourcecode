@@ -24,6 +24,7 @@ class PatternPlus_TeamVC: CustomiseViewController {
     @IBOutlet weak var headerView:UIView!
     @IBOutlet weak var headerHeight:NSLayoutConstraint!
     @IBOutlet weak var titleLbl:UILabel!
+    var addTpes = ["5545 Little Debbie Pkwy, Ooltewah, TN 37363, United States"]
     var listArray = [DoctorCoatchDetails]()
     var viewModel:RegistrationViewModel!
     override func viewDidLoad() {
@@ -65,6 +66,14 @@ class PatternPlus_TeamVC: CustomiseViewController {
                 guard let vc = storyboard.instantiateViewController(withIdentifier: "KYDrawerController") as? KYDrawerController  else{return}
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+        }
+    }
+    
+    @IBAction func dropDown_Btn(_ sender :UIButton){
+        sender.addDropDown(forDataSource: addTpes) { [weak self](item) in
+            guard let self = self else {return}
+            self.address_Btn.setTitle(item, for: .normal)
+            // self.buttonStyle = item
         }
     }
 }
@@ -135,7 +144,7 @@ extension PatternPlus_TeamVC:UITableViewDataSource,UITableViewDelegate{
         vc.indexTag = sender.tag
         self.present(vc, animated: true, completion:nil)
     }
-  
+    
     @objc func pickCoatch(_ sender :UIButton){
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DectorsListVC") as? DectorsListVC  else{return}
         vc.modalPresentationStyle = .custom
@@ -187,8 +196,6 @@ extension PatternPlus_TeamVC:UITableViewDataSource,UITableViewDelegate{
             self.present(vc, animated: true, completion:nil)
         }
     }
-    
-    
 }
 
 

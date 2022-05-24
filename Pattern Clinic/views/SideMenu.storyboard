@@ -1542,7 +1542,7 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Su-DH-d69" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Su-DH-d69" customClass="AnimatableLabel" customModule="IBAnimatable">
                                                     <rect key="frame" x="276" y="41" width="24" height="24"/>
                                                     <color key="backgroundColor" name="blue_Back"/>
                                                     <constraints>
@@ -1901,9 +1901,9 @@
                                                                         <constraint firstItem="S4l-pw-Tla" firstAttribute="leading" secondItem="i5U-Ak-cmB" secondAttribute="leading" constant="8" id="5h0-aJ-LaO"/>
                                                                         <constraint firstItem="wm4-na-bg5" firstAttribute="top" secondItem="i5U-Ak-cmB" secondAttribute="top" constant="8" id="PZc-Eb-lG3"/>
                                                                         <constraint firstItem="qSu-JA-b9v" firstAttribute="leading" secondItem="wm4-na-bg5" secondAttribute="leading" id="a4D-pp-ac0"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="qSu-JA-b9v" secondAttribute="bottom" constant="13.5" id="d6u-hK-EWQ"/>
                                                                         <constraint firstItem="S4l-pw-Tla" firstAttribute="top" secondItem="i5U-Ak-cmB" secondAttribute="top" constant="8" id="dYu-8H-3li"/>
                                                                         <constraint firstAttribute="trailing" secondItem="wm4-na-bg5" secondAttribute="trailing" constant="12" id="gaf-Lu-XlE"/>
-                                                                        <constraint firstAttribute="height" constant="60" id="k53-dk-igx"/>
                                                                         <constraint firstItem="qSu-JA-b9v" firstAttribute="top" secondItem="wm4-na-bg5" secondAttribute="bottom" constant="2.5" id="oJU-Dd-3le"/>
                                                                         <constraint firstItem="wm4-na-bg5" firstAttribute="leading" secondItem="S4l-pw-Tla" secondAttribute="trailing" constant="12" id="psn-NP-m2a"/>
                                                                     </constraints>
@@ -1930,6 +1930,9 @@
                                                                 <constraint firstItem="i5U-Ak-cmB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TFV-yb-d9I" secondAttribute="leading" constant="50" id="xES-yw-RKb"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="documentName" destination="wm4-na-bg5" id="wgE-98-MlJ"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Docmentanotheruser" rowHeight="110" id="x1t-fU-Hdg" customClass="Docmentanotheruser" customModule="Pattern_Clinic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="602.5" width="320" height="110"/>
@@ -1955,7 +1958,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 KB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlO-Tb-XHP">
-                                                                            <rect key="frame" x="59" y="31" width="31.5" height="15.5"/>
+                                                                            <rect key="frame" x="59" y="31" width="123.5" height="15.5"/>
                                                                             <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                             <color key="textColor" name="#787878_lbl_grey"/>
                                                                             <nil key="highlightedColor"/>
@@ -1964,13 +1967,15 @@
                                                                     <color key="backgroundColor" name="blue_Back"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="6T8-1i-xZr" secondAttribute="trailing" constant="12" id="TZS-p1-HOY"/>
-                                                                        <constraint firstAttribute="height" constant="60" id="VyH-7A-t7U"/>
                                                                         <constraint firstItem="6T8-1i-xZr" firstAttribute="top" secondItem="esG-Ms-q7k" secondAttribute="top" constant="8" id="cCP-W0-QHi"/>
+                                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VlO-Tb-XHP" secondAttribute="bottom" constant="13.5" id="dCN-tM-SeU"/>
                                                                         <constraint firstItem="57o-JH-2UU" firstAttribute="leading" secondItem="esG-Ms-q7k" secondAttribute="leading" constant="8" id="eyX-xe-PTA"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="57o-JH-2UU" secondAttribute="bottom" constant="8" id="jP0-8B-efo"/>
                                                                         <constraint firstItem="6T8-1i-xZr" firstAttribute="leading" secondItem="57o-JH-2UU" secondAttribute="trailing" constant="12" id="tMF-IE-Zqb"/>
                                                                         <constraint firstItem="VlO-Tb-XHP" firstAttribute="leading" secondItem="6T8-1i-xZr" secondAttribute="leading" id="uRU-eu-qi0"/>
                                                                         <constraint firstItem="VlO-Tb-XHP" firstAttribute="top" secondItem="6T8-1i-xZr" secondAttribute="bottom" constant="2.5" id="vfE-2F-hO6"/>
                                                                         <constraint firstItem="57o-JH-2UU" firstAttribute="top" secondItem="esG-Ms-q7k" secondAttribute="top" constant="8" id="xyb-em-6rJ"/>
+                                                                        <constraint firstItem="VlO-Tb-XHP" firstAttribute="trailing" secondItem="6T8-1i-xZr" secondAttribute="trailing" id="zul-Eb-ZRa"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1995,6 +2000,9 @@
                                                                 <constraint firstItem="jWp-wG-Y3U" firstAttribute="trailing" secondItem="esG-Ms-q7k" secondAttribute="trailing" id="tAC-SU-z3R"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="documentName" destination="6T8-1i-xZr" id="gyO-5I-apZ"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudiomyCell" rowHeight="148" id="65g-oW-j5Y" customClass="AudiomyCell" customModule="Pattern_Clinic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="712.5" width="320" height="148"/>
@@ -2144,6 +2152,8 @@
                                                                     <constraint firstAttribute="height" constant="40" id="jOV-5v-LHD"/>
                                                                     <constraint firstAttribute="width" secondItem="q0c-Ue-Ado" secondAttribute="height" multiplier="1:1" id="r4v-sp-cyd"/>
                                                                 </constraints>
+                                                                <color key="tintColor" name="Light_TitleGrey"/>
+                                                                <state key="normal" image="mic"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8g-NB-BKR">
                                                                 <rect key="frame" x="65" y="0.0" width="40" height="40"/>
@@ -2184,9 +2194,12 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Type your message..."/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                                <color key="value" name="lbl_blackcolour"/>
+                                                                <color key="value" name="Light_TitleGrey"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Zq5-hg-FeX" id="T2Z-b3-H6m"/>
+                                                        </connections>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2266,6 +2279,7 @@
                         <outlet property="record_BTN" destination="q0c-Ue-Ado" id="LT7-4Z-JNI"/>
                         <outlet property="record_View" destination="h42-j1-eUW" id="5gA-AS-VLp"/>
                         <outlet property="txt_message" destination="TB4-bI-iPE" id="Nxc-6b-TNX"/>
+                        <outlet property="user_Name" destination="H5k-fH-bWn" id="ePi-bP-61T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="421-le-nyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

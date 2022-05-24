@@ -11,13 +11,15 @@ import AVKit
 import AVFoundation
 import SafariServices
 import iRecordView
+import IBAnimatable
 
 class MessageVC: CustomiseViewController {
     
     let mpRecorder: MPAudioRecorder = MPAudioRecorder()
     var viewModel:SocketBaseClassVC!
     @IBOutlet weak var chatTable:UITableView!
-    @IBOutlet weak var txt_message:UITextView!
+    @IBOutlet weak var txt_message:AnimatableTextView!
+    @IBOutlet weak var user_Name:UILabel!
     var userChat_Info:RecentChatlist?
     var userChat = [Chatlist]()
     var fontCamera    = false
@@ -26,7 +28,8 @@ class MessageVC: CustomiseViewController {
     var videoURl       :URL?
     var fileURL        :URL?
     var audioURL       :URL?
-    
+   
+  
     @IBOutlet weak var record_View: RecordView!
     @IBOutlet weak var record_BTN: RecordButton!
     override func viewDidLoad() {
@@ -36,9 +39,14 @@ class MessageVC: CustomiseViewController {
         self.viewModel.makeSocketConnection()
         self.viewModel.ReceiverSK.value = userChat_Info?.sk ?? ""
         self.viewModel.SenderSK.value = UserDefaults.User?.patientInfo?.sk ?? ""
+        self.user_Name.text = userChat_Info?.name ?? ""
         record_BTN.recordView = record_View
-        record_View.delegate = self
-        mpRecorder.delegateMPAR  = self
+        if userChat_Info?.chatStatus == "InActive"{
+            record_View.isHidden = true
+        }else{
+            record_View.isHidden = false
+        }
+        
         self.viewModel.socketConnectCloser = { [weak self] in
             guard let self = self else {return}
             Dispatch.main{
@@ -61,16 +69,28 @@ class MessageVC: CustomiseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        record_View.delegate = self
+        mpRecorder.delegateMPAR  = self
+    }
+    
     @IBAction func openCamera(_ sender :UIButton){
         ImagePickerController.init().pickImage(self, isCamraFront: fontCamera, isvideoFlag: true) { [weak self] (videoURL) in
             guard let self = self else {return}
             Dispatch.main{
+                self.pickedImage = nil
+                self.fileURL = nil
+                self.audioURL = nil
                 self.viewModel.uploadFilesToServer(files:self.pickedImage,videoUrl: videoURL, FileURL:self.fileURL, audioURL: self.audioURL)
             }
         } _: { [weak self] (img) in
             guard let self = self else {return}
             Dispatch.main{
                 self.pickedImage = img
+                self.videoURl = nil
+                self.fileURL = nil
+                self.audioURL = nil
                 self.images["identity_img"] = img
                 self.viewModel.uploadFilesToServer(files:img,videoUrl:self.videoURl,FileURL:self.fileURL, audioURL: self.audioURL)
             }
@@ -84,7 +104,9 @@ class MessageVC: CustomiseViewController {
     }
     
     @IBAction func send_Message(_ sender :UIButton){
-        if self.txt_message.text != "" || self.txt_message.text == " " {
+        if self.txt_message.text == "" || self.txt_message.text == " " {
+           
+        }else{
             self.viewModel.userMessage.value = txt_message.text ??  ""
             self.viewModel.sendMessageToUser()
         }
@@ -124,11 +146,13 @@ extension MessageVC: UITableViewDataSource, UITableViewDelegate {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudiomyCell", for: indexPath) as! AudiomyCell
                 cell.play_btn.tag = indexPath.row
                 cell.play_btn.addTarget(self, action: #selector(play_VideoLink(_ :)), for: .touchUpInside)
+                cell.selectionStyle = .none
                 return cell
             }
             else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DocmentmyCell", for: indexPath) as! DocmentmyCell
                 cell.selectionStyle = .none
+                cell.documentName.text = (self.viewModel?.userPreviousChat?.chatlist.reversed()[indexPath.row].message ?? "").replacingOccurrences(of: "https://annexappapi.apatternplus.com/ChatFiles/", with: "")
                 return cell
             }
             
@@ -155,12 +179,14 @@ extension MessageVC: UITableViewDataSource, UITableViewDelegate {
             }else if self.viewModel.userPreviousChat?.chatlist.reversed()[indexPath.row].chatType == "Audio"{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Audioanotheruser", for: indexPath) as! Audioanotheruser
                 cell.play_btn.tag = indexPath.row
+                cell.selectionStyle = .none
                 cell.play_btn.addTarget(self, action: #selector(play_VideoLink(_ :)), for: .touchUpInside)
                 return cell
             }
             else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Docmentanotheruser", for: indexPath) as! Docmentanotheruser
                 cell.selectionStyle = .none
+                cell.documentName.text = (self.viewModel?.userPreviousChat?.chatlist.reversed()[indexPath.row].message ?? "").replacingOccurrences(of: "https://annexappapi.apatternplus.com/ChatFiles/", with: "")
                 return cell
             }
         }
@@ -173,7 +199,7 @@ extension MessageVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let chat_Info = self.viewModel.userPreviousChat?.chatlist.reversed()[indexPath.row]{
             if chat_Info.chatType == "Image"{
-                self.openActionSheet(imageUrl:self.viewModel.userPreviousChat?.chatlist.reversed()[indexPath.row].message ?? "", oneTitle: "Zoom Image", secondTitle: "Download Image", type: chat_Info.chatType ?? "")
+                self.openActionSheet(imageUrl:self.viewModel.userPreviousChat?.chatlist.reversed()[indexPath.row].message ?? "", oneTitle: "View Image", secondTitle: "Download Image", type: chat_Info.chatType ?? "")
             }else if  chat_Info.chatType == "File"{
                 self.openActionSheet(imageUrl:self.viewModel.userPreviousChat?.chatlist.reversed()[indexPath.row].message ?? "", oneTitle: "Preview PDF", secondTitle: "Download PDF", type: chat_Info.chatType ?? "")
             }else{
@@ -251,6 +277,7 @@ class DocmentmyCell:UITableViewCell{
 class Docmentanotheruser:UITableViewCell{
     @IBOutlet weak var user_Img:UIImageView!
     @IBOutlet weak var play_btn:UIButton!
+    @IBOutlet weak var documentName:UILabel!
 }
 
 class AudiomyCell:UITableViewCell{
@@ -262,6 +289,9 @@ class Audioanotheruser:UITableViewCell{
 }
 extension MessageVC:UIDocumentPickerDelegate,UIDocumentInteractionControllerDelegate{
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        self.videoURl = nil
+        self.pickedImage = nil
+        self.audioURL = nil
         self.viewModel.uploadFilesToServer(files:self.pickedImage,videoUrl:self.videoURl,FileURL:url, audioURL: self.audioURL)
     }
     
@@ -281,10 +311,10 @@ extension MessageVC:UIDocumentPickerDelegate,UIDocumentInteractionControllerDele
             if type == "Image"{
                 self.downloadImge(imageUrl: imageUrl)
             }else{
-                let url = URL(string: "http://www.filedownloader.com/mydemofile.pdf")
-                FileDownloader.loadFileAsync(url: url!) { (path, error) in
-                    print("PDF File downloaded to : \(path!)")
-                }
+                guard let url = URL(string: imageUrl)else {return}
+                      let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+                      let downloadTask = urlSession.downloadTask(with: url)
+                      downloadTask.resume()
             }
         }))
         
@@ -344,17 +374,21 @@ extension Data{
 
 extension MessageVC:RecordViewDelegate{
     func onStart() {
+        self.txt_message.placeholderText = ""
+        mpRecorder.delegateMPAR = self
         mpRecorder.startAudioRecording()
     }
     
     func onCancel() {
         print("Cancel")
+        self.txt_message.placeholderText = "Type your message..."
     }
     
     func onFinished(duration: CGFloat) {
         mpRecorder.stopAudioRecording()
+        record_View.delegate = self
+        self.txt_message.placeholderText = "Type your message..."
     }
-    
     
 }
 
@@ -368,6 +402,9 @@ extension MessageVC: MPAudioRecorderDelegate
     }
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool)
     {
+        self.videoURl = nil
+        self.pickedImage = nil
+        self.fileURL = nil
         self.viewModel.uploadFilesToServer(files:self.pickedImage,videoUrl:self.videoURl,FileURL:self.fileURL, audioURL:recorder.url)
         
     }
@@ -390,5 +427,59 @@ extension MessageVC: MPAudioRecorderDelegate
     func audioSessionPermission(granted: Bool)
     {
         print(granted)
+    }
+    
+    fileprivate func createVideoThumbnail(from url: URL) -> UIImage? {
+        
+        let asset = AVAsset(url: url)
+        let assetImgGenerate = AVAssetImageGenerator(asset: asset)
+        assetImgGenerate.appliesPreferredTrackTransform = true
+        assetImgGenerate.maximumSize = CGSize(width: frame.width, height: frame.height)
+        
+        let time = CMTimeMakeWithSeconds(0.0, preferredTimescale: 600)
+        do {
+            let img = try assetImgGenerate.copyCGImage(at: time, actualTime: nil)
+            let thumbnail = UIImage(cgImage: img)
+            return thumbnail
+        }
+        catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+    
+}
+
+
+extension MessageVC:UITextViewDelegate{
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard range.location == 0 else {
+               return true
+           }
+
+           let newString = (textView.text! as NSString).replacingCharacters(in: range, with: text) as NSString
+           return newString.rangeOfCharacter(from: CharacterSet.whitespacesAndNewlines).location != 0
+    }
+}
+
+extension MessageVC : URLSessionDownloadDelegate {
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        print("File Downloaded Location- ",  location)
+        
+        guard let url = downloadTask.originalRequest?.url else {
+            return
+        }
+        let docsPath = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let destinationPath = docsPath.appendingPathComponent(url.lastPathComponent)
+        
+        try? FileManager.default.removeItem(at: destinationPath)
+        
+        do{
+            try FileManager.default.copyItem(at: location, to: destinationPath)
+            var pdfUrl = destinationPath
+            print("File Downloaded Location- ",  pdfUrl ?? "NOT")
+        }catch let error {
+            print("Copy Error: \(error.localizedDescription)")
+        }
     }
 }

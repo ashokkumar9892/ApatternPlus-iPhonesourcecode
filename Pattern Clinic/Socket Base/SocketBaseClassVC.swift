@@ -56,7 +56,7 @@ class SocketBaseClassVC: NSObject,ViewModel{
     var filesUpdated :UPloadFilesModel?
     
     static let sharedInstance = SocketBaseClassVC()
-    private let serverUrl = "https://patternclinicapis.harishparas.com/ChatHub"
+    private let serverUrl = "https://annexappapi.apatternplus.com/chatHub"
     private let dispatchQueue = DispatchQueue(label: "hubsamplephone.queue.dispatcheueuq")
     
     private var chatHubConnection: HubConnection?
@@ -65,7 +65,8 @@ class SocketBaseClassVC: NSObject,ViewModel{
     
     func makeSocketConnection(){
         self.chatHubConnectionDelegate = self
-        self.chatHubConnection = HubConnectionBuilder(url: URL(string: self.serverUrl)!)
+        guard let serverURL = URL(string: self.serverUrl) else {return}
+        self.chatHubConnection = HubConnectionBuilder(url: serverURL)
             .withLogging(minLogLevel: .debug)
             .withAutoReconnect()
             .withHubConnectionDelegate(delegate: self.chatHubConnectionDelegate!)
@@ -73,7 +74,7 @@ class SocketBaseClassVC: NSObject,ViewModel{
         self.chatHubConnection!.start()
         
         self.chatHubConnection?.on(method: "ReceiveMessage", callback: { (result) in
-            Indicator.shared.hide()
+          //  Indicator.shared.hide()
             if let messagereponse = try? result.getArgument(type: normalMessage.self) {
                 let mesasge_1 = Chatlist(senderID: messagereponse.senderSK ?? "", receiverId:"", sentOn: messagereponse.senton ?? "", message: messagereponse.message ?? "", chatType:messagereponse.messageType ?? "", isAdmin: true, isNotification: true)
                 self.userPreviousChat?.chatlist.insert(mesasge_1, at:0)
@@ -103,18 +104,6 @@ class SocketBaseClassVC: NSObject,ViewModel{
                 print(err.localizedDescription)
             }
         }
-        
-        //        let getUserChat = getChatList(SK: "PATIENT_1650619112058", AuthToken:UserDefaults.userToken)
-        //
-        //        self.chatHubConnection?.invoke(method: "UserChatList", arguments: [getUserChat], invocationDidComplete: { error in
-        //            print(error?.localizedDescription as Any)
-        //        })
-        //        self.chatHubConnection?.on(method: "ShowUserChatList", callback: { (result) in
-        //            if let messagereponse = try? result.getArgument(type: [ChatListModel].self) {
-        //                self.chatUserInfo = messagereponse
-        //                self.didFinishFetch?()
-        //            }
-        //        })
     }
     
     func uploadFilesToServer(files:UIImage?,videoUrl:URL?,FileURL:URL?,audioURL:URL?){
@@ -144,7 +133,7 @@ class SocketBaseClassVC: NSObject,ViewModel{
     
     func sendMessageToUser(){
         let codData = SocketRequestModel(SenderSK:UserDefaults.User?.patientInfo?.sk ?? "", ReceiverSK:ReceiverSK.value, Message: userMessage.value, MessageType:messageType.value, AuthToken:UserDefaults.userToken)
-        Indicator.shared.show("loading...")
+       // Indicator.shared.show("loading...")
         self.chatHubConnection?.invoke(method: "SendMessages", arguments: [codData], invocationDidComplete: { error in
             self.messageType.value = "Text"
         })

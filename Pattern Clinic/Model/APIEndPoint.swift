@@ -9,7 +9,7 @@
 import UIKit
 
 enum NetworkEnvironment : String {
-    case development  = "http://patternclinicapis.harishparas.com/api/"
+    case development  = "https://annexappapi.apatternplus.com/api/"
 }
 
 //enum OtherURLS:String {

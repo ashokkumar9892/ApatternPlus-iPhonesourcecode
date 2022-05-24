@@ -96,11 +96,11 @@ struct GetChatList: APIModel {
 
 // MARK: - Chatlist
 struct RecentChatlist: Codable {
-    let profilePic, name, sk,message: String?
+    let profilePic, name, sk,message,chatStatus: String?
     let isAdmin, isNotification: Bool?
 
     enum CodingKeys: String, CodingKey {
-        case profilePic, name, sk,message
+        case profilePic, name, sk,message,chatStatus
         case isAdmin, isNotification
     }
 }
