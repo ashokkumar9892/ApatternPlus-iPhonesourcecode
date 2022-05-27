@@ -30,6 +30,7 @@ enum APIEndPoint {
     case getPreviousChat(param:[String:Any])
     case getChatList(param:[String:Any])
     case uploadChatFile(param:[String:Any],userImg:UIImage?,videoUrl:URL?,FileURL:URL?,audioURL:URL?)
+    case manageNotifications(param:[String:Any])
 }
 extension APIEndPoint:EndPointType {
     var environmentBaseURL : String {
@@ -68,6 +69,8 @@ extension APIEndPoint:EndPointType {
             return "Chat/ChatUsers"
         case .uploadChatFile:
             return "Chat/UploadFiles"
+        case .manageNotifications:
+            return "Basic/ManageNotifications"
         }
     }
     var httpMethod: HTTPMethod {
@@ -104,6 +107,8 @@ extension APIEndPoint:EndPointType {
             let boundary = NSString(format: "---------------------------14737809831466499882746641449")
             let boundry = self.createBodyWithParameters(parameters: param, filePathKey: "files", imageDataKey: userfile, boundary: boundary as String, videoUrl: videoURL, fileUrl: fileURL,audioURL:audioURL)
             return .requestMultipart(data: boundry, additionHeaders: headers)
+        case .manageNotifications(param: let param):
+            return .requestParametersAndHeaders(bodyParameters: param, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders:headers)
         }
     }
     

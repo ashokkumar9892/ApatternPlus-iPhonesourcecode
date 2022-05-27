@@ -93,6 +93,9 @@
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izA-La-i3r">
                                                         <rect key="frame" x="223" y="34" width="51" height="31"/>
                                                         <color key="onTintColor" name="button_Colour"/>
+                                                        <connections>
+                                                            <action selector="notification_Switch:" destination="Cno-hi-aAY" eventType="valueChanged" id="oB4-sM-ghl"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

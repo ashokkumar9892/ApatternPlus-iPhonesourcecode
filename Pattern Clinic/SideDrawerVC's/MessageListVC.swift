@@ -23,8 +23,6 @@ class MessageListVC: CustomiseViewController {
         }
     }
 }
-
-
 extension MessageListVC:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.chatUserInfo?.chatlist?.count ?? 0

@@ -8,12 +8,23 @@
 import UIKit
 
 class SettingsVC: CustomiseViewController {
-    
+    var viewModel: SettingsViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.viewModel = SettingsViewModel(type: .ManageNotifications)
+        self.setUpVM(model:self.viewModel)
     }
+    
+    
+    @IBAction func notification_Switch(_ sender: UISwitch) {
+        if sender.isOn == true{
+            self.viewModel.notificationFlag.value = "true"
+        }else{
+            self.viewModel.notificationFlag.value = "false"
+        }
+        self.viewModel.manageNotifications()
+    }
+    
     @IBAction func contactUs_btn(_ sender :UIButton){
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactUSVC") as? ContactUSVC  else{return}
         self.navigationController?.pushViewController(vc, animated: true)

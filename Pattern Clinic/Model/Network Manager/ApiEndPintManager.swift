@@ -136,5 +136,15 @@ extension NetworkManager {
         handleAPICalling(request:.uploadChatFile(param: param, userImg: files, videoUrl: videoUrl, FileURL: FileURL, audioURL: audioURL), completion: completion)
     }
     
+    //MARK: - Manage Notifications Settings
+    
+    func manageNotifications(IsNotificationOn:String = "",completion: @escaping ((Result<Basic_Model,APIError>) -> Void)){
+        let param = [
+            "AuthToken"             :  UserDefaults.userToken,
+            "SK"                    :  UserDefaults.User?.patientInfo?.sk ?? "",
+            "IsNotificationOn"      : IsNotificationOn
+        ] as [String : Any]
+        handleAPICalling(request:.manageNotifications(param: param), completion: completion)
+    }
 }
 

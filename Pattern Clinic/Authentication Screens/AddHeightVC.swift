@@ -109,7 +109,6 @@ class AddHeightVC: CustomiseViewController {
             }else{
                 self.showErrorMessages(message: self.viewModel.brokenRules.first?.message ?? "")
             }
-            
         case .Edit:
             self.navigationController?.popViewController(animated: true)
         }
